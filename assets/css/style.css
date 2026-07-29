@@ -943,13 +943,13 @@ h3 {
   }
 }
 
-/* The wordmark is olive on transparent; knock it out to white so it holds up
-   against the moving footage. */
+/* Keep the wordmark in its brand olive; a shadow separates it from the
+   footage without touching its colour. */
 .wavepro-logo {
   width: min(100%, 430px);
   height: auto;
   margin-bottom: 1.75rem;
-  filter: brightness(0) invert(1) drop-shadow(0 2px 14px rgba(12, 24, 23, 0.5));
+  filter: drop-shadow(0 2px 16px rgba(12, 24, 23, 0.65));
 }
 
 /* The wordmark above is the section's visual title; keep the statement
