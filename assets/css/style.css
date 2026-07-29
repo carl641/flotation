@@ -118,6 +118,7 @@ a {
 }
 
 .hero :focus-visible,
+.media-section :focus-visible,
 .band-dark :focus-visible,
 .site-footer :focus-visible {
   outline-color: #cdd8c4;
@@ -895,21 +896,76 @@ h3 {
    WAVEPro
    -------------------------------------------------------------------------- */
 
+/* Full-bleed background video behind a section. Same cover math as the hero:
+   the iframe is sized to the larger of viewport width or 16:9 height so the
+   video always fills, then centred and clipped by the section. */
+.media-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(155deg, #2b3a2c 0%, var(--teal-900) 55%, var(--teal-950) 100%);
+  color: var(--on-dark);
+}
+
+.media-section-video {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.media-section-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100vw, 177.78vh);
+  height: max(100vh, 56.25vw);
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+
+.media-section-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 36, 35, 0.82) 0%,
+    rgba(18, 36, 35, 0.68) 45%,
+    rgba(18, 36, 35, 0.8) 100%
+  );
+}
+
+.media-section > .container {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-section-video {
+    display: none;
+  }
+}
+
+/* The wordmark is olive on transparent; knock it out to white so it holds up
+   against the moving footage. */
 .wavepro-logo {
   width: min(100%, 430px);
   height: auto;
   margin-bottom: 1.75rem;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 14px rgba(12, 24, 23, 0.5));
 }
 
 /* The wordmark above is the section's visual title; keep the statement
    heading a step below the standard section scale. */
 .wavepro-title {
   font-size: clamp(1.6rem, 2.9vw, 2.3rem);
+  color: #f4f7ef;
+}
+
+.wavepro-head .lede {
+  color: var(--on-dark);
 }
 
 .wavepro-head .body {
   margin-top: 1rem;
-  color: var(--ink-mute);
+  color: var(--on-dark-soft);
 }
 
 .wavepro-points {
@@ -919,22 +975,27 @@ h3 {
 }
 
 .wavepro-point {
-  border-top: 2px solid var(--olive);
+  border-top: 2px solid #a9bb8b;
   padding-top: 1.25rem;
 }
 
 .wavepro-point h3 {
   font-size: 1.05rem;
+  color: #f4f7ef;
 }
 
 .wavepro-point p {
   margin-top: 0.5rem;
   font-size: 0.95rem;
-  color: var(--ink-mute);
+  color: var(--on-dark-soft);
 }
 
 .wavepro-link {
   margin-top: 2.5rem;
+}
+
+.wavepro-link .arrow-link {
+  color: #cdd8c4;
 }
 
 @media (max-width: 800px) {
