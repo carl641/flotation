@@ -38,6 +38,54 @@
     });
   }
 
+  /* Intro quick-links: hovering (or focusing) a link swaps the copy column for
+     an overview of that page; leaving the panel restores the default copy. */
+  var introLinks = document.querySelector(".intro-links");
+  var introPanels = document.querySelector(".intro-panels");
+
+  if (introLinks && introPanels) {
+    var panels = {};
+    [].forEach.call(introPanels.querySelectorAll("[data-panel]"), function (panel) {
+      panels[panel.getAttribute("data-panel")] = panel;
+    });
+
+    var activePanel = "default";
+
+    var showPanel = function (key) {
+      if (!panels[key] || key === activePanel) return;
+      panels[activePanel].classList.remove("is-active");
+      panels[activePanel].hidden = true;
+      panels[key].hidden = false;
+      panels[key].classList.add("is-active");
+      activePanel = key;
+    };
+
+    var panelFor = function (target) {
+      var link = target && target.closest ? target.closest("[data-intro-panel]") : null;
+      return link ? link.getAttribute("data-intro-panel") : null;
+    };
+
+    introLinks.addEventListener("mouseover", function (event) {
+      var key = panelFor(event.target);
+      if (key) showPanel(key);
+    });
+
+    introLinks.addEventListener("focusin", function (event) {
+      var key = panelFor(event.target);
+      if (key) showPanel(key);
+    });
+
+    introLinks.addEventListener("mouseleave", function () {
+      if (!introLinks.contains(document.activeElement)) showPanel("default");
+    });
+
+    introLinks.addEventListener("focusout", function () {
+      window.setTimeout(function () {
+        if (!introLinks.contains(document.activeElement)) showPanel("default");
+      }, 0);
+    });
+  }
+
   var revealEls = document.querySelectorAll(".reveal");
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealEls.forEach(function (el) {
