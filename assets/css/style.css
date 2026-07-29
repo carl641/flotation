@@ -805,6 +805,41 @@ h3 {
   aspect-ratio: 16 / 10;
 }
 
+/* Dock photography runs full colour: the duotone wash and grayscale are
+   dropped so the real finishes and water read true. */
+.dock-card .duo::after {
+  display: none;
+}
+
+.dock-card .duo img {
+  filter: none;
+  /* Slight overscan so the hover float never exposes the frame edge. */
+  transform: scale(1.05);
+  transition: transform 0.5s var(--ease);
+}
+
+.dock-card:hover .duo img,
+.dock-card:focus-visible .duo img {
+  animation: dock-float 3.2s ease-in-out infinite;
+}
+
+@keyframes dock-float {
+  0%,
+  100% {
+    transform: scale(1.05) translateY(-1.2%);
+  }
+  50% {
+    transform: scale(1.05) translateY(1.2%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dock-card:hover .duo img,
+  .dock-card:focus-visible .duo img {
+    animation: none;
+  }
+}
+
 .dock-card-body {
   display: flex;
   flex-direction: column;
