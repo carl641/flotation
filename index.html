@@ -280,47 +280,108 @@
       <div class="container">
         <div class="section-head reveal">
           <h2 class="h-section">The Designer Color Series</h2>
-          <p class="lede">Inspired by nature. Poetry in color. Decking, powder coat, and roof tones drawn from the woods and water around your shoreline.</p>
+          <p class="lede">Inspired by nature. Poetry in color. Nine designer packages pair roof, frame, and decking tones drawn from the woods and water around your shoreline &mdash; pick a package, then make it yours with your choice of decking.</p>
         </div>
-        <div class="swatch-grid">
-          <figure class="swatch reveal">
-            <div class="swatch-chip" style="background:linear-gradient(145deg,#75604b,#64503d)"></div>
-            <figcaption>Cedar Creek</figcaption>
-          </figure>
-          <figure class="swatch reveal" style="--d:.04s">
-            <div class="swatch-chip" style="background:linear-gradient(145deg,#46524c,#39443f)"></div>
-            <figcaption>Charleston</figcaption>
-          </figure>
-          <figure class="swatch reveal" style="--d:.08s">
-            <div class="swatch-chip" style="background:linear-gradient(145deg,#948b7d,#82796b)"></div>
-            <figcaption>Driftwood</figcaption>
-          </figure>
-          <figure class="swatch reveal" style="--d:.12s">
-            <div class="swatch-chip" style="background:linear-gradient(145deg,#b8a88e,#a5947a)"></div>
-            <figcaption>Savannah</figcaption>
-          </figure>
-          <figure class="swatch reveal" style="--d:.16s">
-            <div class="swatch-chip" style="background:linear-gradient(145deg,#b3b8b4,#a0a6a2)"></div>
-            <figcaption>Silver Ridge</figcaption>
-          </figure>
-          <figure class="swatch reveal" style="--d:.2s">
-            <div class="swatch-chip" style="background:linear-gradient(145deg,#4c5a43,#3f4c37)"></div>
-            <figcaption>Timberline</figcaption>
-          </figure>
-          <figure class="swatch reveal" style="--d:.24s">
-            <div class="swatch-chip" style="background:linear-gradient(145deg,#7b7f80,#6a6e6f)"></div>
-            <figcaption>Greystone</figcaption>
-          </figure>
-          <figure class="swatch reveal" style="--d:.28s">
-            <div class="swatch-chip" style="background:linear-gradient(145deg,#33373a,#282c2f)"></div>
-            <figcaption>Black Stone</figcaption>
-          </figure>
-          <figure class="swatch reveal" style="--d:.32s">
-            <div class="swatch-chip" style="background:linear-gradient(120deg,#75604b 0%,#46524c 25%,#b8a88e 50%,#4c5a43 75%,#33373a 100%)"></div>
-            <figcaption>Custom Colors</figcaption>
-          </figure>
+
+        <div class="picker reveal" id="color-picker">
+          <div class="picker-controls">
+            <h3 class="picker-label" id="package-label">1 &mdash; Choose your color package</h3>
+            <div class="package-grid" role="group" aria-labelledby="package-label">
+              <button class="package is-selected" type="button" data-package="greystone" aria-pressed="true">
+                <span class="package-strip" aria-hidden="true"><span style="background:#3f4249"></span><span style="background:#727272"></span><span style="background:#a09fa4"></span></span>
+                <span class="package-name">Greystone</span>
+              </button>
+              <button class="package" type="button" data-package="timberline" aria-pressed="false">
+                <span class="package-strip" aria-hidden="true"><span style="background:#47372a"></span><span style="background:#47372a"></span><span style="background:#7a5540"></span></span>
+                <span class="package-name">Timberline</span>
+              </button>
+              <button class="package" type="button" data-package="woods_n_water" aria-pressed="false">
+                <span class="package-strip" aria-hidden="true"><span style="background:#47372a"></span><span style="background:#47372a"></span><span style="background:#c8ae9a"></span></span>
+                <span class="package-name">Woods-N-Water</span>
+              </button>
+              <button class="package" type="button" data-package="silver_ridge" aria-pressed="false">
+                <span class="package-strip" aria-hidden="true"><span style="background:#b4b0b1"></span><span style="background:#47372a"></span><span style="background:#a09fa4"></span></span>
+                <span class="package-name">Silver Ridge</span>
+              </button>
+              <button class="package" type="button" data-package="savannah" aria-pressed="false">
+                <span class="package-strip" aria-hidden="true"><span style="background:#2e5773"></span><span style="background:#a09fa4"></span><span style="background:#a09fa4"></span></span>
+                <span class="package-name">Savannah</span>
+              </button>
+              <button class="package" type="button" data-package="driftwood" aria-pressed="false">
+                <span class="package-strip" aria-hidden="true"><span style="background:#47372a"></span><span style="background:#47372a"></span><span style="background:#a09fa4"></span></span>
+                <span class="package-name">Driftwood</span>
+              </button>
+              <button class="package" type="button" data-package="charleston" aria-pressed="false">
+                <span class="package-strip" aria-hidden="true"><span style="background:#b4b0b1"></span><span style="background:#212121"></span><span style="background:#a09fa4"></span></span>
+                <span class="package-name">Charleston</span>
+              </button>
+              <button class="package" type="button" data-package="cedar_creek" aria-pressed="false">
+                <span class="package-strip" aria-hidden="true"><span style="background:#532e24"></span><span style="background:#7a5540"></span><span style="background:#c8ae9a"></span></span>
+                <span class="package-name">Cedar Creek</span>
+              </button>
+              <button class="package" type="button" data-package="blackstone" aria-pressed="false">
+                <span class="package-strip" aria-hidden="true"><span style="background:#212121"></span><span style="background:#212121"></span><span style="background:#7a5540"></span></span>
+                <span class="package-name">Blackstone</span>
+              </button>
+            </div>
+
+            <h3 class="picker-label" id="deck-label">2 &mdash; Choose your decking</h3>
+            <div class="deck-options" role="group" aria-labelledby="deck-label">
+              <button class="deck-option is-selected" type="button" data-deck="granite_gray" aria-pressed="true">
+                <span class="deck-dot" style="background:#a09fa4" aria-hidden="true"></span>Granite Gray
+              </button>
+              <button class="deck-option" type="button" data-deck="buckskin" aria-pressed="false">
+                <span class="deck-dot" style="background:#c8ae9a" aria-hidden="true"></span>Buckskin
+              </button>
+              <button class="deck-option" type="button" data-deck="hearthstone" aria-pressed="false">
+                <span class="deck-dot" style="background:#7a5540" aria-hidden="true"></span>Hearthstone
+              </button>
+              <button class="deck-option" type="button" data-deck="silverstone" aria-pressed="false">
+                <span class="deck-dot" style="background:#d5d5d5" aria-hidden="true"></span>Silverstone
+              </button>
+            </div>
+            <p class="picker-hint">Every package comes with its standard decking &mdash; or swap in any of the four decking tones without changing your roof and frame.</p>
+          </div>
+
+          <div class="picker-preview">
+            <div class="preview-head" aria-live="polite">
+              <h3 class="preview-name" id="preview-name">Greystone</h3>
+              <p class="preview-blurb" id="preview-blurb">Cool grays in three easy steps &mdash; the signature neutral of the series.</p>
+            </div>
+            <div class="preview-diagram" aria-hidden="true">
+              <span class="diagram-roof" id="diagram-roof" style="background:#3f4249"></span>
+              <span class="diagram-body">
+                <span class="diagram-deck" id="diagram-deck" style="background:#a09fa4"></span>
+                <span class="diagram-frame" id="diagram-frame" style="background:#727272"></span>
+              </span>
+            </div>
+            <ul class="preview-specs">
+              <li>
+                <span class="spec-part">Roof</span>
+                <span class="spec-chip" id="chip-roof" style="background:#3f4249" aria-hidden="true"></span>
+                <span class="spec-name" id="name-roof">Charcoal</span>
+              </li>
+              <li>
+                <span class="spec-part">Frame</span>
+                <span class="spec-chip" id="chip-frame" style="background:#727272" aria-hidden="true"></span>
+                <span class="spec-name" id="name-frame">Mouse Gray</span>
+              </li>
+              <li>
+                <span class="spec-part">Deck</span>
+                <span class="spec-chip" id="chip-deck" style="background:#a09fa4" aria-hidden="true"></span>
+                <span class="spec-name" id="name-deck">Granite Gray</span>
+                <span class="spec-note" id="deck-note" hidden>your pick</span>
+              </li>
+            </ul>
+            <figure class="preview-plate">
+              <img id="plate-img" src="assets/images/greystone-swatch.jpg" alt="Greystone swatch plate: Charcoal roof, Mouse Gray frame, Granite Gray decking" width="1050" height="375" loading="lazy" decoding="async">
+              <figcaption id="plate-caption">Factory swatch plate, shown with the standard Granite Gray decking.</figcaption>
+            </figure>
+            <a class="arrow-link preview-cta" href="/contact-flotation-systems/">Get a quote in <span id="cta-name">Greystone</span><span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
-        <p class="swatch-note reveal">Tones shown are representative. Review physical samples with your dealer before ordering.</p>
+
+        <p class="swatch-note reveal">Tones shown are representative. Review physical samples with your dealer before ordering &mdash; custom colors are also available.</p>
       </div>
     </section>
 

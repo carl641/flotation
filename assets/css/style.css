@@ -942,36 +942,255 @@ h3 {
 }
 
 /* --------------------------------------------------------------------------
-   Designer Color Series
+   Designer Color Series — interactive color picker
    -------------------------------------------------------------------------- */
 
-.swatch-grid {
+.picker {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
 }
 
-.swatch {
-  border-radius: var(--r-card);
-  overflow: hidden;
-  border: 1px solid var(--line);
+.picker-label {
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 0.9rem;
+}
+
+.picker-label + .picker-label,
+.package-grid + .picker-label {
+  margin-top: 2rem;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.package {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.75rem;
   background: var(--surface);
-  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font: 600 0.92rem / 1.25 inherit;
+  font-family: inherit;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease),
+    border-color 0.25s var(--ease);
 }
 
-.swatch:hover {
-  transform: translateY(-3px);
+.package:hover {
+  transform: translateY(-2px);
   box-shadow: var(--shadow-card);
 }
 
-.swatch-chip {
-  aspect-ratio: 5 / 3;
+.package.is-selected {
+  border-color: var(--olive);
+  box-shadow: inset 0 0 0 1px var(--olive);
 }
 
-.swatch figcaption {
-  padding: 0.75rem 1rem 0.85rem;
-  font-size: 0.92rem;
+.package-strip {
+  display: flex;
+  height: 26px;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.package-strip span {
+  flex: 1;
+}
+
+.deck-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.deck-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font: 600 0.88rem / 1.2 inherit;
+  font-family: inherit;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.deck-option:hover {
+  border-color: var(--olive);
+}
+
+.deck-option.is-selected {
+  border-color: var(--olive);
+  box-shadow: inset 0 0 0 1px var(--olive);
+}
+
+.deck-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.picker-hint {
+  margin-top: 1.1rem;
+  font-size: 0.88rem;
+  color: var(--ink-mute);
+  max-width: 52ch;
+}
+
+.picker-preview {
+  position: sticky;
+  top: 92px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.preview-name {
+  font-size: 1.5rem;
+}
+
+.preview-blurb {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--ink-mute);
+}
+
+.preview-diagram {
+  display: grid;
+  grid-template-rows: 64px 1fr;
+  height: 190px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.diagram-body {
+  display: grid;
+  grid-template-columns: 1fr 38px;
+}
+
+.diagram-deck {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.14) 0 2px,
+    transparent 2px 42px
+  );
+}
+
+.diagram-roof,
+.diagram-deck,
+.diagram-frame,
+.spec-chip {
+  transition: background-color 0.3s var(--ease);
+}
+
+.preview-specs {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.preview-specs li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.spec-part {
+  flex: none;
+  width: 3.6rem;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.spec-chip {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.spec-name {
   font-weight: 600;
+}
+
+.spec-note {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive);
+  background: var(--olive-wash);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+
+.preview-plate img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.preview-plate figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--ink-mute);
+}
+
+.preview-cta {
+  align-self: flex-start;
+}
+
+@media (prefers-color-scheme: dark) {
+  .deck-dot,
+  .spec-chip {
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+
+  .spec-note {
+    color: #a9bb8b;
+  }
+}
+
+@media (max-width: 900px) {
+  .picker {
+    grid-template-columns: 1fr;
+  }
+
+  .picker-preview {
+    position: static;
+  }
 }
 
 .swatch-note {
@@ -1203,7 +1422,12 @@ h3 {
 
   .btn,
   .dock-card,
-  .swatch,
+  .package,
+  .deck-option,
+  .diagram-roof,
+  .diagram-deck,
+  .diagram-frame,
+  .spec-chip,
   .arrow-link {
     transition: none;
   }
