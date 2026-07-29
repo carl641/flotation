@@ -521,49 +521,158 @@ h3 {
 }
 
 /* --------------------------------------------------------------------------
-   Trust strip
+   Intro: welcome copy + quick-links panel
    -------------------------------------------------------------------------- */
 
-.trust {
-  border-bottom: 1px solid var(--line);
-}
-
-.trust .container {
+.intro-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  padding-block: 2.5rem;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
 }
 
-.trust-item {
-  padding-left: 1.25rem;
-  border-left: 2px solid var(--olive);
+/* Copy reads first in the markup; the link panel sits left on desktop. */
+.intro-copy {
+  grid-column: 2;
+  grid-row: 1;
 }
 
-.trust-item strong {
-  display: block;
-  font-size: 1.35rem;
+.intro-links {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.intro-tag {
+  margin-top: 0.85rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
   font-weight: 650;
   letter-spacing: -0.01em;
+  color: var(--olive);
 }
 
-.trust-item span {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.9rem;
+.intro-copy .lede,
+.intro-copy .body {
+  margin-top: 1.25rem;
+  max-width: 58ch;
+}
+
+.intro-copy .body {
   color: var(--ink-mute);
 }
 
-@media (max-width: 900px) {
-  .trust .container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+.intro-close {
+  margin-top: 1.75rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  max-width: 58ch;
+}
+
+.text-link {
+  color: var(--olive);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.25s var(--ease);
+}
+
+.text-link:hover {
+  color: var(--olive-deep);
+}
+
+.intro-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+
+.intro-links li + li {
+  border-top: 1px solid var(--line);
+}
+
+.intro-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1.15rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.25s var(--ease);
+}
+
+.intro-link:hover {
+  background: var(--olive-wash);
+}
+
+.intro-link-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--olive-wash);
+  color: var(--olive);
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.intro-link-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.intro-link:hover .intro-link-icon {
+  background: var(--olive);
+  color: #fff;
+}
+
+.intro-link-arrow {
+  margin-left: auto;
+  color: var(--olive);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.intro-link:hover .intro-link-arrow {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .intro-tag,
+  .text-link,
+  .intro-link-icon,
+  .intro-link-arrow {
+    color: #a9bb8b;
+  }
+
+  .text-link:hover {
+    color: #c3d2ab;
+  }
+
+  .intro-link:hover .intro-link-icon {
+    background: var(--olive);
+    color: #fff;
   }
 }
 
-@media (max-width: 520px) {
-  .trust .container {
+@media (max-width: 900px) {
+  .intro-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .intro-copy,
+  .intro-links {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 
@@ -783,6 +892,23 @@ h3 {
 /* --------------------------------------------------------------------------
    WAVEPro
    -------------------------------------------------------------------------- */
+
+.wavepro-logo {
+  width: min(100%, 430px);
+  height: auto;
+  margin-bottom: 1.75rem;
+}
+
+/* The wordmark above is the section's visual title; keep the statement
+   heading a step below the standard section scale. */
+.wavepro-title {
+  font-size: clamp(1.6rem, 2.9vw, 2.3rem);
+}
+
+.wavepro-head .body {
+  margin-top: 1rem;
+  color: var(--ink-mute);
+}
 
 .wavepro-points {
   display: grid;
