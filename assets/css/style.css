@@ -560,6 +560,53 @@ h3 {
   color: var(--ink-mute);
 }
 
+/* Panels stack in one grid cell so the copy column keeps a stable height as
+   hovering a quick-link swaps in that page's overview. */
+.intro-panels {
+  display: grid;
+  margin-top: 0.25rem;
+}
+
+.intro-panel {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(6px);
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.intro-panel.is-active {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+/* The panel is inert, not gone: [hidden] would collapse the stack. Without JS,
+   and on narrow screens where there is no hover, let it collapse as usual. */
+.intro-panel[hidden] {
+  display: block;
+}
+
+.no-js .intro-panel[hidden] {
+  display: none;
+}
+
+.intro-panel-title {
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-panel {
+    transform: none;
+    transition: none;
+  }
+}
+
 .intro-close {
   margin-top: 1.75rem;
   font-weight: 650;
@@ -647,6 +694,7 @@ h3 {
 
 @media (prefers-color-scheme: dark) {
   .intro-tag,
+  .intro-panel-title,
   .text-link,
   .intro-link-icon,
   .intro-link-arrow {
@@ -674,6 +722,10 @@ h3 {
     grid-column: auto;
     grid-row: auto;
   }
+
+  .intro-panel[hidden] {
+    display: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -695,56 +747,6 @@ h3 {
 
 .section-head .lede {
   margin-top: 1rem;
-}
-
-/* --------------------------------------------------------------------------
-   Intro / About split
-   -------------------------------------------------------------------------- */
-
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
-  gap: clamp(2.5rem, 6vw, 5.5rem);
-  align-items: center;
-}
-
-.about-copy p {
-  margin-top: 1.25rem;
-  max-width: 58ch;
-}
-
-.about-copy p.lede {
-  margin-top: 1.5rem;
-}
-
-.about-copy .body {
-  color: var(--ink-mute);
-}
-
-.about-copy .arrow-link {
-  margin-top: 1.75rem;
-}
-
-.about-media {
-  border-radius: var(--r-card);
-  aspect-ratio: 4 / 5;
-  box-shadow: var(--shadow-card);
-}
-
-@media (min-width: 901px) {
-  .about-media {
-    margin-top: 2.5rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-media {
-    aspect-ratio: 4 / 3;
-  }
 }
 
 /* Duotone treatment: unifies photography into the brand palette. */
