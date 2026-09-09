@@ -28,6 +28,7 @@ link resolves unchanged.
 | Dock Piers & Platforms | `/dock-piers-boat-piers-floating-piers/` |
 | Marinas & Commercial | `/marina-docks-commercial-boat-docks/` |
 | Fixed & Floating | `/fixed-floating-boat-docks/` |
+| Pier & Platform Gallery | `/flotation-systems-boat-dock-pier-platform-gallery/` |
 
 Copy is carried over from the corresponding pages on the current site. The
 "Dock Styles" item in the header is now a flyout listing all seven styles; on
@@ -57,6 +58,27 @@ per style page, six on the hub:
 Replace the whole `<div class="ph ...">` block with an `<img>` (keep the
 surrounding `<figure>`/card markup). The hub grid and the "Other dock styles"
 rows already use the real photos in `assets/images/`.
+
+## Pier & Platform Gallery
+
+`/flotation-systems-boat-dock-pier-platform-gallery/` carries all 57 photos and
+captions from the current site, in the same three groups (Recent Projects,
+2022-2023, 2021 and previous). The photos are hosted on Uploadcare and
+referenced by their full CDN URLs (`https://1fugrywua1.ucarecd.net/<uuid>/...`);
+no image files live in this repo. To serve smaller derivatives, insert
+Uploadcare operations between the UUID and the filename, e.g.
+`/<uuid>/-/scale_crop/900x675/center/-/format/auto/<file>.jpg`.
+
+Clicking any photo opens the lightbox (`#lightbox` markup on the page, behavior
+and styles in `assets/js/main.js` / `assets/css/style.css`): the caption shows
+under the photo, with left/right arrows, keyboard arrows and Esc, swipe on
+touch, neighbour preloading, and focus returned to the tile on close. The
+lightbox script is generic - any page with `.gallery-open` buttons plus the
+`#lightbox` markup gets the same behavior.
+
+The caption on the eighth 2022-2023 photo reads "P3-22" because that is the
+label on the current live page (the file behind it is `P3(8)-22.jpg`); it looks
+like a typo there but the copy was carried over as-is.
 
 ## Design notes
 

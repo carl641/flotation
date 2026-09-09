@@ -349,3 +349,127 @@
     });
   }
 })();
+
+/* Gallery lightbox — opens any .gallery-open button in an overlay with the
+   photo's caption, prev/next arrows, keyboard (arrows + Esc) and swipe. */
+(function () {
+  var box = document.getElementById("lightbox");
+  var triggers = [].slice.call(document.querySelectorAll(".gallery-open"));
+  if (!box || !triggers.length) return;
+
+  var img = document.getElementById("lightbox-img");
+  var caption = document.getElementById("lightbox-caption");
+  var counter = document.getElementById("lightbox-index");
+  var prevBtn = box.querySelector("[data-lightbox-prev]");
+  var nextBtn = box.querySelector("[data-lightbox-next]");
+  var closeBtn = box.querySelector(".lightbox-close");
+
+  var slides = triggers.map(function (trigger) {
+    var figure = trigger.closest("figure");
+    var figcaption = figure ? figure.querySelector("figcaption") : null;
+    var photo = trigger.querySelector("img");
+    return {
+      trigger: trigger,
+      src: photo ? photo.getAttribute("src") : "",
+      alt: photo ? photo.getAttribute("alt") : "",
+      caption: figcaption ? figcaption.innerHTML : ""
+    };
+  });
+
+  var current = 0;
+  var lastFocus = null;
+
+  function preload(i) {
+    var slide = slides[i];
+    if (slide && !slide.preloaded) {
+      slide.preloaded = true;
+      new Image().src = slide.src;
+    }
+  }
+
+  function show(i) {
+    current = (i + slides.length) % slides.length;
+    var slide = slides[current];
+    img.src = slide.src;
+    img.alt = slide.alt;
+    caption.innerHTML = slide.caption;
+    counter.textContent = String(current + 1);
+    preload(current + 1 < slides.length ? current + 1 : 0);
+    preload(current - 1 >= 0 ? current - 1 : slides.length - 1);
+  }
+
+  function open(i) {
+    lastFocus = document.activeElement;
+    box.hidden = false;
+    box.classList.add("is-open");
+    document.body.classList.add("lightbox-open");
+    show(i);
+    closeBtn.focus();
+  }
+
+  function close() {
+    box.hidden = true;
+    box.classList.remove("is-open");
+    document.body.classList.remove("lightbox-open");
+    img.removeAttribute("src");
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  triggers.forEach(function (trigger, i) {
+    trigger.addEventListener("click", function () {
+      open(i);
+    });
+  });
+
+  box.addEventListener("click", function (event) {
+    if (event.target.closest("[data-lightbox-close]")) return close();
+    if (event.target.closest("[data-lightbox-prev]")) return show(current - 1);
+    if (event.target.closest("[data-lightbox-next]")) return show(current + 1);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (box.hidden) return;
+    if (event.key === "Escape") {
+      close();
+    } else if (event.key === "ArrowLeft") {
+      show(current - 1);
+    } else if (event.key === "ArrowRight") {
+      show(current + 1);
+    } else if (event.key === "Tab") {
+      /* Keep focus inside the overlay while it is open. */
+      var focusable = [prevBtn, nextBtn, closeBtn];
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      } else if (focusable.indexOf(document.activeElement) === -1) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  var touchX = null;
+  box.addEventListener(
+    "touchstart",
+    function (event) {
+      touchX = event.changedTouches[0].clientX;
+    },
+    { passive: true }
+  );
+
+  box.addEventListener(
+    "touchend",
+    function (event) {
+      if (touchX === null) return;
+      var dx = event.changedTouches[0].clientX - touchX;
+      touchX = null;
+      if (Math.abs(dx) > 45) show(current + (dx < 0 ? 1 : -1));
+    },
+    { passive: true }
+  );
+})();
