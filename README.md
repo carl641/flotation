@@ -31,9 +31,15 @@ link resolves unchanged.
 
 Copy is carried over from the corresponding pages on the current site. The
 "Dock Styles" item in the header is now a flyout listing all seven styles; on
-mobile it is an indented always-open list. Assets on these pages are referenced
-root-relative (`/assets/...`), so preview them through the local server rather
-than `file://`.
+mobile it is an indented always-open list.
+
+All links between these pages and to `assets/` are **relative** (`../assets/...`,
+`../sundeck-boat-docks/`), so the site works both at a domain root and under a
+subpath like GitHub Pages' `/<repo>/`. Do not change them to root-relative
+(`/assets/...`) — that breaks the Pages preview. Links to pages that only exist
+on the live WordPress site (contact, dealers, galleries, about) are absolute
+`https://www.aluminumboatdocks.com/...` URLs so they resolve from either host;
+point them back at local slugs as those pages get built out.
 
 ## TODO: upload the Dock Styles photography
 
@@ -57,7 +63,7 @@ rows already use the real photos in `assets/images/`.
 - Brand palette: olive `#61714a` (single accent), grey-green neutrals, dark teal (`#1a3130` / `#122423`) for the closing CTA band and footer.
 - Hero uses the Vimeo video `1213775675` as a full-bleed background (`background=1&autoplay=1&loop=1&muted=1`). A brand gradient shows until the video loads, and the video is hidden entirely under `prefers-reduced-motion`.
 - Light and dark mode are both supported via `prefers-color-scheme`.
-- Internal links point at the live site's existing WordPress slugs so the page can drop into the root of aluminumboatdocks.com.
+- Page slugs match the live site's existing WordPress slugs, so the tree can drop into the root of aluminumboatdocks.com with links intact.
 
 ## TODO: swap placeholder photos
 
