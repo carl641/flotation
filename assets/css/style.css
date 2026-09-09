@@ -1530,3 +1530,432 @@ h3 {
     transition: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Dock Styles pages
+   Interior template shared by the Dock Styles hub and each individual style.
+   Reuses the homepage tokens; adds a short page hero, the image placeholder
+   component, and the copy/feature/spec blocks the style pages need.
+   -------------------------------------------------------------------------- */
+
+/* Dock Styles flyout in the primary nav ---------------------------------- */
+
+.nav-links .has-sub {
+  position: relative;
+}
+
+.nav-sub {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  min-width: 250px;
+  padding: 0.5rem;
+  margin-top: 0.65rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: 0 22px 44px -24px rgba(18, 36, 35, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease),
+    visibility 0.22s var(--ease);
+}
+
+.nav-links .has-sub:hover .nav-sub,
+.nav-links .has-sub:focus-within .nav-sub {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.nav-sub a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 550;
+  color: var(--ink);
+  transition: background-color 0.2s var(--ease);
+}
+
+.nav-sub a:hover {
+  opacity: 1;
+  background: var(--olive-wash);
+}
+
+.nav-sub a[aria-current="page"] {
+  color: var(--olive);
+  font-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-sub a[aria-current="page"] {
+    color: #a9bb8b;
+  }
+}
+
+/* On mobile the flyout is simply an indented, always-open list. */
+@media (max-width: 900px) {
+  .nav-sub {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    min-width: 0;
+    margin: 0 0 0 0.9rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    border-left: 1px solid var(--line);
+  }
+
+  .nav-sub a {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.98rem;
+    border-radius: 0;
+  }
+}
+
+/* Page hero --------------------------------------------------------------- */
+
+.hero-page {
+  min-height: 0;
+  min-height: 0;
+}
+
+.hero-page .container {
+  padding-top: 9rem;
+  padding-bottom: clamp(3rem, 7vh, 4.75rem);
+}
+
+/* In the hero the placeholder is the whole backdrop, so it stays a faint hatch
+   with its note tucked into the bottom corner, clear of the headline. */
+.hero-page .hero-media .ph {
+  position: absolute;
+  inset: 0;
+  padding: 1.5rem var(--gutter);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  place-items: end end;
+  align-content: end;
+  justify-items: end;
+  text-align: right;
+  gap: 0.15rem;
+  color: rgba(237, 241, 232, 0.55);
+}
+
+.hero-page .hero-media .ph::before {
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 14px,
+    rgba(237, 241, 232, 0.05) 14px 15px
+  );
+}
+
+.hero-page .ph-note {
+  font-size: 0.8rem;
+}
+
+.crumbs {
+  position: relative;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(237, 241, 232, 0.78);
+}
+
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.crumbs a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s var(--ease);
+}
+
+.crumbs a:hover {
+  border-color: currentColor;
+}
+
+.crumbs [aria-current="page"] {
+  color: #fff;
+  font-weight: 600;
+}
+
+.crumbs .sep {
+  opacity: 0.5;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b9cb99;
+  margin-bottom: 0.9rem;
+}
+
+.section-head .eyebrow {
+  color: var(--olive);
+  margin-bottom: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-head .eyebrow {
+    color: #a9bb8b;
+  }
+}
+
+/* Image placeholders ------------------------------------------------------ */
+
+.ph {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.4rem;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px dashed var(--olive);
+  border-radius: var(--r-card);
+  background: var(--olive-wash);
+  color: var(--ink-mute);
+  overflow: hidden;
+}
+
+/* Faint diagonal hatch so a placeholder never reads as a finished panel. */
+.ph::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 10px,
+    rgba(97, 113, 74, 0.09) 10px 11px
+  );
+  pointer-events: none;
+}
+
+.ph > * {
+  position: relative;
+}
+
+.ph-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.hero-page .ph-label {
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ph-label {
+    color: #a9bb8b;
+  }
+}
+
+.ph-note {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  max-width: 36ch;
+}
+
+.ph-16x10 { aspect-ratio: 16 / 10; }
+.ph-4x5   { aspect-ratio: 4 / 5; }
+.ph-21x9  { aspect-ratio: 21 / 9; }
+.ph-1x1   { aspect-ratio: 1 / 1; }
+
+/* Two-column copy + media ------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  align-items: center;
+}
+
+.split-media figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+}
+
+.split-copy .body {
+  margin-top: 1.15rem;
+  color: var(--ink-mute);
+  max-width: 58ch;
+}
+
+.split-copy .arrow-link {
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Feature list ------------------------------------------------------------ */
+
+.feature-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.feature {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+}
+
+.feature h3 {
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-mute);
+}
+
+/* Three-up variant of the homepage bento, for the related-styles row. */
+.dock-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1000px) {
+  .dock-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .dock-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Configuration cards ----------------------------------------------------- */
+
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.config-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+
+.config-card .ph {
+  border: 0;
+  border-bottom: 1px dashed var(--olive);
+  border-radius: 0;
+}
+
+.config-body {
+  padding: 1.15rem 1.25rem 1.4rem;
+}
+
+.config-body h3 {
+  margin-bottom: 0.4rem;
+}
+
+.config-body p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-mute);
+}
+
+/* Options checklist ------------------------------------------------------- */
+
+.option-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+
+.option-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.option-list li::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.55rem;
+  border-radius: 50%;
+  background: var(--olive);
+}
+
+/* Gallery strip ----------------------------------------------------------- */
+
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+/* Spec table -------------------------------------------------------------- */
+
+.spec-table {
+  border-top: 1px solid var(--line);
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.spec-row dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding-top: 0.2rem;
+}
+
+.spec-row dd {
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 600px) {
+  .spec-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
