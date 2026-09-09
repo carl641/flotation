@@ -32,7 +32,10 @@ link resolves unchanged.
 
 Copy is carried over from the corresponding pages on the current site. The
 "Dock Styles" item in the header is now a flyout listing all seven styles; on
-mobile it is an indented always-open list.
+mobile it is an indented always-open list. "Galleries" is a second flyout of the
+same kind: the Pier & Platform Gallery points at the local page, the other six
+galleries and the "All Galleries" hub still point at the live WordPress URLs
+until those pages are rebuilt.
 
 All links between these pages and to `assets/` are **relative** (`../assets/...`,
 `../sundeck-boat-docks/`), so the site works both at a domain root and under a
