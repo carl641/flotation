@@ -2,7 +2,8 @@
 
 Redesigned homepage for [aluminumboatdocks.com](https://www.aluminumboatdocks.com/) (Flotation Systems, Inc.).
 
-Static site, no build step: `index.html` plus `assets/` (CSS, JS, self-hosted Archivo variable font).
+Static site, no build step: `index.html`, the Dock Styles pages, and `assets/`
+(CSS, JS, self-hosted Archivo variable font).
 
 ## Preview locally
 
@@ -10,6 +11,46 @@ Static site, no build step: `index.html` plus `assets/` (CSS, JS, self-hosted Ar
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
+
+## Pages
+
+Each page lives at the live site's existing WordPress slug, as `<slug>/index.html`,
+so the tree can drop into the root of aluminumboatdocks.com and every internal
+link resolves unchanged.
+
+| Page | Slug |
+| --- | --- |
+| Dock Styles (hub) | `/flotation-systems-aluminum-boat-dock-styles/` |
+| Sundeck Docks | `/sundeck-boat-docks/` |
+| Sundeck Combo Docks | `/sundeck-combo-boat-docks/` |
+| Gable Roof Docks | `/gable-roof-covered-boat-docks/` |
+| Hip Roof Docks | `/hip-roof-covered-boat-docks/` |
+| Dock Piers & Platforms | `/dock-piers-boat-piers-floating-piers/` |
+| Marinas & Commercial | `/marina-docks-commercial-boat-docks/` |
+| Fixed & Floating | `/fixed-floating-boat-docks/` |
+
+Copy is carried over from the corresponding pages on the current site. The
+"Dock Styles" item in the header is now a flyout listing all seven styles; on
+mobile it is an indented always-open list. Assets on these pages are referenced
+root-relative (`/assets/...`), so preview them through the local server rather
+than `file://`.
+
+## TODO: upload the Dock Styles photography
+
+Every photo slot on the new pages is an `.ph` placeholder block, each preceded by
+an `<!-- IMAGE PLACEHOLDER: ... -->` comment describing the shot it wants. Nine
+per style page, six on the hub:
+
+| Slot | Where | Approx. size |
+| --- | --- | --- |
+| Hero backdrop | Full-bleed behind the page title | 2400x1200 |
+| Overview portrait | Beside the intro copy | 1000x1250 |
+| Configuration cards | Three, in the configurations row | 800x500 each |
+| Gallery strip | Four, above the gallery link | 800x500 each |
+
+Replace the whole `<div class="ph ...">` block with an `<img>` (keep the
+surrounding `<figure>`/card markup). The hub grid and the "Other dock styles"
+rows already use the real photos in `assets/images/`.
 
 ## Design notes
 
