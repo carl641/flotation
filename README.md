@@ -103,9 +103,9 @@ previous):
 | Marinas & Commercial | `/flotation-systems-commercial-marina-boat-docks-gallery/` | 42 |
 | Fixed & Stationary | `/flotation-systems-fixed-stationary-dock-gallery/` | 13 |
 
-A ninth page, `/flotation-systems-galleries/`, is the hub: it excerpts the 12
-most recent projects from each gallery (fewer where a gallery's recent section
-holds fewer) behind a "View more" button to the full gallery, and shares the
+A ninth page, `/flotation-systems-galleries/`, is the hub: it excerpts the 6
+most recent projects from each gallery behind a "View more" button to the full
+gallery, and shares the
 galleries' hero, jump nav, grid and lightbox.
 
 The ADA gallery had no link on the live site, so its slug is a guess - confirm
