@@ -2076,6 +2076,12 @@ h3 {
   }
 }
 
+/* "View more" button under a gallery excerpt. */
+.gallery-more {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .gallery-jump {
   position: sticky;
   /* Sits directly under the fixed site header. */
