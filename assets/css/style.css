@@ -1779,14 +1779,21 @@ h3 {
 .ph-1x1   { aspect-ratio: 1 / 1; }
 
 /* Photography dropped into the slots the placeholders used to hold. The box
-   keeps the placeholder's shape; the photo sits inside it whole, at its own
-   proportions, on a quiet ground where the ratios do not match. */
+   keeps the placeholder's shape and the photo scales to fill it, cropping at
+   the edges. Add .media-contain to a photo that should sit inside the frame
+   whole instead, on the olive ground the placeholders used. */
 .split-media > img,
 .config-card > img,
 .gallery-strip img {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   background: var(--olive-wash);
+}
+
+.split-media > img.media-contain,
+.config-card > img.media-contain,
+.gallery-strip img.media-contain {
+  object-fit: contain;
 }
 
 .split-media > img {
