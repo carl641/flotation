@@ -473,3 +473,29 @@
     { passive: true }
   );
 })();
+
+/* Hero slideshow — cross-fades the photos in .hero-media-slideshow. Honors
+   reduced-motion by holding the first frame. */
+(function () {
+  var stage = document.querySelector(".hero-media-slideshow");
+  if (!stage) return;
+
+  var slides = [].slice.call(stage.querySelectorAll("img"));
+  if (slides.length < 2) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var current = 0;
+  slides[0].classList.add("is-active");
+  stage.classList.add("is-ready");
+
+  // Decode the rest up front so the first cross-fade is not a pop-in.
+  slides.slice(1).forEach(function (slide) {
+    slide.loading = "eager";
+  });
+
+  setInterval(function () {
+    slides[current].classList.remove("is-active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("is-active");
+  }, 5500);
+})();

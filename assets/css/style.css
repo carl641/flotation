@@ -1978,6 +1978,39 @@ h3 {
   }
 }
 
+/* Hero slideshow: stacked photos that cross-fade in place. Without JS the
+   first slide simply stays put, so the hero still reads as a photo hero. */
+.hero-media-slideshow img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+
+.hero-media-slideshow img:first-child,
+.hero-media-slideshow img.is-active {
+  opacity: 1;
+}
+
+.hero-media-slideshow img:first-child:not(.is-active) {
+  opacity: 0;
+}
+
+.hero-media-slideshow.is-ready img:first-child {
+  opacity: 0;
+}
+
+.hero-media-slideshow.is-ready img.is-active {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* No cross-fade: the first photo holds. */
+  .hero-media-slideshow img {
+    transition: none;
+  }
+}
+
 .gallery-jump {
   position: sticky;
   /* Sits directly under the fixed site header. */
