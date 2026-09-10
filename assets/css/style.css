@@ -82,6 +82,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -1776,6 +1777,26 @@ h3 {
 .ph-4x5   { aspect-ratio: 4 / 5; }
 .ph-21x9  { aspect-ratio: 21 / 9; }
 .ph-1x1   { aspect-ratio: 1 / 1; }
+
+/* Photography dropped into the slots the placeholders used to hold: the box
+   keeps its shape and the photo crops to fill, whatever its native ratio. */
+.split-media > img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--r-card);
+}
+
+.config-card > img,
+.gallery-strip img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.gallery-strip img {
+  border-radius: var(--r-card);
+}
 
 /* Two-column copy + media ------------------------------------------------- */
 
