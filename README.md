@@ -104,7 +104,9 @@ previous):
 | Fixed & Stationary | `/flotation-systems-fixed-stationary-dock-gallery/` | 13 |
 
 The ADA gallery had no link on the live site, so its slug is a guess - confirm
-it before launch. The others match the live site's existing slugs. The photos are hosted on Uploadcare and
+it before launch. The others match the live site's existing slugs.
+
+The photos are hosted on Uploadcare and
 referenced by their full CDN URLs (`https://1fugrywua1.ucarecd.net/<uuid>/...`);
 no image files live in this repo. To serve smaller derivatives, insert
 Uploadcare operations between the UUID and the filename, e.g.
@@ -117,7 +119,8 @@ touch, neighbour preloading, and focus returned to the tile on close. The
 lightbox script is generic - any page with `.gallery-open` buttons plus the
 `#lightbox` markup gets the same behavior.
 
-The caption on the eighth 2022-2023 photo reads "P3-22" because that is the
+In the Pier & Platform gallery, the caption on the eighth 2022-2023 photo
+reads "P3-22" because that is the
 label on the current live page (the file behind it is `P3(8)-22.jpg`); it looks
 like a typo there but the copy was carried over as-is.
 
