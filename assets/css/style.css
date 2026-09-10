@@ -82,6 +82,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -1776,6 +1777,31 @@ h3 {
 .ph-4x5   { aspect-ratio: 4 / 5; }
 .ph-21x9  { aspect-ratio: 21 / 9; }
 .ph-1x1   { aspect-ratio: 1 / 1; }
+
+/* Photography dropped into the slots the placeholders used to hold. The box
+   keeps the placeholder's shape; the photo sits inside it whole, at its own
+   proportions, on a quiet ground where the ratios do not match. */
+.split-media > img,
+.config-card > img,
+.gallery-strip img {
+  width: 100%;
+  object-fit: contain;
+  background: var(--olive-wash);
+}
+
+.split-media > img {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-card);
+}
+
+.config-card > img,
+.gallery-strip img {
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-strip img {
+  border-radius: var(--r-card);
+}
 
 /* Two-column copy + media ------------------------------------------------- */
 
