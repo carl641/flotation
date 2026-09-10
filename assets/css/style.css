@@ -874,6 +874,44 @@ h3 {
   gap: 0.65rem;
 }
 
+/* Preview rows: the card carries a button rather than a bare arrow link, so
+   the target of the click is obvious. The card itself is the anchor, so this
+   is a span styled as a button, not a nested control. */
+.dock-card-body .go-btn {
+  align-self: flex-start;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.95rem;
+  border: 1px solid var(--olive);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--olive);
+  background: transparent;
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), gap 0.25s var(--ease);
+}
+
+.dock-card:hover .go-btn,
+.dock-card:focus-visible .go-btn {
+  gap: 0.65rem;
+  color: #fff;
+  background: var(--olive);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dock-card-body .go-btn {
+    border-color: #a9bb8b;
+    color: #a9bb8b;
+  }
+  .dock-card:hover .go-btn,
+  .dock-card:focus-visible .go-btn {
+    color: #16241a;
+    background: #a9bb8b;
+  }
+}
+
 .dock-card-feature {
   grid-column: 1 / 3;
   grid-row: 1 / 3;
