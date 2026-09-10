@@ -33,9 +33,8 @@ link resolves unchanged.
 Copy is carried over from the corresponding pages on the current site. The
 "Dock Styles" item in the header is now a flyout listing all seven styles; on
 mobile it is an indented always-open list. "Galleries" is a second flyout of the
-same kind: the Pier & Platform Gallery points at the local page, the other six
-galleries and the "All Galleries" hub still point at the live WordPress URLs
-until those pages are rebuilt.
+same kind. All eight galleries are now local pages; only the "All Galleries"
+hub still points at the live WordPress URL.
 
 All links between these pages and to `assets/` are **relative** (`../assets/...`,
 `../sundeck-boat-docks/`), so the site works both at a domain root and under a
@@ -45,28 +44,69 @@ on the live WordPress site (contact, dealers, galleries, about) are absolute
 `https://www.aluminumboatdocks.com/...` URLs so they resolve from either host;
 point them back at local slugs as those pages get built out.
 
-## TODO: upload the Dock Styles photography
+## Dock Styles photography
 
-Every photo slot on the new pages is an `.ph` placeholder block, each preceded by
-an `<!-- IMAGE PLACEHOLDER: ... -->` comment describing the shot it wants. Nine
-per style page, six on the hub:
+Photos are hosted on Uploadcare and referenced by full CDN URL; no image files
+live in this repo. Two style pages carry photography so far - Piers & Platforms
+and Sundeck. The rest still hold `.ph` placeholder blocks, each preceded by an
+`<!-- IMAGE PLACEHOLDER: ... -->` comment describing the shot it wants.
 
-| Slot | Where | Approx. size |
+Every style page has the same nine slots (the hub has six):
+
+| Slot | Where | Frame |
 | --- | --- | --- |
-| Hero backdrop | Full-bleed behind the page title | 2400x1200 |
-| Overview portrait | Beside the intro copy | 1000x1250 |
-| Configuration cards | Three, in the configurations row | 800x500 each |
-| Gallery strip | Four, above the gallery link | 800x500 each |
+| Hero | Full-bleed behind the page title | Fills the hero |
+| Overview portrait | Beside the intro copy | 4/5 |
+| Configuration cards | Three, in the configurations row | 16/10 each |
+| Gallery strip | Four, above the gallery link | 16/10 each |
 
-Replace the whole `<div class="ph ...">` block with an `<img>` (keep the
-surrounding `<figure>`/card markup). The hub grid and the "Other dock styles"
-rows already use the real photos in `assets/images/`.
+**House rules for these slots** - follow them on every style page:
 
-## Pier & Platform Gallery
+1. **The hero is a carousel.** Stack the images inside
+   `<div class="hero-media hero-media-photo hero-media-slideshow">`, in the
+   order given. They cross-fade every 5.5s (`assets/js/main.js`). The first
+   image gets `fetchpriority="high"`, the rest `loading="lazy"`; all take
+   `alt=""` because the hero is decorative. With JS off, or under
+   `prefers-reduced-motion`, the first image simply holds.
+2. **Frames keep the placeholder's size.** Replace the whole
+   `<div class="ph ...">` block with an `<img>` and leave the surrounding
+   `<figure>` / card markup alone. The stylesheet gives each slot the ratio its
+   placeholder had, so swapping in a photo never moves the layout.
+3. **Photos zoom to fill the frame.** `object-fit: cover` on
+   `.split-media > img`, `.config-card > img` and `.gallery-strip img`: the
+   photo keeps its own proportions and scales up until it covers the box,
+   cropping at the edges. Never letterbox (`contain`) and never distort - a
+   rectangle stays a rectangle, the frame just shows a window onto it. Where a
+   crop cuts the subject, fix that one image with `object-position`, not by
+   changing the fit.
+4. Keep `width`/`height` attributes on every `<img>` so the browser reserves
+   space. They only work because the base `img` rule sets `height: auto` - do
+   not remove it, or an image constrained narrower than its attribute width
+   will stretch vertically.
+5. Where a page runs short of new photos, fill the remaining slots from that
+   style's gallery page and reuse the gallery caption as the `alt` text.
 
-`/flotation-systems-boat-dock-pier-platform-gallery/` carries all 57 photos and
-captions from the current site, in the same three groups (Recent Projects,
-2022-2023, 2021 and previous). The photos are hosted on Uploadcare and
+## Galleries
+
+Eight gallery pages carry every photo and caption from the current site, in the
+same groups it uses (typically Recent Projects, 2022-2023, and 2021 and
+previous):
+
+| Gallery | Slug | Photos |
+| --- | --- | --- |
+| Sundeck | `/flotation-systems-sundeck-boat-dock-gallery/` | 104 |
+| Sundeck Combo | `/flotation-systems-sundeck-combo-boat-dock-gallery/` | 44 |
+| Gable Roof | `/flotation-systems-gable-roof-boat-dock-gallery/` | 66 |
+| Hip Roof | `/flotation-systems-hip-roof-boat-dock-gallery/` | 149 |
+| Pier & Platform | `/flotation-systems-boat-dock-pier-platform-gallery/` | 57 |
+| ADA Compliant | `/flotation-systems-ada-compliant-boat-dock-gallery/` | 13 |
+| Marinas & Commercial | `/flotation-systems-commercial-marina-boat-docks-gallery/` | 42 |
+| Fixed & Stationary | `/flotation-systems-fixed-stationary-dock-gallery/` | 13 |
+
+The ADA gallery had no link on the live site, so its slug is a guess - confirm
+it before launch. The others match the live site's existing slugs.
+
+The photos are hosted on Uploadcare and
 referenced by their full CDN URLs (`https://1fugrywua1.ucarecd.net/<uuid>/...`);
 no image files live in this repo. To serve smaller derivatives, insert
 Uploadcare operations between the UUID and the filename, e.g.
@@ -79,7 +119,8 @@ touch, neighbour preloading, and focus returned to the tile on close. The
 lightbox script is generic - any page with `.gallery-open` buttons plus the
 `#lightbox` markup gets the same behavior.
 
-The caption on the eighth 2022-2023 photo reads "P3-22" because that is the
+In the Pier & Platform gallery, the caption on the eighth 2022-2023 photo
+reads "P3-22" because that is the
 label on the current live page (the file behind it is `P3(8)-22.jpg`); it looks
 like a typo there but the copy was carried over as-is.
 
