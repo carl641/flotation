@@ -31,6 +31,8 @@ link resolves unchanged.
 | Specialty Styles (Beaumont, Lodge) | `/specialty-dock-styles/` |
 | Fixed & Floating | `/fixed-floating-boat-docks/` |
 | Options & Accessories | `/options-accessories/` |
+| Tech Specs | `/tech-specs/` |
+| About | `/about-flotation-systems-aluminum-boat-docks/` |
 | Color Choices | `/boat-dock-color-choices/` |
 | Ramps & Bridges | `/ramps-bridges/` |
 | Slip Configurations | `/slip-configurations/` |
@@ -43,7 +45,8 @@ link resolves unchanged.
 The nine galleries are listed under **Galleries** below. The ADA style page and
 ADA gallery slugs are guesses - the live site has no link to either - so confirm
 them before launch. So are the eight slugs added with the new nav (Options &
-Accessories through Warranty Information); the live site has no equivalent
+Accessories through Warranty Information, except About, which uses the live
+site's existing about slug); the live site has no equivalent
 pages, so pick final slugs before launch.
 
 Copy is carried over from the corresponding pages on the current site, except on
@@ -52,34 +55,34 @@ the eight pages listed below under **Template pages**.
 ### Navigation
 
 The header menu is, in order: **Dock Styles**, **Options & Accessories**,
-**Tech Specs**, **Galleries**, **Contact**, then the **Get a Quote** button.
-Every item except Tech Specs is itself a link as well as a flyout parent; Tech
-Specs has no page of its own, so it renders as
-`<span class="nav-parent" tabindex="0">` (the `tabindex` keeps the `:focus-within`
-flyout keyboard-reachable). On mobile every flyout is an indented, always-open
-list, so nothing depends on hover.
+**Tech Specs**, **Galleries**, **About**, then the **Get a Quote** button.
+Every item is both a link and a flyout parent. On mobile every flyout is an
+indented, always-open list, so nothing depends on hover.
 
 | Menu item | Links to | Dropdown |
 | --- | --- | --- |
 | Dock Styles | `/flotation-systems-aluminum-boat-dock-styles/` | the nine style pages |
 | Options & Accessories | `/options-accessories/` | Colors, Ramps & Bridges, Slip Configurations |
-| Tech Specs | (no page) | WavePro™ Technology, LockDry® Marine Decking, Materials & Methods |
+| Tech Specs | `/tech-specs/` | WavePro™ Technology, LockDry® Marine Decking, Materials & Methods |
 | Galleries | `/flotation-systems-galleries/` | the eight style galleries |
-| Contact | `/contact-flotation-systems/` | Warranty Information |
+| About | `/about-flotation-systems-aluminum-boat-docks/` | Contact, Warranty Information |
 | Get a Quote (button) | `/contact-flotation-systems/` | - |
 
 The nav is generated from a single model rather than hand-edited per page - when
-it changes, regenerate it on all pages so the 29 copies stay identical.
+it changes, regenerate it on all pages so the 31 copies stay identical.
 
 ### Template pages
 
-Eight pages were created as templates because the live site has no equivalent
-content to carry over: `options-accessories/`, `ramps-bridges/`,
-`slip-configurations/`, `wavepro-technology/`, `lockdry-marine-decking/`,
-`materials-methods/`, `contact-flotation-systems/`, `warranty-information/`.
-Each has the full shared chrome (nav, hero carousel, split sections, feature
-grid, dark CTA band, footer) and plausible placeholder copy. Four carry a "Still
-to come" section marking what needs real content. Replace the copy - and, on the
+Ten pages were created as templates because the live site has no equivalent
+content to carry over (or, for About, none has been brought across yet):
+`options-accessories/`, `ramps-bridges/`, `slip-configurations/`, `tech-specs/`,
+`wavepro-technology/`, `lockdry-marine-decking/`, `materials-methods/`,
+`about-flotation-systems-aluminum-boat-docks/`, `contact-flotation-systems/`,
+`warranty-information/`. Each has the full shared chrome (nav, hero carousel,
+split sections, feature grid, dark CTA band, footer) and plausible placeholder
+copy. Six carry a "Still to come" section marking what needs real content.
+`tech-specs/` and `about-.../` are overview pages: each opens with a linked card
+grid pointing at the pages in its own dropdown. Replace the copy - and, on the
 contact page, wire up a real form - before launch. Their hero and section photos
 are borrowed from the existing galleries.
 
@@ -89,9 +92,9 @@ subpath like GitHub Pages' `/<repo>/`. Do not change them to root-relative
 (`/assets/...`) — that breaks the Pages preview. Links to pages that only exist
 on the live WordPress site (dealers, about) are absolute
 `https://www.aluminumboatdocks.com/...` URLs so they resolve from either host;
-point them back at local slugs as those pages get built out. Every "Get a Quote"
-and "Contact Us" link now points at the local `contact-flotation-systems/` page
-instead of the live URL.
+point them back at local slugs as those pages get built out. Every "Get a Quote" and "Contact Us"
+link now points at the local `contact-flotation-systems/` page, and every
+"About Us" link at the local about page, instead of the live URLs.
 
 ## Dock Styles photography
 
