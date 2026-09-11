@@ -103,7 +103,7 @@ laid out like Contact Us:
 - **Request a quote** - copy beside a `.placeholder-box` for the form embed
   (most likely the same form as Contact Us).
 - **How to order** - the LockDry decking Sketch / Detail / Send steps, each
-  with an image placeholder where the live page has a photo of the design form.
+  with its `order-step` photo.
 - **After you send it** - quote turnaround, payment methods and lead times.
 - **Find a dealer** - the live intro copy, a wide placeholder for the dealer
   map and search plugin, then the dealer directory by state (company and
