@@ -2357,22 +2357,27 @@ h3 {
 /* The dealer network, one card per dealer. */
 .dealer-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(1.25rem, 2.5vw, 1.75rem);
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+  justify-content: center;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 2.5rem;
 }
 
 .dealer-card {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  gap: 0.65rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 3px solid var(--olive);
   border-radius: var(--r-card);
   box-shadow: var(--shadow-card);
   font-size: 0.94rem;
+}
+
+.dealer-card .h-card {
+  padding-bottom: 0.15rem;
 }
 
 .dealer-person {
@@ -2413,7 +2418,8 @@ h3 {
 }
 
 .dealer-terr {
-  padding-top: 0.6rem;
+  margin-top: 0.35rem;
+  padding-top: 0.9rem;
   border-top: 1px solid var(--line);
   font-size: 0.88rem;
   color: var(--ink-mute);
