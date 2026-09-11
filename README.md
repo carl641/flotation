@@ -79,10 +79,22 @@ page with a clear split: `#options` covers what is built into the dock (lifts,
 WavePro™ 6 posts, slip fill-ins, alternative decking, swim platforms, closets,
 stairs, shades, cupolas, railings), `#accessories` covers what is added on top
 (covers, floats, dog gear, board racks, kayak launches, fish stations, lights,
-ladders, diving boards, seating, storage, hardware). All 49 `opt-`/`acc-`
-Uploadcare photos are used: the primary shot of each item is the split media,
-and any extra shots sit in a `gallery-strip strip-under` below it. The hero is
-a six-photo carousel of gallery docks.
+ladders, diving boards, seating, storage, hardware). The hero is a six-photo carousel of
+gallery docks, followed by a sticky `gallery-jump` bar (the same component the
+galleries hub uses) linking the eight groups on the page.
+
+Each half opens with one full split - watercraft lifts, and the Marine Concepts
+cover system - and the remaining items are `config-card` tiles grouped into
+"Built into the dock", "Railings", "On the water", "Fishing & lighting",
+"Seating & storage" and "Hardware". Each tile carries a one-line summary with
+the rest of the live copy collapsed behind a `card-more` `<details>` toggle, so
+the page stays scannable without dropping any of it: closed, the page is about
+13,000px instead of 31,000px.
+
+All 49 `opt-`/`acc-` Uploadcare photos are used: each item's primary shot is
+the tile (or split) image, and extra shots sit inside that item's `<details>`
+as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
+strip-under` below.
 
 ### Template pages
 
