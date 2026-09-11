@@ -105,17 +105,16 @@ laid out like Contact Us:
 - **How to order** - the LockDry decking Sketch / Detail / Send steps, each
   with its `order-step` photo.
 - **After you send it** - quote turnaround, payment methods and lead times.
-- **Find a dealer** - the live intro copy, a wide placeholder for the dealer
-  map and search plugin, then the dealer directory by state (company and
-  contact name only).
-- **Dealer spotlight** - Randy Travis, with an image placeholder.
+- **Find a dealer** - the live intro copy and the "taking on dealers
+  nationwide" line.
+- **Dealer spotlight** - Randy Travis, with an image placeholder - followed by
+  all 25 dealers as cards (contact, email, site, address, phone, territories,
+  and the bio where the live site has a real one).
 
 The header's "Get a Quote" button now points here rather than at Contact Us.
 
-Not carried across: the per-dealer detail blocks (addresses, phone numbers,
-territories and bios) from the live Dealer Spotlight page. Much of that copy is
-still lorem ipsum on the live site, and it belongs on a dealer page of its own
-rather than on a quote page - say the word and it can have one.
+Seventeen of the 25 dealer bios are still lorem ipsum on the live site, so
+those cards carry contact details only - they need real copy before launch.
 
 ### Warranty Information
 
