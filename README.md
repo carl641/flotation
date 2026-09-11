@@ -96,6 +96,16 @@ the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
 
+### Slip Configurations
+
+`slip-configurations/` carries the live page's copy. The four `slip-*` files
+are plan drawings, not photographs, so they use `img.plan-media`
+(`object-fit: contain` on a light ground) instead of the usual cover crop -
+cropping a plan drawing loses the layout it exists to show. The hero is a
+five-photo carousel of gallery docks, and the page's closing sections link out
+to Fixed & Floating, Ramps & Bridges, Dock Styles, and the two halves of
+Options & Accessories.
+
 ### Ramps & Bridges
 
 `ramps-bridges/` carries the live page's copy and all 14 `ramps` photos. The
