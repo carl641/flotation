@@ -2250,11 +2250,52 @@ h3 {
   color: var(--ink-mute);
 }
 
-/* Two cards read better as a pair than stretched across a three-up grid. */
-.dock-grid.duo-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  max-width: 860px;
-  margin-inline: auto;
+/* A photo that must be seen whole - group shots, art with edges that matter. */
+.split-media > img.full-media {
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: var(--surface);
+}
+
+/* The warranty promise, lifted out of the page flow onto its own panel. */
+.warranty-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.75rem, 4vw, 3.25rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+}
+
+.warranty-seals {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: center;
+}
+
+.warranty-seals img {
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .warranty-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .warranty-seals {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .warranty-seals img {
+    max-width: 150px;
+  }
 }
 
 /* Spec table -------------------------------------------------------------- */
