@@ -97,12 +97,14 @@ strip-under` below.
 
 ### Tech Specs
 
-`tech-specs/` is the Materials & Methods page: the live site's
+`tech-specs/` opens with "Every dock comes down to three things" - how it is
+engineered (WavePro™), what you walk on (LockDry®), and what it is made of.
+The first two cards lead to their own pages; the third is an in-page link,
+because the rest of the page *is* Materials & Methods: the live site's
 materials/design/manufacturing copy, the six construction spec lists, and all
-six `material-construction` shop photos, with a hero carousel of gallery docks.
-It keeps a preview card grid for the two other pages in its dropdown. There is
-no separate `/materials-methods/` page - it was folded into this one, and links
-that pointed at it now point here.
+six `material-construction` shop photos, under a hero carousel of gallery
+docks. There is no separate `/materials-methods/` page - it was folded into
+this one, and links that pointed at it now point here.
 
 ### LockDry® Marine Decking
 
