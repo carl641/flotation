@@ -107,10 +107,12 @@ laid out like Contact Us:
 - **After you send it** - quote turnaround, payment methods and lead times.
 - **Find a dealer** - the live intro copy and the "taking on dealers
   nationwide" line.
-- **Dealer spotlight** - Randy Travis, illustrated with gallery photos (the
-  live site's spotlight shots were never supplied) - followed by
-  the first five dealers as cards (contact, email, site, address, phone,
-  territories, and the bio where the live site has a real one). The other
+- **Dealer spotlight** - Randy Travis, with `spotlight1` and `spotlight2` -
+  followed by
+  the first five dealers as cards - a tinted header with the company and
+  contact name, then labelled rows for email, website, address, phone and
+  territories, with the bio in a tinted footer where the live site has a real
+  one. The other
   twenty are in `scratchpad/dealers.py` if the list should grow or move to a
   dealer page of its own.
 
