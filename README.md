@@ -99,12 +99,15 @@ strip-under` below.
 
 `contact-flotation-systems/` carries the live page's copy: the intro line, the
 full address block (phone, toll-free, fax, email, hours) and "Come by and see
-us." The page runs: contact
-(placeholder box + details card), "Come by and see us", then the map.
+us." The page runs: intro copy
+beside the form slot, then hours and address cards beside the map, then "Come
+by and see us."
 
-- **The form is a `.placeholder-box`** - a dashed box reading "Form
-  placeholder", paired with the details card. Replace the whole box with the
-  form embed.
+- **The form is a `.placeholder-box`** - an olive-wash box reading "Form
+  placeholder", the same wash the photo slots use, sitting where the form
+  goes. Replace the whole box with the form embed.
+- **Hours are an assumption.** The live footer only says "M-F, 8AM-5PM", so
+  Saturday and Sunday are listed as Closed - confirm before launch.
 - **The map is a keyless Google Maps embed** pinned to 2700 Alabama Highway 69
   South, in its own full-width section. It needs no API key, but swap in your
   map plugin or a keyed embed if you prefer; an "Open in Google Maps" link sits

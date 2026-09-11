@@ -2298,101 +2298,149 @@ h3 {
   }
 }
 
-/* Contact form and details ------------------------------------------------ */
+/* Contact page ------------------------------------------------------------ */
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: stretch;
-}
-
-/* Stands in for an embed that has not been dropped in yet. */
+/* Stands in for an embed that has not been dropped in yet - the same olive
+   wash the photo slots use, so it reads as a reserved slot, not a broken one. */
 .placeholder-box {
   display: grid;
   place-items: center;
-  min-height: 420px;
+  min-height: 100%;
   padding: 2rem;
-  border: 2px dashed var(--line);
+  border: 1px solid var(--line);
   border-radius: var(--r-card);
-  background: var(--surface-tint);
+  background: var(--olive-wash);
 }
 
 .placeholder-box p {
   margin: 0;
-  font-size: 0.95rem;
-  font-weight: 650;
-  letter-spacing: 0.12em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-mute);
 }
 
+.split > .placeholder-box {
+  min-height: 420px;
+}
+
+/* Cards beside the map: hours, then the address. */
+.info-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: start;
+}
+
+.info-stack {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
 .info-card {
-  padding: clamp(1.5rem, 3vw, 2.25rem);
+  padding: clamp(1.5rem, 3vw, 2rem);
   background: var(--surface);
   border: 1px solid var(--line);
+  border-left: 3px solid var(--olive);
   border-radius: var(--r-card);
   box-shadow: var(--shadow-card);
 }
 
+.info-card .h-card {
+  margin-top: 0.35rem;
+}
+
 .info-card address {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   font-style: normal;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--ink-soft);
 }
 
+.hours-list,
 .info-list {
-  margin: 1.5rem 0;
+  margin: 1.25rem 0 0;
+}
+
+.hours-list > div,
+.info-list > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.6rem 0;
   border-top: 1px solid var(--line);
 }
 
 .info-list > div {
-  display: grid;
   grid-template-columns: minmax(0, 6.5rem) minmax(0, 1fr);
-  gap: 0.75rem;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--line);
 }
 
+.hours-list dt,
 .info-list dt {
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-mute);
 }
 
+.hours-list dd,
 .info-list dd {
   margin: 0;
   overflow-wrap: anywhere;
+}
+
+.hours-list dd {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+}
+
+.hours-list .is-closed {
+  font-weight: 650;
+  color: var(--olive);
+}
+
+.info-card .arrow-link {
+  margin-top: 1.25rem;
 }
 
 .map-embed {
   border-radius: var(--r-card);
   overflow: hidden;
   background: var(--olive-wash);
+  border: 1px solid var(--line);
   box-shadow: var(--shadow-card);
 }
 
 .map-embed iframe {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 7;
+  aspect-ratio: 1 / 1;
   border: 0;
 }
 
-#map .arrow-link {
-  margin-top: 1.25rem;
+/* The ghost button is built for dark hero art; on paper it needs ink. */
+.btn-ghost-light {
+  color: var(--ink);
+  border-color: var(--line);
+  background: var(--surface);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.btn-ghost-light:hover {
+  border-color: var(--olive);
+  background: var(--olive-wash);
 }
 
 @media (max-width: 900px) {
-  .contact-grid {
+  .info-layout {
     grid-template-columns: 1fr;
   }
 
-  .placeholder-box {
+  .split > .placeholder-box {
     min-height: 260px;
   }
 
