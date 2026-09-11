@@ -96,6 +96,17 @@ the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
 
+### Ramps & Bridges
+
+`ramps-bridges/` carries the live page's copy and all 14 `ramps` photos. The
+seven filenames marked `(gallery)` are the hero carousel and the "Explore more
+boat dock ramp designs" grid; `ramps1` and `ramps4` are split media; the rest
+are the captioned grid. The two photos that carry burned-in labels on the live
+site (`ramps5`, `ramps6` - "ADA picket rails and grab bars with a transition
+plate") and `ramps7` ("Dock, pier and ramp gates") have those labels as
+`<figcaption>` text below the photo instead. Both grids feed the shared
+lightbox, same as a gallery page.
+
 ### Template pages
 
 Ten pages were created as templates because the live site has no equivalent
