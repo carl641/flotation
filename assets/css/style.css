@@ -2138,6 +2138,16 @@ h3 {
   gap: 1rem;
 }
 
+/* A gallery strip sitting directly under a split, as extra detail shots. */
+.strip-under {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* A lone detail shot should read as a detail, not a full-bleed banner. */
+.strip-under > div:only-child {
+  max-width: 620px;
+}
+
 /* Spec table -------------------------------------------------------------- */
 
 .spec-table {

@@ -71,6 +71,19 @@ indented, always-open list, so nothing depends on hover.
 The nav is generated from a single model rather than hand-edited per page - when
 it changes, regenerate it on all pages so the 31 copies stay identical.
 
+### Options & Accessories
+
+`options-accessories/` carries the copy from the live site's two separate
+**Boat Dock Options** and **Boat Dock Accessories** pages, combined into one
+page with a clear split: `#options` covers what is built into the dock (lifts,
+WavePro™ 6 posts, slip fill-ins, alternative decking, swim platforms, closets,
+stairs, shades, cupolas, railings), `#accessories` covers what is added on top
+(covers, floats, dog gear, board racks, kayak launches, fish stations, lights,
+ladders, diving boards, seating, storage, hardware). All 49 `opt-`/`acc-`
+Uploadcare photos are used: the primary shot of each item is the split media,
+and any extra shots sit in a `gallery-strip strip-under` below it. The hero is
+a six-photo carousel of gallery docks.
+
 ### Template pages
 
 Ten pages were created as templates because the live site has no equivalent
@@ -81,6 +94,8 @@ content to carry over (or, for About, none has been brought across yet):
 `warranty-information/`. Each has the full shared chrome (nav, hero carousel,
 split sections, feature grid, dark CTA band, footer) and plausible placeholder
 copy. Six carry a "Still to come" section marking what needs real content.
+(`options-accessories/` is no longer one of them - it now carries the live
+site's real copy; see above.)
 `tech-specs/` and `about-.../` are overview pages: each opens with a linked card
 grid pointing at the pages in its own dropdown. Replace the copy - and, on the
 contact page, wire up a real form - before launch. Their hero and section photos
