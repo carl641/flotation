@@ -95,6 +95,15 @@ the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
 
+### About Us
+
+`about-flotation-systems-aluminum-boat-docks/` carries the live About page's
+copy and all five `about` files: the plant as the hero, the owners photo and
+the dealer-network map with real `<figcaption>` credits, and the warranty seal
+and Made in USA mark alongside the workmanship section. Contact Us and Warranty
+Information are highlighted twice - as the hero's two buttons, and as a
+two-card "Talk to us" pair before the closing band.
+
 ### Tech Specs
 
 `tech-specs/` opens with "Every dock comes down to three things" - how it is
