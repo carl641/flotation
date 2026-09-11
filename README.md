@@ -108,13 +108,15 @@ laid out like Contact Us:
 - **Find a dealer** - the live intro copy and the "taking on dealers
   nationwide" line.
 - **Dealer spotlight** - Randy Travis, with an image placeholder - followed by
-  all 25 dealers as cards (contact, email, site, address, phone, territories,
-  and the bio where the live site has a real one).
+  the first five dealers as cards (contact, email, site, address, phone,
+  territories, and the bio where the live site has a real one). The other
+  twenty are in `scratchpad/dealers.py` if the list should grow or move to a
+  dealer page of its own.
 
 The header's "Get a Quote" button now points here rather than at Contact Us.
 
-Seventeen of the 25 dealer bios are still lorem ipsum on the live site, so
-those cards carry contact details only - they need real copy before launch.
+Most dealer bios are still lorem ipsum on the live site, so those cards carry
+contact details only - they need real copy before launch.
 
 ### Warranty Information
 
