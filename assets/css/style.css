@@ -1397,6 +1397,57 @@ h3 {
   margin-left: auto;
 }
 
+/* Short attribute chips under a collection's copy: three words each, so the
+   reader gets the shape of the design before the button. */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-row li {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-mute);
+}
+
+/* Mirror a split section so consecutive ones do not march the same way. The
+   columns swap with the content, so the copy keeps the wider side. */
+.split-flip {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+}
+
+.split-flip .split-media {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.split-flip .split-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+@media (max-width: 900px) {
+  /* Stacked: copy leads, photo follows, same as every other split. */
+  .split-flip .split-copy,
+  .split-flip .split-media {
+    grid-column: 1;
+  }
+  .split-flip .split-copy {
+    grid-row: 1;
+  }
+  .split-flip .split-media {
+    grid-row: 2;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Dark close: CTA band + footer
    -------------------------------------------------------------------------- */
