@@ -95,6 +95,13 @@ the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
 
+### Warranty Information
+
+`warranty-information/` carries the live page's copy: the promise, the four
+things that stand behind it as a feature grid, and the dealer support section
+with the warranty seal (uncropped, via `full-media`). The hero is a four-photo
+carousel of gallery docks.
+
 ### Contact Us
 
 `contact-flotation-systems/` carries the live page's copy: the intro line, the
@@ -179,22 +186,18 @@ plate") and `ramps7` ("Dock, pier and ramp gates") have those labels as
 `<figcaption>` text below the photo instead. Both grids feed the shared
 lightbox, same as a gallery page.
 
-### Template pages
+### Build status
 
-Nine pages were created as templates because the live site has no equivalent
-content to carry over (or, for About, none has been brought across yet):
-`options-accessories/`, `ramps-bridges/`, `slip-configurations/`,
-`wavepro-technology/`, `lockdry-marine-decking/`,
-`about-flotation-systems-aluminum-boat-docks/`, `contact-flotation-systems/`,
-`warranty-information/`. Each has the full shared chrome (nav, hero carousel,
-split sections, feature grid, dark CTA band, footer) and plausible placeholder
-copy. Six carry a "Still to come" section marking what needs real content.
-(`options-accessories/` is no longer one of them - it now carries the live
-site's real copy; see above.)
-`about-.../` is an overview page: it opens with a linked card grid pointing at
-the pages in its own dropdown. Replace the copy - and, on the
-contact page, wire up a real form - before launch. Their hero and section photos
-are borrowed from the existing galleries.
+Every page now carries the live site's own copy; no "Still to come" placeholder
+sections remain. Two things are still outstanding:
+
+- **The contact form embed** - `contact-flotation-systems/` has a
+  `.placeholder-box` where the form goes. See **Contact Us** above.
+- **Alt text for photos nobody has described.** The Uploadcare CDN is not
+  reachable from the machine these pages were built on, so alt text for the
+  dock photography is generic and keyed to each item's name. Anything a
+  screen reader should hear more precisely needs a human who can see the
+  photos.
 
 All links between these pages and to `assets/` are **relative** (`../assets/...`,
 `../sundeck-boat-docks/`), so the site works both at a domain root and under a
