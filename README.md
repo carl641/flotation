@@ -136,9 +136,10 @@ us." The page runs: intro copy
 beside the form slot, then one card with the map above the address
 and numbers, then "Come by and see us" with the owners photo.
 
-- **The form is a `.placeholder-box`** - an olive-wash box reading "Form
-  placeholder", the same wash the photo slots use, sitting where the form
-  goes. Replace the whole box with the form embed.
+- **Two form slots, both `.placeholder-box`** - an olive-wash box reading "Form
+  placeholder" at the top for the contact form, and "Satisfaction form
+  placeholder" at the bottom for the customer satisfaction form. Replace each
+  whole box with its embed.
 - **The map sits inside the address card**, above the address and numbers, as
   one `contact-card`.
 - **The map is a keyless Google Maps embed** pinned to 2700 Alabama Highway 69
