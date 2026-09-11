@@ -99,10 +99,14 @@ strip-under` below.
 
 `about-flotation-systems-aluminum-boat-docks/` carries the live About page's
 copy and all five `about` files: the plant as the hero, the owners photo and
-the dealer-network map with real `<figcaption>` credits, and the warranty seal
-and Made in USA mark alongside the workmanship section. Contact Us and Warranty
-Information are highlighted twice - as the hero's two buttons, and as a
-two-card "Talk to us" pair before the closing band.
+the dealer-network map with real `<figcaption>` credits. The warranty section
+is lifted onto its own `warranty-panel` - a bordered card carrying both seals
+and a "Read the warranty" button - so the promise stands out from the page
+flow; Contact Us and Warranty Information are also the hero's two buttons.
+
+The owners photo uses `img.full-media` (`aspect-ratio: auto; object-fit:
+contain`), because a group portrait has to be seen whole - a cover crop cuts
+people out of it.
 
 ### Tech Specs
 
