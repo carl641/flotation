@@ -27,11 +27,16 @@ link resolves unchanged.
 | Hip Roof Docks | `/hip-roof-covered-boat-docks/` |
 | Dock Piers & Platforms | `/dock-piers-boat-piers-floating-piers/` |
 | Marinas & Commercial | `/marina-docks-commercial-boat-docks/` |
+| ADA Compliant Docks | `/ada-compliant-boat-docks/` |
+| Specialty Styles (Beaumont, Lodge) | `/specialty-dock-styles/` |
 | Fixed & Floating | `/fixed-floating-boat-docks/` |
-| Pier & Platform Gallery | `/flotation-systems-boat-dock-pier-platform-gallery/` |
+
+The nine galleries are listed under **Galleries** below. The ADA style page and
+ADA gallery slugs are guesses - the live site has no link to either - so confirm
+them before launch.
 
 Copy is carried over from the corresponding pages on the current site. The
-"Dock Styles" item in the header is now a flyout listing all seven styles; on
+"Dock Styles" item in the header is now a flyout listing all nine styles; on
 mobile it is an indented always-open list. "Galleries" is a second flyout of the
 same kind. All eight galleries are now local pages; only the "All Galleries"
 hub still points at the live WordPress URL.
