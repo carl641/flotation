@@ -95,6 +95,20 @@ the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
 
+### Contact Us
+
+`contact-flotation-systems/` carries the live page's copy: the intro line, the
+full address block (phone, toll-free, fax, email, hours) and "Come by and see
+us." Two things need finishing before launch:
+
+- **The form is markup only.** `.form-panel` has the live page's fields (first,
+  last, phone, email, message, consent) with real labels and an `action="#"`.
+  Point it at your form handler and add spam protection, then delete the
+  `.build-note` paragraph inside the form.
+- **The map is a keyless Google Maps embed** pinned to 2700 Alabama Highway 69
+  South. It needs no API key, but swap in your map plugin or a keyed embed if
+  you prefer; an "Open in Google Maps" link sits beneath it either way.
+
 ### About Us
 
 `about-flotation-systems-aluminum-boat-docks/` carries the live About page's
