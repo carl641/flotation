@@ -2242,6 +2242,21 @@ h3 {
   }
 }
 
+/* Caption under a split's photo, for credits and named people. */
+.split-media figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-mute);
+}
+
+/* Two cards read better as a pair than stretched across a three-up grid. */
+.dock-grid.duo-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 860px;
+  margin-inline: auto;
+}
+
 /* Spec table -------------------------------------------------------------- */
 
 .spec-table {
