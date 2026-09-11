@@ -96,6 +96,18 @@ the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
 
+### LockDry® Marine Decking
+
+`lockdry-marine-decking/` carries the live page's copy and all 12 `lockdry`/
+`deck` files. The hero is a five-photo carousel of gallery docks; the logo sits
+above the intro; the gutter animation and the starter/main/finisher plank
+profiles use the `plan-media` contain treatment. The decking specs are a
+`spec-table`, and the four decking colors repeat here as a `swatch-grid`.
+
+The page and the Colors page link to each other with buttons: "See all dock
+colors" and "Decking colors" here, "More on LockDry® decking" in the Colors
+page's decking section.
+
 ### WavePro™ Technology
 
 `wavepro-technology/` carries the live page's copy and all 14 `wave` files. The
