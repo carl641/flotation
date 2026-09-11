@@ -96,6 +96,15 @@ the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
 
+### WavePro™ Technology
+
+`wavepro-technology/` carries the live page's copy and all 14 `wave` files. The
+hero is the mockup render; `wave (logo1)` sits above the intro and `wave
+(logo2)` is the closing banner. The eleven numbered files are CAD drawings and
+component cut-outs, so they use `img.plan-media` (`object-fit: contain`) like
+the slip plans - the detail they show is the point, and a cover crop would cut
+it off.
+
 ### Slip Configurations
 
 `slip-configurations/` carries the live page's copy. The four `slip-*` files
