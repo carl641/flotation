@@ -99,15 +99,16 @@ strip-under` below.
 
 `contact-flotation-systems/` carries the live page's copy: the intro line, the
 full address block (phone, toll-free, fax, email, hours) and "Come by and see
-us." Two things need finishing before launch:
+us." The page runs: contact
+(placeholder box + details card), "Come by and see us", then the map.
 
-- **The form is markup only.** `.form-panel` has the live page's fields (first,
-  last, phone, email, message, consent) with real labels and an `action="#"`.
-  Point it at your form handler and add spam protection, then delete the
-  `.build-note` paragraph inside the form.
+- **The form is a `.placeholder-box`** - a dashed box reading "Form
+  placeholder", paired with the details card. Replace the whole box with the
+  form embed.
 - **The map is a keyless Google Maps embed** pinned to 2700 Alabama Highway 69
-  South. It needs no API key, but swap in your map plugin or a keyed embed if
-  you prefer; an "Open in Google Maps" link sits beneath it either way.
+  South, in its own full-width section. It needs no API key, but swap in your
+  map plugin or a keyed embed if you prefer; an "Open in Google Maps" link sits
+  beneath it either way.
 
 ### About Us
 
