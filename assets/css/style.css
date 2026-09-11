@@ -324,6 +324,21 @@ h3 {
   opacity: 0.75;
 }
 
+/* A flyout parent with no page of its own: looks like the others, opens the
+   same way, and takes focus so the keyboard can still reach its menu. */
+.nav-parent {
+  font-size: 0.94rem;
+  font-weight: 550;
+  color: #fff;
+  cursor: default;
+  transition: opacity 0.2s var(--ease);
+}
+
+.nav-parent:hover,
+.nav-parent:focus-visible {
+  opacity: 0.75;
+}
+
 .nav-phone {
   font-size: 0.94rem;
   font-weight: 650;
