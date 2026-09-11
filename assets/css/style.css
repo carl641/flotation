@@ -1418,9 +1418,34 @@ h3 {
   color: var(--ink-mute);
 }
 
+/* Collection rows: two splits inside one section, alternating sides, with a
+   hairline between them so they read as one run rather than two sections. */
+.collection-row {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.collection-row + .collection-row {
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.h-collection {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.collection-row .split-media img {
+  aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 900px) {
+  .collection-row .split-media img {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 /* Mirror a split section so consecutive ones do not march the same way. The
    columns swap with the content, so the copy keeps the wider side. */
-.split-flip {
+.split.split-flip {
   grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
 }
 
@@ -1435,7 +1460,11 @@ h3 {
 }
 
 @media (max-width: 900px) {
-  /* Stacked: copy leads, photo follows, same as every other split. */
+  /* Stacked: one column, copy leading, same as every other split. The
+     two-column template has to be undone at the same specificity that set it. */
+  .split.split-flip {
+    grid-template-columns: 1fr;
+  }
   .split-flip .split-copy,
   .split-flip .split-media {
     grid-column: 1;
