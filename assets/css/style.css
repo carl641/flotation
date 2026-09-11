@@ -1383,6 +1383,20 @@ h3 {
   margin-top: 1.5rem;
 }
 
+.beaumont-panel .btn {
+  margin-top: 1.5rem;
+}
+
+.beaumont-panel .eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+/* A second highlight band reads as a pair with the first when its panel sits
+   on the opposite side. Stacks back to the left edge on narrow screens. */
+.beaumont-end .beaumont-panel {
+  margin-left: auto;
+}
+
 /* --------------------------------------------------------------------------
    Dark close: CTA band + footer
    -------------------------------------------------------------------------- */
