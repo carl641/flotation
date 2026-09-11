@@ -2148,6 +2148,66 @@ h3 {
   max-width: 620px;
 }
 
+/* Collapsed detail inside a card, so a long options page stays scannable. */
+.card-more {
+  margin-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.7rem;
+}
+
+.card-more > summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: var(--olive);
+}
+
+.card-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.card-more > summary::after {
+  content: " +";
+  font-weight: 700;
+}
+
+.card-more[open] > summary::after {
+  content: " \2212";
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-more > summary {
+    color: #a9bb8b;
+  }
+}
+
+.card-more-body {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.7rem;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+}
+
+.card-more-body .option-list {
+  margin: 0;
+}
+
+.card-more-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.6rem;
+}
+
+.card-more-shots img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--olive-wash);
+}
+
 /* Spec table -------------------------------------------------------------- */
 
 .spec-table {
