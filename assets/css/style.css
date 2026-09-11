@@ -1433,6 +1433,45 @@ h3 {
   font-size: clamp(1.5rem, 2.6vw, 2rem);
 }
 
+/* Color swatch grids: a chip of the finish with its name under it. */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.25rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: 0;
+  list-style: none;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.swatch img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--r-card);
+  border: 1px solid var(--line);
+  background: var(--olive-wash);
+}
+
+.swatch-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-mute);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .swatch-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+}
+
 .collection-row .split-media img {
   aspect-ratio: 4 / 3;
 }
