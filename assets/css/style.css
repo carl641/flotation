@@ -2325,17 +2325,22 @@ h3 {
   min-height: 420px;
 }
 
-/* Cards beside the map: hours, then the address. */
-.info-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: clamp(1.25rem, 3vw, 2rem);
-  align-items: start;
+/* One card carrying the map above the address and numbers. */
+.info-card.contact-card {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 0;
+  overflow: hidden;
 }
 
-.info-stack {
-  display: grid;
-  gap: clamp(1.25rem, 3vw, 2rem);
+.contact-card-body {
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.contact-card .map-embed {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .info-card {
@@ -2358,12 +2363,10 @@ h3 {
   color: var(--ink-soft);
 }
 
-.hours-list,
 .info-list {
   margin: 1.25rem 0 0;
 }
 
-.hours-list > div,
 .info-list > div {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -2377,7 +2380,6 @@ h3 {
   grid-template-columns: minmax(0, 6.5rem) minmax(0, 1fr);
 }
 
-.hours-list dt,
 .info-list dt {
   font-size: 0.82rem;
   font-weight: 700;
@@ -2386,20 +2388,9 @@ h3 {
   color: var(--ink-mute);
 }
 
-.hours-list dd,
 .info-list dd {
   margin: 0;
   overflow-wrap: anywhere;
-}
-
-.hours-list dd {
-  font-variant-numeric: tabular-nums;
-  color: var(--ink-soft);
-}
-
-.hours-list .is-closed {
-  font-weight: 650;
-  color: var(--olive);
 }
 
 .info-card .arrow-link {
@@ -2417,7 +2408,7 @@ h3 {
 .map-embed iframe {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   border: 0;
 }
 
@@ -2436,10 +2427,6 @@ h3 {
 }
 
 @media (max-width: 900px) {
-  .info-layout {
-    grid-template-columns: 1fr;
-  }
-
   .split > .placeholder-box {
     min-height: 260px;
   }
