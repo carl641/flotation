@@ -30,25 +30,68 @@ link resolves unchanged.
 | ADA Compliant Docks | `/ada-compliant-boat-docks/` |
 | Specialty Styles (Beaumont, Lodge) | `/specialty-dock-styles/` |
 | Fixed & Floating | `/fixed-floating-boat-docks/` |
+| Options & Accessories | `/options-accessories/` |
 | Color Choices | `/boat-dock-color-choices/` |
+| Ramps & Bridges | `/ramps-bridges/` |
+| Slip Configurations | `/slip-configurations/` |
+| WavePro™ Technology | `/wavepro-technology/` |
+| LockDry® Marine Decking | `/lockdry-marine-decking/` |
+| Materials & Methods | `/materials-methods/` |
+| Contact Us | `/contact-flotation-systems/` |
+| Warranty Information | `/warranty-information/` |
 
 The nine galleries are listed under **Galleries** below. The ADA style page and
 ADA gallery slugs are guesses - the live site has no link to either - so confirm
-them before launch.
+them before launch. So are the eight slugs added with the new nav (Options &
+Accessories through Warranty Information); the live site has no equivalent
+pages, so pick final slugs before launch.
 
-Copy is carried over from the corresponding pages on the current site. The
-"Dock Styles" item in the header is now a flyout listing all nine styles; on
-mobile it is an indented always-open list. "Galleries" is a second flyout of the
-same kind. All eight galleries are now local pages; only the "All Galleries"
-hub still points at the live WordPress URL.
+Copy is carried over from the corresponding pages on the current site, except on
+the eight pages listed below under **Template pages**.
+
+### Navigation
+
+The header menu is, in order: **Dock Styles**, **Options & Accessories**,
+**Tech Specs**, **Galleries**, **Contact**, then the **Get a Quote** button.
+Every item except Tech Specs is itself a link as well as a flyout parent; Tech
+Specs has no page of its own, so it renders as
+`<span class="nav-parent" tabindex="0">` (the `tabindex` keeps the `:focus-within`
+flyout keyboard-reachable). On mobile every flyout is an indented, always-open
+list, so nothing depends on hover.
+
+| Menu item | Links to | Dropdown |
+| --- | --- | --- |
+| Dock Styles | `/flotation-systems-aluminum-boat-dock-styles/` | the nine style pages |
+| Options & Accessories | `/options-accessories/` | Colors, Ramps & Bridges, Slip Configurations |
+| Tech Specs | (no page) | WavePro™ Technology, LockDry® Marine Decking, Materials & Methods |
+| Galleries | `/flotation-systems-galleries/` | the eight style galleries |
+| Contact | `/contact-flotation-systems/` | Warranty Information |
+| Get a Quote (button) | `/contact-flotation-systems/` | - |
+
+The nav is generated from a single model rather than hand-edited per page - when
+it changes, regenerate it on all pages so the 29 copies stay identical.
+
+### Template pages
+
+Eight pages were created as templates because the live site has no equivalent
+content to carry over: `options-accessories/`, `ramps-bridges/`,
+`slip-configurations/`, `wavepro-technology/`, `lockdry-marine-decking/`,
+`materials-methods/`, `contact-flotation-systems/`, `warranty-information/`.
+Each has the full shared chrome (nav, hero carousel, split sections, feature
+grid, dark CTA band, footer) and plausible placeholder copy. Four carry a "Still
+to come" section marking what needs real content. Replace the copy - and, on the
+contact page, wire up a real form - before launch. Their hero and section photos
+are borrowed from the existing galleries.
 
 All links between these pages and to `assets/` are **relative** (`../assets/...`,
 `../sundeck-boat-docks/`), so the site works both at a domain root and under a
 subpath like GitHub Pages' `/<repo>/`. Do not change them to root-relative
 (`/assets/...`) — that breaks the Pages preview. Links to pages that only exist
-on the live WordPress site (contact, dealers, galleries, about) are absolute
+on the live WordPress site (dealers, about) are absolute
 `https://www.aluminumboatdocks.com/...` URLs so they resolve from either host;
-point them back at local slugs as those pages get built out.
+point them back at local slugs as those pages get built out. Every "Get a Quote"
+and "Contact Us" link now points at the local `contact-flotation-systems/` page
+instead of the live URL.
 
 ## Dock Styles photography
 
