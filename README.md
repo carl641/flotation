@@ -38,7 +38,6 @@ link resolves unchanged.
 | Slip Configurations | `/slip-configurations/` |
 | WavePro™ Technology | `/wavepro-technology/` |
 | LockDry® Marine Decking | `/lockdry-marine-decking/` |
-| Materials & Methods | `/materials-methods/` |
 | Contact Us | `/contact-flotation-systems/` |
 | Warranty Information | `/warranty-information/` |
 
@@ -63,7 +62,7 @@ indented, always-open list, so nothing depends on hover.
 | --- | --- | --- |
 | Dock Styles | `/flotation-systems-aluminum-boat-dock-styles/` | the nine style pages |
 | Options & Accessories | `/options-accessories/` | Colors, Ramps & Bridges, Slip Configurations |
-| Tech Specs | `/tech-specs/` | WavePro™ Technology, LockDry® Marine Decking, Materials & Methods |
+| Tech Specs | `/tech-specs/` | WavePro™ Technology, LockDry® Marine Decking |
 | Galleries | `/flotation-systems-galleries/` | the eight style galleries |
 | About | `/about-flotation-systems-aluminum-boat-docks/` | Contact, Warranty Information |
 | Get a Quote (button) | `/contact-flotation-systems/` | - |
@@ -95,6 +94,15 @@ All 49 `opt-`/`acc-` Uploadcare photos are used: each item's primary shot is
 the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
+
+### Tech Specs
+
+`tech-specs/` is the Materials & Methods page: the live site's
+materials/design/manufacturing copy, the six construction spec lists, and all
+six `material-construction` shop photos, with a hero carousel of gallery docks.
+It keeps a preview card grid for the two other pages in its dropdown. There is
+no separate `/materials-methods/` page - it was folded into this one, and links
+that pointed at it now point here.
 
 ### LockDry® Marine Decking
 
@@ -140,18 +148,18 @@ lightbox, same as a gallery page.
 
 ### Template pages
 
-Ten pages were created as templates because the live site has no equivalent
+Nine pages were created as templates because the live site has no equivalent
 content to carry over (or, for About, none has been brought across yet):
-`options-accessories/`, `ramps-bridges/`, `slip-configurations/`, `tech-specs/`,
-`wavepro-technology/`, `lockdry-marine-decking/`, `materials-methods/`,
+`options-accessories/`, `ramps-bridges/`, `slip-configurations/`,
+`wavepro-technology/`, `lockdry-marine-decking/`,
 `about-flotation-systems-aluminum-boat-docks/`, `contact-flotation-systems/`,
 `warranty-information/`. Each has the full shared chrome (nav, hero carousel,
 split sections, feature grid, dark CTA band, footer) and plausible placeholder
 copy. Six carry a "Still to come" section marking what needs real content.
 (`options-accessories/` is no longer one of them - it now carries the live
 site's real copy; see above.)
-`tech-specs/` and `about-.../` are overview pages: each opens with a linked card
-grid pointing at the pages in its own dropdown. Replace the copy - and, on the
+`about-.../` is an overview page: it opens with a linked card grid pointing at
+the pages in its own dropdown. Replace the copy - and, on the
 contact page, wire up a real form - before launch. Their hero and section photos
 are borrowed from the existing galleries.
 
