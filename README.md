@@ -30,6 +30,7 @@ link resolves unchanged.
 | ADA Compliant Docks | `/ada-compliant-boat-docks/` |
 | Specialty Styles (Beaumont, Lodge) | `/specialty-dock-styles/` |
 | Fixed & Floating | `/fixed-floating-boat-docks/` |
+| Color Choices | `/boat-dock-color-choices/` |
 
 The nine galleries are listed under **Galleries** below. The ADA style page and
 ADA gallery slugs are guesses - the live site has no link to either - so confirm

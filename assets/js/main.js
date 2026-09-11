@@ -218,8 +218,12 @@
     ctaName: document.getElementById("cta-name")
   };
 
+  // The picker runs on the homepage and on the colors page one level down, so
+  // the swatch path is taken from whatever the markup already points at.
+  var plateBase = (els.plateImg.getAttribute("src") || "").split("assets/images/")[0];
+
   function plateSrc(id) {
-    return "assets/images/" + id.replace(/_/g, "-") + "-swatch.jpg";
+    return plateBase + "assets/images/" + id.replace(/_/g, "-") + "-swatch.jpg";
   }
 
   function plateAlt(id) {
