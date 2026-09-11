@@ -40,6 +40,8 @@ link resolves unchanged.
 | LockDry® Marine Decking | `/lockdry-marine-decking/` |
 | Contact Us | `/contact-flotation-systems/` |
 | Warranty Information | `/warranty-information/` |
+| Get a Quote | `/get-boat-dock-quote/` |
+| Sitemap | `/sitemap/` |
 
 The nine galleries are listed under **Galleries** below. The ADA style page and
 ADA gallery slugs are guesses - the live site has no link to either - so confirm
@@ -50,6 +52,20 @@ pages, so pick final slugs before launch.
 
 Copy is carried over from the corresponding pages on the current site, except on
 the eight pages listed below under **Template pages**.
+
+### Footer
+
+Generated the same way as the nav, from `scratchpad/foot.py`. Five blocks: the
+brand, **Dock Styles** (all ten styles in order, then Photo Galleries),
+**Company** (About, Contact, Warranty), **Dealers** (Dealer Login, Become a
+Dealer, Find a Dock Builder) and **Contact** (phone, email, address). A bottom
+bar carries the copyright with Privacy Policy, Site Use and Sitemap.
+
+Two of those links are guesses at live-site URLs and need confirming:
+`/dealer-login/` and `/site-use/`. Privacy Policy points at the live
+`/privacy-policy/`. Sitemap is a local page (`sitemap/`) listing all 32 pages.
+"Become a Dealer" routes to the contact page and "Find a Dock Builder" to the
+dealer section of Get a Quote.
 
 ### Navigation
 

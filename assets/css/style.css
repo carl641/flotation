@@ -1597,8 +1597,8 @@ h3 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) repeat(3, minmax(0, 3fr));
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 4fr) repeat(4, minmax(0, 3fr));
+  gap: clamp(1.75rem, 3.5vw, 3rem);
   padding-block: 4rem 3rem;
 }
 
@@ -1658,15 +1658,80 @@ h3 {
 }
 
 .footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-block: 1.5rem;
   font-size: 0.85rem;
   color: var(--on-dark-mute);
 }
 
-@media (max-width: 900px) {
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+}
+
+.footer-legal a {
+  color: var(--on-dark-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-legal a:hover {
+  color: #fff;
+  border-color: currentColor;
+}
+
+/* Sitemap page columns. */
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.sitemap-col h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--olive);
+}
+
+.sitemap-col ul {
+  margin-top: 0.75rem;
+  list-style: none;
+}
+
+.sitemap-col li {
+  padding: 0.4rem 0;
+}
+
+.sitemap-col a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.sitemap-col a:hover {
+  color: var(--olive);
+  border-color: currentColor;
+}
+
+@media (max-width: 1080px) {
   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
