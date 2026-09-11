@@ -95,6 +95,28 @@ the tile (or split) image, and extra shots sit inside that item's `<details>`
 as a `card-more-shots` row - or, on the two splits, in a `gallery-strip
 strip-under` below.
 
+### Get a Quote
+
+`get-boat-dock-quote/` (the live site's quote slug) combines three live pages,
+laid out like Contact Us:
+
+- **Request a quote** - copy beside a `.placeholder-box` for the form embed
+  (most likely the same form as Contact Us).
+- **How to order** - the LockDry decking Sketch / Detail / Send steps, each
+  with an image placeholder where the live page has a photo of the design form.
+- **After you send it** - quote turnaround, payment methods and lead times.
+- **Find a dealer** - the live intro copy, a wide placeholder for the dealer
+  map and search plugin, then the dealer directory by state (company and
+  contact name only).
+- **Dealer spotlight** - Randy Travis, with an image placeholder.
+
+The header's "Get a Quote" button now points here rather than at Contact Us.
+
+Not carried across: the per-dealer detail blocks (addresses, phone numbers,
+territories and bios) from the live Dealer Spotlight page. Much of that copy is
+still lorem ipsum on the live site, and it belongs on a dealer page of its own
+rather than on a quote page - say the word and it can have one.
+
 ### Warranty Information
 
 `warranty-information/` carries the live page's copy: the promise, the four

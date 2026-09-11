@@ -2325,6 +2325,76 @@ h3 {
   min-height: 420px;
 }
 
+/* An image slot inside a split, at the same 4/5 frame the photos use. */
+.placeholder-media,
+.placeholder-wide {
+  width: 100%;
+}
+
+.placeholder-media {
+  aspect-ratio: 4 / 5;
+}
+
+.placeholder-wide {
+  aspect-ratio: 16 / 7;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.split > .placeholder-media,
+.placeholder-wide {
+  min-height: 0;
+}
+
+/* Steps on the quote page: tighter than a full section between each. */
+.step-row + .step-row {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-head + .step-row {
+  margin-top: clamp(1rem, 2vw, 2rem);
+}
+
+/* Dealers by state. */
+.dealer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+}
+
+.dealer-state h3 {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--olive);
+}
+
+.dealer-state ul {
+  list-style: none;
+  margin-top: 0.75rem;
+}
+
+.dealer-state li {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.dealer-state li span {
+  font-size: 0.88rem;
+  color: var(--ink-mute);
+}
+
+@media (max-width: 900px) {
+  .placeholder-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .placeholder-wide {
+    aspect-ratio: 4 / 3;
+  }
+}
+
 /* One card carrying the map above the address and numbers. */
 .info-card.contact-card {
   max-width: 760px;
@@ -2429,6 +2499,10 @@ h3 {
 @media (max-width: 900px) {
   .split > .placeholder-box {
     min-height: 260px;
+  }
+
+  .split > .placeholder-media {
+    min-height: 0;
   }
 
   .map-embed iframe {
