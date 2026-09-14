@@ -1854,9 +1854,10 @@ h3 {
   }
 }
 
-/* The dealer-login callout: a line for people who are not the audience of the
-   page they landed on, so it sits at the top and gets out of the way. */
-.dealer-login {
+/* Callouts that put a line of copy beside a single button: the dealer-login
+   line at the top of Become a Dealer, and the brochure callouts. */
+.dealer-login,
+.brochure {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1864,17 +1865,31 @@ h3 {
   gap: 1.25rem 2rem;
 }
 
-.dealer-login .h-card {
+.dealer-login .h-card,
+.brochure .h-card {
   margin-top: 0.3rem;
 }
 
-.dealer-login p:last-of-type {
+.dealer-login p:last-of-type,
+.brochure p:last-of-type {
   margin-top: 0.5rem;
   color: var(--ink-mute);
 }
 
-.dealer-login .btn {
+.dealer-login .btn,
+.brochure .btn {
   flex: none;
+}
+
+/* A brochure sits inside the section it belongs to rather than in one of its
+   own, so it needs its own top margin where it follows a run of content. */
+.brochure {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.container > .brochure:first-child,
+.brochure:first-child {
+  margin-top: 0;
 }
 
 /* --------------------------------------------------------------------------
