@@ -504,6 +504,31 @@ Two things to settle before launch:
 - Hand-entered reviews do not refresh. If keeping them current matters more
   than the design, a third-party widget is the route that self-updates.
 
+## Brochures
+
+Nine PDFs on Uploadcare, surfaced as `.callout.brochure` blocks - the same
+callout component as the warranty panel and the dealer-login line, so they read
+as one kind of thing. Each carries a button that opens the PDF in a new tab
+(`target="_blank" rel="noopener"`, with the new tab named in the `aria-label`),
+matching how Dealer Login and the social links behave.
+
+| Brochure | Page | Placement |
+| --- | --- | --- |
+| Corporate Brochure 2023 | Dock Styles hub | own section before the CTA |
+| Advantages 2023 | Tech Specs | own section before the CTA |
+| Beaumont Series 2023 | Specialty Styles | inside `#beaumont` |
+| Designer Color Series 2023 | Colors | own section before the CTA |
+| Fixed or Floating Docks | Anchoring | own section before the CTA |
+| LockDry Marine Decking | LockDry | own section before the CTA |
+| LockDry Refurbish | LockDry | inside the Refurbishing section |
+| Accessories 2023 | Options & Accessories | own section before the FAQ |
+| Marine Concepts 2023 | Options & Accessories | inside `#accessories` |
+
+Specialty Styles previously linked the Beaumont brochure at
+`aluminumboatdocks.com/boat-dock-brochure-downloads/FSI-BeaumontSeries-2023.pdf`
+on the old site; that link is gone, replaced by the Uploadcare copy. No
+off-site brochure links remain.
+
 ## Design notes
 
 - Every page except the homepage uses the same hero frame: `.hero-page
