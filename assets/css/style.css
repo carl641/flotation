@@ -1555,8 +1555,14 @@ h3 {
    Dark close: CTA band + footer
    -------------------------------------------------------------------------- */
 
+/* The closing CTA sits directly on top of the footer, and both were dark
+   teal - the band's gradient even ended on the footer's exact colour, so the
+   two merged into one slab. Give the band the brand's olive-into-teal blend
+   (the same family as .duo and .media-section) and land it on --teal-900, a
+   clear step above the footer's --teal-950, so the callout reads as its own
+   block rather than as the top of the footer. */
 .band-dark {
-  background: linear-gradient(180deg, var(--teal-900) 0%, var(--teal-950) 100%);
+  background: linear-gradient(160deg, #35422f 0%, var(--teal-800) 52%, var(--teal-900) 100%);
   color: var(--on-dark);
 }
 
