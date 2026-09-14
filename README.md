@@ -79,7 +79,9 @@ dealer section of Get a Quote.
 
 #### Social links
 
-The brand block carries Facebook, Instagram, YouTube and Pinterest icons.
+The contact block carries Facebook, Instagram, YouTube and Pinterest icons in a
+single row under the address. They are inline SVG drawn in CSS-coloured strokes
+- no image files to host.
 All four URLs are confirmed by the site owner. They live in `SOCIAL` in
 `scratchpad/foot.py`.
 

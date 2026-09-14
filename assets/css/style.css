@@ -1626,16 +1626,17 @@ h3 {
   color: var(--on-dark-mute);
 }
 
-/* Social links under the brand line. */
+/* Social links, in one row under the contact details. */
 .footer-social {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.6rem;
-  margin-top: 1.25rem;
+  margin-top: 0.35rem;
   list-style: none;
 }
 
 .footer-social a {
+  flex: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
