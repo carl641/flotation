@@ -36,6 +36,59 @@
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") closeMenu();
     });
+
+    /* With every flyout expanded the mobile menu runs well past the bottom of
+       a phone screen, so each parent gets a chevron that collapses its list.
+       The parent link itself is untouched and still goes to its own page. */
+    var CHEVRON =
+      '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"' +
+      ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M6 9l6 6 6-6"/></svg>';
+
+    [].forEach.call(nav.querySelectorAll(".has-sub"), function (parent, i) {
+      var sub = parent.querySelector(".nav-sub");
+      var label = parent.querySelector("a, .nav-parent");
+      if (!sub || !label) return;
+
+      sub.id = sub.id || "nav-sub-" + (i + 1);
+
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "nav-sub-toggle";
+      btn.innerHTML = CHEVRON;
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-controls", sub.id);
+      btn.setAttribute("aria-label", "Show " + label.textContent.trim() + " pages");
+
+      btn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        var open = parent.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", String(open));
+        btn.setAttribute(
+          "aria-label",
+          (open ? "Hide " : "Show ") + label.textContent.trim() + " pages"
+        );
+      });
+
+      label.insertAdjacentElement("afterend", btn);
+    });
+
+    // Closing the menu resets it, so it reopens from the top every time.
+    var collapseAll = function () {
+      [].forEach.call(nav.querySelectorAll(".has-sub.is-open"), function (parent) {
+        parent.classList.remove("is-open");
+        var btn = parent.querySelector(".nav-sub-toggle");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+      nav.scrollTop = 0;
+    };
+
+    toggle.addEventListener("click", function () {
+      if (!header.classList.contains("menu-open")) collapseAll();
+    });
+    nav.addEventListener("click", function (event) {
+      if (event.target.closest("a")) collapseAll();
+    });
   }
 
   /* Intro quick-links: hovering (or focusing) a link swaps the copy column for
