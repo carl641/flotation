@@ -100,7 +100,8 @@ context ("LockDry® decking", "Anchoring", "Warranty").
 FAQ sections use `.faq-list` with a `<details class="faq-item">` per question.
 Each question is a card in the same language as `.config-card` and
 `.dock-card` - lifted `--surface`, `--line` hairline, `--r-card` radius,
-`--shadow-card` - spaced on a grid rather than run together as a list, with the
+`--shadow-card` - spanning the full content width like every other component
+on the page, spaced on a grid rather than run together as a list, with the
 border warming toward olive on hover and while open. The toggle is a round
 olive-wash chip that fills solid olive when the answer is open, matching the
 circular controls on the galleries and in the footer. Closed by default so the
