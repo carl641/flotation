@@ -1687,48 +1687,94 @@ h3 {
   border-color: currentColor;
 }
 
+/* Contact runs full width under the columns, on the same tracks so every
+   heading and item lines up with the column above it. */
 .footer-contact {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) repeat(3, minmax(0, 3fr));
+  gap: 0.75rem clamp(1.75rem, 3.5vw, 3rem);
+  align-items: start;
   margin-top: clamp(0.5rem, 2vw, 1.25rem);
   padding-top: clamp(1.5rem, 3vw, 2rem);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-contact h3 {
-  margin-bottom: 1rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--on-dark-mute);
-}
-
-.footer-contact-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem 2.5rem;
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--on-dark-soft);
 }
 
-.footer-contact-row address {
+.footer-contact h3 {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+}
+
+.footer-contact address {
   font-style: normal;
 }
 
-.footer-contact-row a {
-  color: var(--on-dark);
+.footer-contact a {
+  color: var(--on-dark-soft);
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  overflow-wrap: anywhere;
 }
 
-.footer-contact-row a:hover {
+.footer-contact a:hover {
   color: #fff;
-  border-color: currentColor;
 }
 
 .footer-hours {
   color: var(--on-dark-mute);
+}
+
+@media (max-width: 1080px) {
+  .footer-contact {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-contact h3 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-contact {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-block: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--on-dark-mute);
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+}
+
+.footer-legal a {
+  color: var(--on-dark-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-legal a:hover {
+  color: #fff;
+  border-color: currentColor;
 }
 
 /* Sitemap page columns. */
