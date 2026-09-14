@@ -464,6 +464,13 @@ their typos ("Flotatation", "costumer", "my doc"). Do not tidy them - they are
 published under the reviewers' names. To add or remove one, add or remove a
 `.review-card`; the "1 of N" counter reads the number of cards.
 
+The cards must NOT carry `.reveal`. The reveal observer watches the viewport,
+and a card scrolled out of the rail is clipped by `overflow-x: auto`, so it
+never intersects, never gets `.in`, and stays at `opacity: 0` for good - on a
+phone, where one card shows at a time, that leaves every card after the first
+blank. `.reveal` goes on `.review-rail`, which is in normal flow, and the rail
+fades in as one unit.
+
 Reviews vary from one line to two hundred words, so `.review-quote` is clamped
 to nine lines and a "Read more" is added by script only to the cards that
 actually overflow. The full text is in the DOM either way. That keeps every
