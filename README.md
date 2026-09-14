@@ -71,9 +71,14 @@ capped at 520px. A bottom bar
 carries the copyright with Privacy Policy, Site Use and
 Sitemap.
 
-Two of those links are guesses at live-site URLs and need confirming:
-`/dealer-login/` and `/site-use/`. Privacy Policy points at the live
-`/privacy-policy/`. Sitemap is a local page (`sitemap/`) listing all 32 pages.
+Dealer Login goes to `https://flotationsystems.sharepoint.com/`, the company
+SharePoint, which bounces dealers through Microsoft sign-in. (The site owner
+supplied a Microsoft `login.microsoftonline.com/.../oauth2/authorize` URL for
+this, but that is a single-use sign-in URL - it carries a `nonce`, `state`,
+`ear_jwe_crypto` and `client-request-id` bound to one browser session and
+expires in minutes - so the SharePoint root it redirects to is linked instead.)
+`/site-use/` is still a guess at a live-site URL and needs confirming. Privacy
+Policy points at the live `/privacy-policy/`. Sitemap is a local page (`sitemap/`) listing all 32 pages.
 "Become a Dealer" routes to the contact page and "Find a Dock Builder" to the
 dealer section of Get a Quote.
 
