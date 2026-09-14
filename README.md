@@ -60,8 +60,9 @@ plus three link columns - **Explore** (All Dock Styles, Sundeck, Gable, Hip, Mar
 Photo Galleries), **Customize & Technical** (Options & Accessories, Slip
 Configurations, Ramps & Bridges, Tech Specs), **Company & Dealers** (About Us,
 Warranty Information, Find A Dock Builder, Become A Dealer, Dealer Login) -
-then **Contact** stretched full width beneath them, with both phone numbers as
-`tel:` links, email, address and business hours in one row. A bottom bar
+then **Contact** stretched full width beneath them in three even cells: both
+phone numbers as `tel:` links, the email, and the address with business hours
+under it. A bottom bar
 carries the copyright with Privacy Policy, Site Use and
 Sitemap.
 
