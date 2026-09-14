@@ -397,7 +397,15 @@ like a typo there but the copy was carried over as-is.
   so a reader learns the shape once. New highlight blocks should use
   `.callout` rather than inventing another treatment.
 
-- Brand palette: olive `#61714a` (single accent), grey-green neutrals, dark teal (`#1a3130` / `#122423`) for the closing CTA band and footer.
+- Brand palette: olive `#61714a` (single accent), grey-green neutrals, dark
+  teal (`#1a3130` / `#122423`) for the closing CTA band and footer.
+- The closing CTA (`.band-dark`) and the footer are both dark, and the band's
+  gradient used to end on `--teal-950`, the footer's exact colour, so the two
+  merged into one slab. The band now runs the brand's olive-into-teal blend
+  (`#35422f` to `--teal-800` to `--teal-900`, the same family as `.duo` and
+  `.media-section`) and lands a step above the footer, so it reads as its own
+  callout. LockDry also uses `.band-dark` mid-page; the same treatment suits
+  it, so the component is styled once rather than split into two variants.
 - Hero uses the Vimeo video `1213775675` as a full-bleed background (`background=1&autoplay=1&loop=1&muted=1`). A brand gradient shows until the video loads, and the video is hidden entirely under `prefers-reduced-motion`.
 - Light and dark mode are both supported via `prefers-color-scheme`.
 - Page slugs match the live site's existing WordPress slugs, so the tree can drop into the root of aluminumboatdocks.com with links intact.
