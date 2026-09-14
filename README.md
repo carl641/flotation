@@ -83,6 +83,47 @@ supplied a Microsoft `login.microsoftonline.com/.../oauth2/authorize` URL for
 this, but that is a single-use sign-in URL - it carries a `nonce`, `state`,
 `ear_jwe_crypto` and `client-request-id` bound to one browser session and
 expires in minutes - so the SharePoint root it redirects to is linked instead.)
+FAQ sections are live on eleven pages: both sundeck pages, Marinas &
+Commercial, ADA Compliant, Anchoring, Options & Accessories, Ramps & Bridges,
+Slip Configurations, LockDry, Warranty Information and Get a Quote. Each sits
+directly above the closing CTA band, on whichever background keeps the page
+alternating.
+
+The questions came from the site owner; the answers were drafted from each
+page's own copy. **Eleven of the 41 answers could not be sourced from the site
+and route to the dealer rather than stating a fact** - see the list at the end
+of this section. Those need real answers from FSI before launch.
+
+FAQ sections use `.faq-list` with a `<details class="faq-item">` per question:
+a summary line with the question, a `.faq-answer` under it, and the same
+plus-to-minus toggle the `.card-more` cards use. Closed by default so the
+section reads as a scannable list of questions, but every answer is in the DOM,
+so find-on-page and crawlers see it either way. Each page carrying an FAQ
+should also carry a `FAQPage` JSON-LD block matching its questions verbatim -
+that is what earns the expandable answers in Google results, and Google drops
+the block if the markup and the visible copy disagree. The blocks are generated
+from the same strings as the visible copy so the two cannot drift; all 41 pairs
+are verified byte-for-byte.
+
+### FAQ answers still needing real information from FSI
+
+| Page | Question | What is missing |
+| --- | --- | --- |
+| Sundeck, Sundeck Combo | Upper-deck capacity | No published load rating for the upper deck. The answer talks about footprint and says it is engineered per build. |
+| Marinas & Commercial | Phased construction | No stated policy. The answer says layouts are modular and asks for the full intended build. |
+| Marinas & Commercial | Utilities | No stated capability for power, water, lighting or fuel. The answer asks the reader to call with a utility schedule. |
+| Options & Accessories | Fit on an existing dock | No retrofit policy, particularly for docks not built by FSI. |
+| Options & Accessories | Who installs | Division of labour between dealer and owner is not stated anywhere. |
+| Ramps & Bridges | Connecting to an existing dock | Same retrofit gap. |
+| Slip Configurations | Measurements needed | No published intake list; the answer lists the obvious boat and site dimensions. |
+| Slip Configurations | Expanding later | No stated policy on adding a slip or upsizing. |
+| LockDry | Surface temperature | **No measured figure anywhere.** The answer describes the finish and says lighter colors run cooler, which is true of any surface, and sends the reader for samples. If FSI has a tested figure it belongs here. |
+| Warranty | What is covered and excluded | The warranty document is not on the site. The answer describes the promise and routes to the dealer for terms. |
+| Warranty | Residential vs commercial | The site says "all our aluminum boat docks" in one place and "residential docks installed by FSI or an authorized dealer" in another. The answer flags the difference rather than resolving it - **this contradiction is in the live copy and should be settled.** |
+| Warranty | Transferability | Not stated anywhere. |
+| Warranty | Claim process | Not stated; the answer routes to the installing dealer. |
+| Get a Quote | What a quote includes | Whether delivery and installation are in scope is not stated. |
+
 `become-a-dealer/` carries the live Become a Dealer copy: the pitch, the
 ten-item benefits list as an `.option-list`, and a `.placeholder-box` for the
 application form embed. A `.callout` sits directly under the hero for the

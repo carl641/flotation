@@ -1478,6 +1478,89 @@ h3 {
   margin-left: auto;
 }
 
+/* --------------------------------------------------------------------------
+   FAQ
+   A run of questions as an accordion, in the same open/close language as the
+   .card-more toggles on Options & Accessories: a plus that becomes a minus, no
+   native marker. Closed by default so the section is scannable as a list of
+   questions; every answer is in the DOM, so find-on-page and search engines
+   still see it.
+   -------------------------------------------------------------------------- */
+
+.faq-list {
+  max-width: 860px;
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item > summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.15rem 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-weight: 650;
+  line-height: 1.45;
+  color: var(--ink);
+  transition: color 0.2s var(--ease);
+}
+
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item > summary:hover {
+  color: var(--olive);
+}
+
+.faq-item > summary::after {
+  content: "+";
+  flex: none;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--olive);
+}
+
+.faq-item[open] > summary::after {
+  content: "\2212";
+}
+
+.faq-item > summary:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.faq-answer {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 68ch;
+  padding-bottom: 1.4rem;
+  color: var(--ink-soft);
+}
+
+.faq-answer ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.faq-answer li {
+  margin-top: 0.4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .faq-item > summary::after {
+    color: #a9bb8b;
+  }
+}
+
 /* The dealer-login callout: a line for people who are not the audience of the
    page they landed on, so it sits at the top and gets out of the way. */
 .dealer-login {
