@@ -148,9 +148,13 @@ readable in one click, indexable, reflowable on a phone and editable in place.
 They are the only pages with no hero - a stock waterfront behind "Terms of
 Use" is decoration on a document nobody reads for pleasure, and it buries the
 text under a screenful of photo. They open on `.page-head` instead: breadcrumb,
-title and lede on paper, with `body.page-plain` holding the header in its
-light state from the top, since the scroll observer that normally does that
-watches `.hero`. On a plain page the header also takes a solid `--surface`
+title and lede on a `--surface-tint` band, so the title block still reads as
+its own thing against the paper the document sits on - the same colour change
+that separates every other section on the site, which is why there is no rule
+under it. `body.page-plain` holds the header in its light state from the top,
+since the scroll observer that normally does that watches `.hero`. The result
+is three steps down the page: a `--surface` nav bar, the tinted title band,
+then the document on paper. On a plain page the header also takes a solid `--surface`
 bar rather than the translucent blur it wears over a photo - with nothing
 behind it to read against, the translucent version leaves the menu floating.
 The old site called the second one "Site Use"; it is "Terms of Use" here.

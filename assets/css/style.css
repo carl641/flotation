@@ -1638,10 +1638,13 @@ h3 {
   background: var(--ink);
 }
 
+/* Tinted so the title block reads as its own band against the paper the
+   document sits on - the same colour change that separates every other
+   section on the site, so no rule is needed under it. */
 .page-head {
   padding-top: clamp(10rem, 13vh, 12rem);
   padding-bottom: clamp(2rem, 4vw, 3rem);
-  border-bottom: 1px solid var(--line);
+  background: var(--surface-tint);
 }
 
 .page-head .crumbs {
