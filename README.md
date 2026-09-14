@@ -56,10 +56,13 @@ the eight pages listed below under **Template pages**.
 ### Footer
 
 Generated the same way as the nav, from `scratchpad/foot.py`. Five blocks: the
-brand, **Dock Styles** (all ten styles in order, then Photo Galleries),
-**Company** (About, Contact, Warranty), **Dealers** (Dealer Login, Become a
-Dealer, Find a Dock Builder) and **Contact** (phone, email, address). A bottom
-bar carries the copyright with Privacy Policy, Site Use and Sitemap.
+brand, **Explore** (All Dock Styles, Sundeck, Gable, Hip, Marinas & Commercial,
+Photo Galleries), **Customize & Technical** (Options & Accessories, Slip
+Configurations, Ramps & Bridges, Tech Specs), **Company & Dealers** (About Us,
+Warranty Information, Find A Dock Builder, Become A Dealer, Dealer Login) and
+**Contact** (both phone numbers as `tel:` links, email, address, business
+hours). A bottom bar carries the copyright with Privacy Policy, Site Use and
+Sitemap.
 
 Two of those links are guesses at live-site URLs and need confirming:
 `/dealer-login/` and `/site-use/`. Privacy Policy points at the live
@@ -70,9 +73,10 @@ dealer section of Get a Quote.
 ### Navigation
 
 The header menu is, in order: **Dock Styles**, **Options & Accessories**,
-**Tech Specs**, **Galleries**, **About**, then the **Get a Quote** button.
+**Tech Specs**, **Galleries**, **About Us**, then the **Get a Quote** button.
 Every item is both a link and a flyout parent. On mobile every flyout is an
-indented, always-open list, so nothing depends on hover.
+indented, always-open list, so nothing depends on hover. The header carries no
+phone number - it lives in the footer contact block.
 
 | Menu item | Links to | Dropdown |
 | --- | --- | --- |
@@ -80,7 +84,7 @@ indented, always-open list, so nothing depends on hover.
 | Options & Accessories | `/options-accessories/` | Colors, Ramps & Bridges, Slip Configurations |
 | Tech Specs | `/tech-specs/` | WavePro™ Technology, LockDry® Marine Decking |
 | Galleries | `/flotation-systems-galleries/` | the eight style galleries |
-| About | `/about-flotation-systems-aluminum-boat-docks/` | Contact, Warranty Information |
+| About Us | `/about-flotation-systems-aluminum-boat-docks/` | Contact, Warranty Information |
 | Get a Quote (button) | `/contact-flotation-systems/` | - |
 
 The nav is generated from a single model rather than hand-edited per page - when

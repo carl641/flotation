@@ -1687,6 +1687,14 @@ h3 {
   border-color: currentColor;
 }
 
+.footer-col address + address {
+  margin-top: 0.9rem;
+}
+
+.footer-hours {
+  margin-top: 0.9rem;
+}
+
 /* Sitemap page columns. */
 .sitemap-grid {
   display: grid;
