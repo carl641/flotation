@@ -753,6 +753,14 @@ h3 {
   padding-block: var(--section);
 }
 
+/* Two sections in a row on the same background read as one block - a heading
+   split and the cards that belong to it - so the doubled padding between them
+   is just a gap. Cut it back to a quarter. */
+.section:not(.section-tint) + .section:not(.section-tint),
+.section-tint + .section-tint {
+  padding-top: calc(var(--section) * 0.25);
+}
+
 .section-tint {
   background: var(--surface-tint);
 }
@@ -2159,6 +2167,9 @@ h3 {
 
 .split-media > img {
   aspect-ratio: 4 / 5;
+  /* On wide screens a 4/5 portrait towers over short copy; cap it so the two
+     columns stay closer in height without changing the frame's shape. */
+  max-height: 540px;
   border-radius: var(--r-card);
 }
 
