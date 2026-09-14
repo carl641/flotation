@@ -1479,6 +1479,177 @@ h3 {
 }
 
 /* --------------------------------------------------------------------------
+   Reviews
+   A rail of review cards that rotates. Built on scroll-snap rather than a
+   transform carousel, so it still swipes with the script off or blocked, and
+   the cards keep the same surface/hairline/radius as every other card here.
+   -------------------------------------------------------------------------- */
+
+.review-rail {
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.review-track {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 0.75rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.review-track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-track {
+    scroll-behavior: auto;
+  }
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 clamp(266px, 31%, 360px);
+  scroll-snap-align: start;
+  padding: clamp(1.35rem, 2.4vw, 1.75rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+}
+
+/* Amber rather than olive: a star row is a rating, and readers expect it to
+   look like one. It is the only place on the site that leaves the palette. */
+.review-stars {
+  display: flex;
+  gap: 0.15rem;
+  color: #c9922e;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+/* Reviews run from one line to two hundred words. Clamping the long ones keeps
+   every card a sane height instead of letting the longest set it, and the full
+   text stays in the DOM either way. */
+.review-quote {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  overflow: hidden;
+  margin: 0.9rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.review-card.is-open .review-quote {
+  display: block;
+  -webkit-line-clamp: unset;
+}
+
+.review-more {
+  align-self: flex-start;
+  margin-top: 0.65rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: var(--olive);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.review-more:hover {
+  color: var(--olive-deep);
+}
+
+@media (prefers-color-scheme: dark) {
+  .review-more {
+    color: #a9bb8b;
+  }
+}
+
+.review-who {
+  margin-top: auto;
+  padding-top: 1.15rem;
+}
+
+.review-name {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.review-meta {
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--ink-mute);
+}
+
+.review-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.review-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+
+.review-btn:hover:not(:disabled) {
+  border-color: var(--olive);
+  color: var(--olive);
+}
+
+.review-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.review-count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-mute);
+}
+
+.review-source {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+}
+
+@media (max-width: 700px) {
+  .review-card {
+    flex-basis: min(82%, 340px);
+  }
+
+  .review-source {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+
+  .review-controls {
+    flex-wrap: wrap;
+  }
+}
+
+/* --------------------------------------------------------------------------
    FAQ
    One card per question, in the same language as .config-card and .dock-card
    - lifted surface, hairline, card radius - so a run of questions reads as

@@ -448,6 +448,43 @@ reads "P3-22" because that is the
 label on the current live page (the file behind it is `P3(8)-22.jpg`); it looks
 like a typo there but the copy was carried over as-is.
 
+## Reviews on the homepage
+
+`#reviews` sits between the Beaumont band and the closing CTA: a rail of ten
+review cards on a scroll-snap track, with prev/next controls and a "1 of 10"
+counter. It auto-advances every 6 seconds and pauses while the reader is
+hovering, focused inside it, or scrolling it. Because the track is scroll-snap
+rather than a transform carousel, it still swipes and keyboard-scrolls with the
+script blocked; the script only adds the rotation. The star row is the one
+place on the site that leaves the olive palette - a rating is expected to look
+like a rating.
+
+The five reviews on the page are real, quoted verbatim from Google including
+their typos ("Flotatation", "costumer", "my doc"). Do not tidy them - they are
+published under the reviewers' names. To add or remove one, add or remove a
+`.review-card`; the "1 of N" counter reads the number of cards.
+
+Reviews vary from one line to two hundred words, so `.review-quote` is clamped
+to nine lines and a "Read more" is added by script only to the cards that
+actually overflow. The full text is in the DOM either way. That keeps every
+card the same height (430px at 1280 wide) instead of letting the longest review
+set it for all five.
+
+There is deliberately **no `Review` or `AggregateRating` schema** on this
+section. Google does not allow a business to mark up reviews of itself on its
+own site - self-serving review markup is ineligible for rich results and risks
+a manual action. The reviews are there for readers, not for stars in search.
+
+Two things to settle before launch:
+
+- Bobby Reed's review ends "Attached are pictures: 1. Teal roof / 26 year old
+  dock. 2. Refurbished dock / burnished slate roof 3. Handicap ramp." Those
+  photos are on Google, not here, so the sentence dangles. Either leave it (it
+  is what he wrote) or end the quote before it with an ellipsis, which is
+  normal quotation practice. It is currently left as written.
+- Hand-entered reviews do not refresh. If keeping them current matters more
+  than the design, a third-party widget is the route that self-updates.
+
 ## Design notes
 
 - Every page except the homepage uses the same hero frame: `.hero-page
