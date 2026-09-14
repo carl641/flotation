@@ -364,15 +364,24 @@ like a typo there but the copy was carried over as-is.
   padding. They were tightened once already - sections went from
   `clamp(4.5rem, 9vw, 7.5rem)` to `clamp(3.5rem, 6.5vw, 5.5rem)` - taking
   roughly 6% off page height without moving anything sideways.
-- Two further rules catch the pages that still read loose: consecutive sections
-  on the same background take about 60% of the usual top padding instead of a
-  full one, and `.split-media > img` is capped at 540px so a 4/5 portrait
-  cannot tower over short copy.
-- Section boundaries stay legible either way. Where the background changes
-  (`.section` to `.section-tint`) the colour shift does the work; where two
-  sections share a background there is no shift, so a container-width hairline
-  is drawn across the top of the second one via `::before`. Every seam between
-  separate sections therefore reads, whichever way the backgrounds fall.
+- Two further rules catch the pages that still read loose: a same-background
+  pair of sections takes about 60% of the usual top padding instead of a full
+  one, and `.split-media > img` is capped at 540px so a 4/5 portrait cannot
+  tower over short copy.
+- Section boundaries are carried by the background, and every page alternates
+  strictly: no two `.section` elements in a row share a background, so each
+  boundary is a colour change. `--surface-tint` was deepened from `#edefe6` to
+  `#e7ebdd` (dark mode `#1a201b` to `#212821`) so the alternation is visible
+  rather than merely present. `.band-dark` and `.media-section` are their own
+  bands and reset the alternation either side of them. A container-width
+  hairline rule still exists as a fallback for a same-background pair, but no
+  page currently needs it.
+- Where two sections were really one topic - a titled block of copy followed by
+  a headless feature or config grid - they are now a single `<section>`, with
+  the grid's container carrying `.section-more` for a normal in-section gap
+  instead of a full section's padding on both sides of a seam. This is the
+  right fix whenever a section has no heading of its own: merge it up rather
+  than leaving a boundary the reader cannot account for.
 - Callouts are one component, not a set of one-offs. Any panel whose job is to
   stand apart from the copy around it - the warranty promise on About, the
   contact details card, the embed placeholders, the Beaumont panel - shares a
