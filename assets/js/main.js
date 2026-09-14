@@ -601,3 +601,31 @@
   label();
   start();
 })();
+
+/* Review cards — a "Read more" only on the ones that actually overflow their
+   clamp, so a two-line review does not get a pointless toggle. */
+(function () {
+  var cards = [].slice.call(document.querySelectorAll(".review-card"));
+  if (!cards.length) return;
+
+  cards.forEach(function (card, i) {
+    var quote = card.querySelector(".review-quote");
+    if (!quote || quote.scrollHeight <= quote.clientHeight + 2) return;
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "review-more";
+    btn.textContent = "Read more";
+    btn.setAttribute("aria-expanded", "false");
+    quote.id = quote.id || "review-quote-" + (i + 1);
+    btn.setAttribute("aria-controls", quote.id);
+
+    btn.addEventListener("click", function () {
+      var open = card.classList.toggle("is-open");
+      btn.textContent = open ? "Read less" : "Read more";
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    quote.insertAdjacentElement("afterend", btn);
+  });
+})();

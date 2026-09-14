@@ -1532,11 +1532,48 @@ h3 {
   letter-spacing: 0.05em;
 }
 
+/* Reviews run from one line to two hundred words. Clamping the long ones keeps
+   every card a sane height instead of letting the longest set it, and the full
+   text stays in the DOM either way. */
 .review-quote {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  overflow: hidden;
   margin: 0.9rem 0 0;
   font-size: 0.98rem;
   line-height: 1.65;
   color: var(--ink-soft);
+}
+
+.review-card.is-open .review-quote {
+  display: block;
+  -webkit-line-clamp: unset;
+}
+
+.review-more {
+  align-self: flex-start;
+  margin-top: 0.65rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: var(--olive);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.review-more:hover {
+  color: var(--olive-deep);
+}
+
+@media (prefers-color-scheme: dark) {
+  .review-more {
+    color: #a9bb8b;
+  }
 }
 
 .review-who {
