@@ -265,7 +265,7 @@ All links between these pages and to `assets/` are **relative** (`../assets/...`
 `../sundeck-boat-docks/`), so the site works both at a domain root and under a
 subpath like GitHub Pages' `/<repo>/`. Do not change them to root-relative
 (`/assets/...`) — that breaks the Pages preview. Links to pages that only exist
-on the live WordPress site (dealers, about) are absolute
+only on the live WordPress site (dealer login, privacy policy, site use) are absolute
 `https://www.aluminumboatdocks.com/...` URLs so they resolve from either host;
 point them back at local slugs as those pages get built out. Every "Get a Quote" and "Contact Us"
 link now points at the local `contact-flotation-systems/` page, and every
