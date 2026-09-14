@@ -74,7 +74,10 @@ carries the copyright with Privacy Policy, Terms of Use and
 Sitemap.
 
 Dealer Login goes to `https://flotationsystems.sharepoint.com/`, the company
-SharePoint, which bounces dealers through Microsoft sign-in. (The site owner
+SharePoint, which bounces dealers through Microsoft sign-in. It opens in a new
+tab (`target="_blank" rel="noopener"`, the same treatment the social icons
+get) so a dealer signing in does not lose the site, with the new tab announced
+to screen readers through the link's `aria-label`. (The site owner
 supplied a Microsoft `login.microsoftonline.com/.../oauth2/authorize` URL for
 this, but that is a single-use sign-in URL - it carries a `nonce`, `state`,
 `ear_jwe_crypto` and `client-request-id` bound to one browser session and
