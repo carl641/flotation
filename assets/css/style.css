@@ -1597,7 +1597,7 @@ h3 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 4fr) repeat(4, minmax(0, 3fr));
+  grid-template-columns: minmax(0, 4fr) repeat(3, minmax(0, 3fr));
   gap: clamp(1.75rem, 3.5vw, 3rem);
   padding-block: 4rem 3rem;
 }
@@ -1687,12 +1687,44 @@ h3 {
   border-color: currentColor;
 }
 
-.footer-col address + address {
-  margin-top: 0.9rem;
+.footer-contact {
+  grid-column: 1 / -1;
+  margin-top: clamp(0.5rem, 2vw, 1.25rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-hours {
-  margin-top: 0.9rem;
+.footer-contact h3 {
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--on-dark-mute);
+}
+
+.footer-contact-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--on-dark-soft);
+}
+
+.footer-contact-row address {
+  font-style: normal;
+}
+
+.footer-contact-row a {
+  color: var(--on-dark);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.footer-contact-row a:hover {
+  color: #fff;
+  border-color: currentColor;
 }
 
 /* Sitemap page columns. */
@@ -1730,10 +1762,6 @@ h3 {
 @media (max-width: 1080px) {
   .footer-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
   }
 }
 
