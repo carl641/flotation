@@ -15,7 +15,7 @@
 :root {
   --paper: #f6f7f3;
   --surface: #fdfdfb;
-  --surface-tint: #edefe6;
+  --surface-tint: #e7ebdd;
   --ink: #232821;
   --ink-soft: #454c3f;
   --ink-mute: #5f6754;
@@ -44,7 +44,7 @@
   :root {
     --paper: #161b17;
     --surface: #1c221d;
-    --surface-tint: #1a201b;
+    --surface-tint: #212821;
     --ink: #e8ece1;
     --ink-soft: #c4ccb8;
     --ink-mute: #9aa48d;
@@ -758,13 +758,13 @@ h3 {
    Keep the space trimmed, but draw the seam: a container-width hairline at the
    top of the second section, so every boundary reads whichever way the
    backgrounds fall. */
-.section:not(.section-tint) + .section:not(.section-tint),
+.section:not(.section-tint, .media-section) + .section:not(.section-tint, .media-section),
 .section-tint + .section-tint {
   position: relative;
   padding-top: calc(var(--section) * 0.62);
 }
 
-.section:not(.section-tint) + .section:not(.section-tint)::before,
+.section:not(.section-tint, .media-section) + .section:not(.section-tint, .media-section)::before,
 .section-tint + .section-tint::before {
   content: "";
   position: absolute;
@@ -777,6 +777,14 @@ h3 {
 
 .section-tint {
   background: var(--surface-tint);
+}
+
+/* A grid that belongs to the section above it rather than to one of its own:
+   one heading, one background, with the cards set below the copy. Used where a
+   feature or config run used to sit in its own <section> and so inherited a
+   full section's padding on both sides of the seam. */
+.section-more {
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .section-head {
