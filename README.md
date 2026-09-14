@@ -358,6 +358,13 @@ like a typo there but the copy was carried over as-is.
 
 ## Design notes
 
+- Vertical rhythm is set by four values, so page density can be tuned from one
+  place: `--section` (the padding above and below every section),
+  `.section-head` bottom margin, `.split` gap, and `.hero-page .container`
+  padding. They were tightened once already - sections went from
+  `clamp(4.5rem, 9vw, 7.5rem)` to `clamp(3.5rem, 6.5vw, 5.5rem)` - taking
+  roughly 6% off page height without moving anything sideways.
+
 - Brand palette: olive `#61714a` (single accent), grey-green neutrals, dark teal (`#1a3130` / `#122423`) for the closing CTA band and footer.
 - Hero uses the Vimeo video `1213775675` as a full-bleed background (`background=1&autoplay=1&loop=1&muted=1`). A brand gradient shows until the video loads, and the video is hidden entirely under `prefers-reduced-motion`.
 - Light and dark mode are both supported via `prefers-color-scheme`.
