@@ -1630,9 +1630,8 @@ h3 {
 .footer-social {
   display: flex;
   flex-wrap: nowrap;
-  gap: 0.6rem;
-  margin-top: 0.35rem;
-  list-style: none;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
 }
 
 .footer-social a {
@@ -1640,8 +1639,8 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 48px;
+  height: 48px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--on-dark-soft);
