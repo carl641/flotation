@@ -1478,6 +1478,57 @@ h3 {
   margin-left: auto;
 }
 
+/* --------------------------------------------------------------------------
+   Plain page head
+   Legal and policy pages carry no photo. A stock waterfront behind "Terms of
+   Use" is decoration on a document nobody reads for pleasure, and it pushes
+   the text that matters below the fold. These pages open on paper with the
+   title set in type, so the header has to hold its light state from the top
+   rather than waiting for the scroll observer that watches .hero.
+   -------------------------------------------------------------------------- */
+
+.page-plain .site-header {
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.page-plain .nav-links a,
+.page-plain .nav-parent,
+.page-plain .nav-phone {
+  color: var(--ink);
+}
+
+.page-plain .nav-toggle span {
+  background: var(--ink);
+}
+
+.page-head {
+  padding-top: 8.5rem;
+  padding-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-head .crumbs {
+  color: var(--ink-mute);
+}
+
+.page-head .h-display {
+  font-size: clamp(2.1rem, 4.6vw, 3.1rem);
+}
+
+.page-head .lede {
+  margin-top: 0.9rem;
+  max-width: 60ch;
+}
+
+/* The rule under the title already separates them; a full section's padding
+   on top of it just pushes the document down. */
+.page-head + .section {
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
 /* Legal pages: a single column of prose at a readable measure. No new type
    scale - the headings are .h-card like every other sub-head on the site. */
 .legal {
