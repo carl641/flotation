@@ -567,6 +567,13 @@ Two things to settle before launch:
   so a reader learns the shape once. New highlight blocks should use
   `.callout` rather than inventing another treatment.
 
+- Never put a dark fill on a dark ground. The olive primary button measured
+  2.1-2.6:1 against the teal bands and the hero gradient, under the 3:1 WCAG
+  asks of a control's own edge - the button was a shape you could not make out.
+  On `.hero`, `.band-dark`, `.media-section`, `.page-head` and the unscrolled
+  header, `.btn-primary` takes a light `--on-dark` fill with `--teal-950` text
+  instead: 9.8:1 against the band, 14.1:1 for the label. It reverts to olive on
+  light grounds, including the header once it scrolls.
 - Brand palette: olive `#61714a` (single accent), grey-green neutrals, dark
   teal (`#1a3130` / `#122423`) for the closing CTA band and footer.
 - The closing CTA (`.band-dark`) and the footer are both dark, and the band's
