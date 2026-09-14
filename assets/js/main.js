@@ -522,3 +522,82 @@
     });
   });
 })();
+
+/* Review rail — auto-advances the cards, pauses while the reader is using it.
+   The rail is a scroll-snap track, so with this script blocked it is still a
+   swipeable, keyboard-scrollable list; this only adds the rotation. */
+(function () {
+  var track = document.getElementById("review-track");
+  if (!track) return;
+
+  var cards = [].slice.call(track.querySelectorAll(".review-card"));
+  if (cards.length < 2) return;
+
+  var prev = document.querySelector("[data-review-prev]");
+  var next = document.querySelector("[data-review-next]");
+  var count = document.querySelector("[data-review-count]");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var timer = null;
+  var paused = false;
+
+  function index() {
+    // the card nearest the left edge of the track is the current one
+    var best = 0;
+    var min = Infinity;
+    cards.forEach(function (card, i) {
+      var d = Math.abs(card.offsetLeft - track.scrollLeft);
+      if (d < min) { min = d; best = i; }
+    });
+    return best;
+  }
+
+  function goTo(i) {
+    var clamped = Math.max(0, Math.min(cards.length - 1, i));
+    track.scrollTo({ left: cards[clamped].offsetLeft, behavior: reduce ? "auto" : "smooth" });
+  }
+
+  function label() {
+    var i = index();
+    if (count) count.textContent = (i + 1) + " of " + cards.length;
+    // the last snap position is wherever the track stops scrolling, so compare
+    // against the real maximum rather than the last card's offset
+    var atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    if (prev) prev.disabled = i === 0;
+    if (next) next.disabled = atEnd;
+  }
+
+  function tick() {
+    if (paused) return;
+    var atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    goTo(atEnd ? 0 : index() + 1);
+  }
+
+  function start() {
+    if (reduce || timer) return;
+    timer = setInterval(tick, 6000);
+  }
+
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  if (prev) prev.addEventListener("click", function () { goTo(index() - 1); });
+  if (next) next.addEventListener("click", function () { goTo(index() + 1); });
+
+  ["pointerenter", "focusin"].forEach(function (e) {
+    track.parentNode.addEventListener(e, function () { paused = true; stop(); });
+  });
+  ["pointerleave", "focusout"].forEach(function (e) {
+    track.parentNode.addEventListener(e, function () { paused = false; start(); });
+  });
+
+  var settle = null;
+  track.addEventListener("scroll", function () {
+    clearTimeout(settle);
+    settle = setTimeout(label, 90);
+  });
+
+  label();
+  start();
+})();

@@ -448,6 +448,36 @@ reads "P3-22" because that is the
 label on the current live page (the file behind it is `P3(8)-22.jpg`); it looks
 like a typo there but the copy was carried over as-is.
 
+## Reviews on the homepage
+
+`#reviews` sits between the Beaumont band and the closing CTA: a rail of ten
+review cards on a scroll-snap track, with prev/next controls and a "1 of 10"
+counter. It auto-advances every 6 seconds and pauses while the reader is
+hovering, focused inside it, or scrolling it. Because the track is scroll-snap
+rather than a transform carousel, it still swipes and keyboard-scrolls with the
+script blocked; the script only adds the rotation. The star row is the one
+place on the site that leaves the olive palette - a rating is expected to look
+like a rating.
+
+**The ten cards are placeholders and must not launch as they are.** Real
+review content has to be dropped in, and there is a decision to make about how:
+
+- **Google's own Places API returns a maximum of five reviews per place, not
+  ten** - that is a hard limit, not a quota. It also needs an API key, which on
+  a static site is exposed in the page and must be locked to the site's HTTP
+  referrer, and Google's terms restrict how long review content may be stored.
+- **A third-party review widget** (Elfsight, Trustindex, EmbedSocial,
+  Featurable and others) can show more than five, refreshes itself, and drops
+  in as a script tag. These are typically paid, and the reviews then render
+  inside the vendor's own markup rather than the card design here.
+- **Pasting the reviews in by hand** keeps the design, costs nothing, needs no
+  key, and is the fastest route to launch. The trade is that new reviews do not
+  appear on their own. Ten cards is a small amount of upkeep.
+
+Whichever route: replace the ten `.review-card` blocks, or drop the embed in
+place of the whole `.review-rail`. The HTML comment above the rail repeats
+this.
+
 ## Design notes
 
 - Every page except the homepage uses the same hero frame: `.hero-page
