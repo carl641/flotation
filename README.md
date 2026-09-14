@@ -365,9 +365,23 @@ like a typo there but the copy was carried over as-is.
   `clamp(4.5rem, 9vw, 7.5rem)` to `clamp(3.5rem, 6.5vw, 5.5rem)` - taking
   roughly 6% off page height without moving anything sideways.
 - Two further rules catch the pages that still read loose: consecutive sections
-  on the same background (a heading split and the cards belonging to it) take a
-  quarter of the usual top padding instead of a full one, and `.split-media >
-  img` is capped at 540px so a 4/5 portrait cannot tower over short copy.
+  on the same background take about 60% of the usual top padding instead of a
+  full one, and `.split-media > img` is capped at 540px so a 4/5 portrait
+  cannot tower over short copy.
+- Section boundaries stay legible either way. Where the background changes
+  (`.section` to `.section-tint`) the colour shift does the work; where two
+  sections share a background there is no shift, so a container-width hairline
+  is drawn across the top of the second one via `::before`. Every seam between
+  separate sections therefore reads, whichever way the backgrounds fall.
+- Callouts are one component, not a set of one-offs. Any panel whose job is to
+  stand apart from the copy around it - the warranty promise on About, the
+  contact details card, the embed placeholders, the Beaumont panel - shares a
+  lifted `--surface` fill, a `--line` hairline, a 4px olive rail down the
+  leading edge and `--shadow-card`. The shared rule lives under "Callouts" in
+  `style.css`; `.callout` is the generic class, and `.info-card`,
+  `.warranty-panel` and `.placeholder-box` inherit from the same selector group
+  so a reader learns the shape once. New highlight blocks should use
+  `.callout` rather than inventing another treatment.
 
 - Brand palette: olive `#61714a` (single accent), grey-green neutrals, dark teal (`#1a3130` / `#122423`) for the closing CTA band and footer.
 - Hero uses the Vimeo video `1213775675` as a full-bleed background (`background=1&autoplay=1&loop=1&muted=1`). A brand gradient shows until the video loads, and the video is hidden entirely under `prefers-reduced-motion`.
