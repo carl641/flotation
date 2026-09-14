@@ -1620,44 +1620,26 @@ h3 {
    rather than waiting for the scroll observer that watches .hero.
    -------------------------------------------------------------------------- */
 
-/* On a plain page there is no photo for the header to sit over, so the
-   translucent treatment leaves it floating. Give it a solid bar of its own
-   against the paper page, so the menu reads as a menu from the first pixel. */
-.page-plain .site-header {
-  background: var(--surface);
-  box-shadow: 0 1px 0 var(--line);
-}
-
-.page-plain .nav-links a,
-.page-plain .nav-parent,
-.page-plain .nav-phone {
-  color: var(--ink);
-}
-
-.page-plain .nav-toggle span {
-  background: var(--ink);
-}
-
-/* Tinted so the title block reads as its own band against the paper the
-   document sits on - the same colour change that separates every other
-   section on the site, so no rule is needed under it. */
+/* The title band on a page that carries no hero photo. It takes the same dark
+   gradient the heroes fall back to, so the head reads against the document
+   below instead of being one more pale block - and the header's normal white
+   nav is legible over it, exactly as it is on every other page. */
 .page-head {
   padding-top: clamp(10rem, 13vh, 12rem);
-  padding-bottom: clamp(2rem, 4vw, 3rem);
-  background: var(--surface-tint);
-}
-
-.page-head .crumbs {
-  color: var(--ink-mute);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  background: linear-gradient(155deg, #2b3a2c 0%, var(--teal-900) 55%, var(--teal-950) 100%);
+  color: var(--on-dark);
 }
 
 .page-head .h-display {
   font-size: clamp(2.1rem, 4.6vw, 3.1rem);
+  color: #f4f7ef;
 }
 
 .page-head .lede {
   margin-top: 0.9rem;
   max-width: 60ch;
+  color: #d9e1d3;
 }
 
 /* The rule under the title already separates them; a full section's padding

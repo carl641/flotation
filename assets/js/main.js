@@ -2,7 +2,7 @@
   document.documentElement.classList.remove("no-js");
 
   var header = document.getElementById("site-header");
-  var hero = document.querySelector(".hero");
+  var hero = document.querySelector(".hero, .page-head");
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
