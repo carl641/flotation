@@ -94,9 +94,16 @@ page's own copy. **Eleven of the 41 answers could not be sourced from the site
 and route to the dealer rather than stating a fact** - see the list at the end
 of this section. Those need real answers from FSI before launch.
 
-FAQ sections use `.faq-list` with a `<details class="faq-item">` per question:
-a summary line with the question, a `.faq-answer` under it, and the same
-plus-to-minus toggle the `.card-more` cards use. Closed by default so the
+Every FAQ section is headed **FAQs**, with the eyebrow carrying the page
+context ("LockDry® decking", "Anchoring", "Warranty").
+
+FAQ sections use `.faq-list` with a `<details class="faq-item">` per question.
+Each question is a card in the same language as `.config-card` and
+`.dock-card` - lifted `--surface`, `--line` hairline, `--r-card` radius,
+`--shadow-card` - spaced on a grid rather than run together as a list, with the
+border warming toward olive on hover and while open. The toggle is a round
+olive-wash chip that fills solid olive when the answer is open, matching the
+circular controls on the galleries and in the footer. Closed by default so the
 section reads as a scannable list of questions, but every answer is in the DOM,
 so find-on-page and crawlers see it either way. Each page carrying an FAQ
 should also carry a `FAQPage` JSON-LD block matching its questions verbatim -

@@ -1480,31 +1480,42 @@ h3 {
 
 /* --------------------------------------------------------------------------
    FAQ
-   A run of questions as an accordion, in the same open/close language as the
-   .card-more toggles on Options & Accessories: a plus that becomes a minus, no
-   native marker. Closed by default so the section is scannable as a list of
-   questions; every answer is in the DOM, so find-on-page and search engines
-   still see it.
+   One card per question, in the same language as .config-card and .dock-card
+   - lifted surface, hairline, card radius - so a run of questions reads as
+   part of the site rather than as a bare list. The toggle is a round chip on
+   the right, matching the circular controls used on the galleries and in the
+   footer. Closed by default so the section is scannable; every answer stays in
+   the DOM for find-on-page and for crawlers.
    -------------------------------------------------------------------------- */
 
 .faq-list {
-  max-width: 860px;
-  border-top: 1px solid var(--line);
+  display: grid;
+  gap: clamp(0.85rem, 1.6vw, 1.15rem);
+  max-width: 900px;
 }
 
 .faq-item {
-  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.25s var(--ease);
+}
+
+.faq-item:hover,
+.faq-item[open] {
+  border-color: color-mix(in srgb, var(--olive) 45%, var(--line));
 }
 
 .faq-item > summary {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  padding: 1.15rem 0;
+  padding: clamp(1.15rem, 2.1vw, 1.5rem) clamp(1.25rem, 2.4vw, 1.75rem);
   list-style: none;
   cursor: pointer;
-  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-size: clamp(1rem, 1.35vw, 1.08rem);
   font-weight: 650;
   line-height: 1.45;
   color: var(--ink);
@@ -1519,30 +1530,42 @@ h3 {
   color: var(--olive);
 }
 
+/* The round chip carries the state, so the label itself stays plain text. */
 .faq-item > summary::after {
   content: "+";
   flex: none;
-  font-size: 1.35rem;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--olive-wash);
+  color: var(--olive);
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1;
-  color: var(--olive);
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
 }
 
 .faq-item[open] > summary::after {
   content: "\2212";
+  background: var(--olive);
+  color: #fff;
 }
 
 .faq-item > summary:focus-visible {
   outline: 2px solid var(--olive);
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline-offset: -2px;
+  border-radius: var(--r-card);
 }
 
 .faq-answer {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.9rem;
   max-width: 68ch;
-  padding-bottom: 1.4rem;
+  margin: 0 clamp(1.25rem, 2.4vw, 1.75rem);
+  padding: clamp(1.1rem, 2vw, 1.35rem) 0 clamp(1.3rem, 2.2vw, 1.6rem);
+  border-top: 1px solid var(--line);
   color: var(--ink-soft);
 }
 
@@ -1558,6 +1581,10 @@ h3 {
 @media (prefers-color-scheme: dark) {
   .faq-item > summary::after {
     color: #a9bb8b;
+  }
+
+  .faq-item[open] > summary::after {
+    color: #10150f;
   }
 }
 
