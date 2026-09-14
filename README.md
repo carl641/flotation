@@ -83,6 +83,15 @@ supplied a Microsoft `login.microsoftonline.com/.../oauth2/authorize` URL for
 this, but that is a single-use sign-in URL - it carries a `nonce`, `state`,
 `ear_jwe_crypto` and `client-request-id` bound to one browser session and
 expires in minutes - so the SharePoint root it redirects to is linked instead.)
+FAQ sections use `.faq-list` with a `<details class="faq-item">` per question:
+a summary line with the question, a `.faq-answer` under it, and the same
+plus-to-minus toggle the `.card-more` cards use. Closed by default so the
+section reads as a scannable list of questions, but every answer is in the DOM,
+so find-on-page and crawlers see it either way. Each page carrying an FAQ
+should also carry a `FAQPage` JSON-LD block matching its questions verbatim -
+that is what earns the expandable answers in Google results, and Google drops
+the block if the markup and the visible copy disagree.
+
 `become-a-dealer/` carries the live Become a Dealer copy: the pitch, the
 ten-item benefits list as an `.option-list`, and a `.placeholder-box` for the
 application form embed. A `.callout` sits directly under the hero for the
