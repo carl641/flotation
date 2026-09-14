@@ -86,6 +86,12 @@ Privacy Policy and Terms of Use are local pages (`privacy-policy/`,
 `terms-of-use/`) carrying the live site's copy, not links off to the old site
 and not PDFs: they are legally operative documents, so they need to be
 readable in one click, indexable, reflowable on a phone and editable in place.
+They are the only pages with no hero - a stock waterfront behind "Terms of
+Use" is decoration on a document nobody reads for pleasure, and it buries the
+text under a screenful of photo. They open on `.page-head` instead: breadcrumb,
+title and lede on paper, with `body.page-plain` holding the header in its
+light state from the top, since the scroll observer that normally does that
+watches `.hero`.
 The old site called the second one "Site Use"; it is "Terms of Use" here.
 Sitemap is a local page (`sitemap/`) listing all 34 pages.
 "Become a Dealer" routes to the contact page and "Find a Dock Builder" to the
