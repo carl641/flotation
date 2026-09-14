@@ -61,10 +61,11 @@ Photo Galleries), **Customize & Technical** (Options & Accessories, Slip
 Configurations, Ramps & Bridges, Tech Specs), **Company & Dealers** (About Us,
 Warranty Information, Find A Dock Builder, Become A Dealer, Dealer Login) -
 then **Contact** stretched full width beneath them on the same grid tracks as
-the columns: the address and hours under the heading, both phone numbers as
-`tel:` links, the email, and a Google Maps pin on the shop at the right end of
-the row - the same keyless embed the contact page uses, styled to match it. The
-map drops below the details once the footer stacks. A bottom bar
+the columns: the details stacked in the first track - both phone numbers as
+`tel:` links, the email, the address and hours - with a Google Maps pin on the
+shop filling the rest of the row beside them. It is the same keyless embed the
+contact page uses, styled to match. Below 900px the map drops beneath the
+details, capped at 480px. A bottom bar
 carries the copyright with Privacy Policy, Site Use and
 Sitemap.
 

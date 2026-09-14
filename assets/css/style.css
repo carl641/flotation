@@ -1687,14 +1687,13 @@ h3 {
   border-color: currentColor;
 }
 
-/* Contact runs full width under the columns, on the same tracks so every
-   heading and item lines up with the column above it. */
+/* Contact runs full width under the columns: the details stay stacked in the
+   first track, and the map fills the space beside them. */
 .footer-contact {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: minmax(0, 4fr) repeat(3, minmax(0, 3fr));
-  gap: 0.75rem clamp(1.75rem, 3.5vw, 3rem);
-  align-items: start;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
   margin-top: clamp(0.5rem, 2vw, 1.25rem);
   padding-top: clamp(1.5rem, 3vw, 2rem);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1703,27 +1702,10 @@ h3 {
   color: var(--on-dark-soft);
 }
 
-.footer-contact-head {
+.footer-contact-info {
   display: grid;
   gap: 0.9rem;
   align-content: start;
-}
-
-/* A pin on the shop at the right of the row, styled like the contact page's
-   map; it drops below the details once the footer stacks. */
-.footer-map {
-  border-radius: var(--r-card);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: var(--shadow-card);
-}
-
-.footer-map iframe {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
 }
 
 .footer-contact h3 {
@@ -1753,52 +1735,41 @@ h3 {
   color: var(--on-dark-mute);
 }
 
-@media (max-width: 1080px) {
+/* The map fills the rest of the row, styled like the contact page's. */
+.footer-map {
+  grid-column: 2 / -1;
+  align-self: stretch;
+  min-height: 100%;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: var(--shadow-card);
+}
+
+.footer-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  border: 0;
+}
+
+@media (max-width: 900px) {
   .footer-contact {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .footer-map {
-    grid-column: 1 / -1;
+    grid-column: 1;
     max-width: 480px;
+    min-height: 0;
   }
-}
 
-@media (max-width: 640px) {
-  .footer-contact {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
+  .footer-map iframe {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
   }
-}
-
-.footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-block: 1.5rem;
-  font-size: 0.85rem;
-  color: var(--on-dark-mute);
-}
-
-.footer-legal {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  list-style: none;
-}
-
-.footer-legal a {
-  color: var(--on-dark-soft);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-
-.footer-legal a:hover {
-  color: #fff;
-  border-color: currentColor;
 }
 
 /* Sitemap page columns. */
@@ -2617,7 +2588,6 @@ h3 {
   font-size: 0.9rem;
   color: var(--ink-soft);
 }
-
 
 @media (max-width: 900px) {
   .placeholder-media {
