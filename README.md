@@ -61,9 +61,10 @@ Photo Galleries), **Customize & Technical** (Options & Accessories, Slip
 Configurations, Ramps & Bridges, Tech Specs), **Company & Dealers** (About Us,
 Warranty Information, Find A Dock Builder, Become A Dealer, Dealer Login) -
 then **Contact** stretched full width beneath them on the same grid tracks as
-the columns: a Google Maps pin on the shop under the heading, then both phone
-numbers as `tel:` links, the email, and the address with business hours under
-it. The map is the same keyless embed the contact page uses. A bottom bar
+the columns: the address and hours under the heading, both phone numbers as
+`tel:` links, the email, and a Google Maps pin on the shop at the right end of
+the row - the same keyless embed the contact page uses, styled to match it. The
+map drops below the details once the footer stacks. A bottom bar
 carries the copyright with Privacy Policy, Site Use and
 Sitemap.
 
@@ -87,7 +88,7 @@ phone number - it lives in the footer contact block.
 | Options & Accessories | `/options-accessories/` | Colors, Ramps & Bridges, Slip Configurations |
 | Tech Specs | `/tech-specs/` | WavePro™ Technology, LockDry® Marine Decking |
 | Galleries | `/flotation-systems-galleries/` | the eight style galleries |
-| About Us | `/about-flotation-systems-aluminum-boat-docks/` | Contact, Warranty Information |
+| About Us | `/about-flotation-systems-aluminum-boat-docks/` | Contact Us, Warranty Information |
 | Get a Quote (button) | `/contact-flotation-systems/` | - |
 
 The nav is generated from a single model rather than hand-edited per page - when
