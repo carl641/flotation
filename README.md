@@ -77,6 +77,12 @@ Two of those links are guesses at live-site URLs and need confirming:
 "Become a Dealer" routes to the contact page and "Find a Dock Builder" to the
 dealer section of Get a Quote.
 
+#### Social links
+
+The brand block carries Facebook, Instagram, YouTube and Pinterest icons.
+All four URLs are confirmed by the site owner. They live in `SOCIAL` in
+`scratchpad/foot.py`.
+
 ### Navigation
 
 The header menu is, in order: **Dock Styles**, **Options & Accessories**,
