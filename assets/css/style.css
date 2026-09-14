@@ -1478,6 +1478,46 @@ h3 {
   margin-left: auto;
 }
 
+/* Legal pages: a single column of prose at a readable measure. No new type
+   scale - the headings are .h-card like every other sub-head on the site. */
+.legal {
+  max-width: 68ch;
+}
+
+.legal > h2 {
+  margin-top: clamp(2.25rem, 4vw, 3rem);
+}
+
+.legal > h2:first-child {
+  margin-top: 0;
+}
+
+.legal > p,
+.legal > ul {
+  margin-top: 1rem;
+  color: var(--ink-soft);
+}
+
+.legal > h2 + p {
+  margin-top: 0.85rem;
+}
+
+.legal > ul {
+  padding-left: 1.2rem;
+}
+
+.legal > ul li {
+  margin-top: 0.4rem;
+}
+
+.legal .legal-contact {
+  margin-top: clamp(2.25rem, 4vw, 3rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.94rem;
+  color: var(--ink-mute);
+}
+
 /* Color swatch grids: a chip of the finish with its name under it. */
 .swatch-grid {
   display: grid;

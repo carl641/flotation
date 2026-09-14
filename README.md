@@ -41,6 +41,8 @@ link resolves unchanged.
 | Contact Us | `/contact-flotation-systems/` |
 | Warranty Information | `/warranty-information/` |
 | Get a Quote | `/get-boat-dock-quote/` |
+| Privacy Policy | `/privacy-policy/` |
+| Terms of Use | `/terms-of-use/` |
 | Sitemap | `/sitemap/` |
 
 The nine galleries are listed under **Galleries** below. The ADA style page and
@@ -68,7 +70,7 @@ contact page uses, styled to match. It spans the three tracks beside the
 details and ends on the container's right edge, in line with the columns above
 and the legal bar below. Below 900px it drops beneath the details at 16:9,
 capped at 520px. A bottom bar
-carries the copyright with Privacy Policy, Site Use and
+carries the copyright with Privacy Policy, Terms of Use and
 Sitemap.
 
 Dealer Login goes to `https://flotationsystems.sharepoint.com/`, the company
@@ -77,8 +79,12 @@ supplied a Microsoft `login.microsoftonline.com/.../oauth2/authorize` URL for
 this, but that is a single-use sign-in URL - it carries a `nonce`, `state`,
 `ear_jwe_crypto` and `client-request-id` bound to one browser session and
 expires in minutes - so the SharePoint root it redirects to is linked instead.)
-`/site-use/` is still a guess at a live-site URL and needs confirming. Privacy
-Policy points at the live `/privacy-policy/`. Sitemap is a local page (`sitemap/`) listing all 32 pages.
+Privacy Policy and Terms of Use are local pages (`privacy-policy/`,
+`terms-of-use/`) carrying the live site's copy, not links off to the old site
+and not PDFs: they are legally operative documents, so they need to be
+readable in one click, indexable, reflowable on a phone and editable in place.
+The old site called the second one "Site Use"; it is "Terms of Use" here.
+Sitemap is a local page (`sitemap/`) listing all 34 pages.
 "Become a Dealer" routes to the contact page and "Find a Dock Builder" to the
 dealer section of Get a Quote.
 
