@@ -64,8 +64,10 @@ then **Contact** stretched full width beneath them on the same grid tracks as
 the columns: the details stacked in the first track - both phone numbers as
 `tel:` links, the email, the address and hours - with a Google Maps pin on the
 shop filling the rest of the row beside them. It is the same keyless embed the
-contact page uses, styled to match. Below 900px the map drops beneath the
-details, capped at 480px. A bottom bar
+contact page uses, styled to match. Its height scales with the viewport
+(`clamp(200px, 17vw, 340px)`) so a wider screen gets a taller pin rather than a
+letterboxed strip. Below 900px the map drops beneath the details at 16:9,
+capped at 520px. A bottom bar
 carries the copyright with Privacy Policy, Site Use and
 Sitemap.
 
