@@ -214,17 +214,18 @@ h3 {
   color: #fff;
 }
 
-/* A dark button on a dark ground is a shape you cannot make out. The olive
-   primary measures 2.1-2.6:1 against the teal bands and the hero gradient,
-   under the 3:1 WCAG asks of a control's own edge, so on dark surfaces the
-   primary flips to a light fill with ink text (9.8:1 against the band). */
+/* The primary stays olive everywhere, including on the dark bands. Olive on
+   teal is only about 2.2:1 fill-against-ground, so on dark surfaces the button
+   also takes a light hairline: that edge is what makes it read as a control,
+   and the label is pure white at 5.3:1. */
 .hero .btn-primary,
 .band-dark .btn-primary,
 .media-section .btn-primary,
 .page-head .btn-primary,
 .site-header .btn-primary {
-  background: var(--on-dark);
-  color: var(--teal-950);
+  background: var(--olive);
+  color: #fff;
+  border-color: rgba(237, 241, 232, 0.5);
 }
 
 .hero .btn-primary:hover,
@@ -232,6 +233,24 @@ h3 {
 .media-section .btn-primary:hover,
 .page-head .btn-primary:hover,
 .site-header .btn-primary:hover {
+  background: #697a53;
+  border-color: rgba(237, 241, 232, 0.8);
+}
+
+/* Scrolled, the header is over paper and needs no edge. The selector has to
+   out-weigh `.site-header.scrolled .nav-links a`, which sets every nav link to
+   ink and was turning the button's label ink on olive. */
+.site-header.scrolled .nav-links a.btn-primary {
+  background: var(--olive);
+  color: #fff;
+  border-color: transparent;
+}
+
+.site-header.scrolled .nav-links a.btn-primary:hover {
+  background: var(--olive-deep);
+}
+
+.btn-primary:hover {
   background: #fff;
 }
 

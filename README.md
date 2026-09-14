@@ -592,13 +592,14 @@ off-site brochure links remain.
   so a reader learns the shape once. New highlight blocks should use
   `.callout` rather than inventing another treatment.
 
-- Never put a dark fill on a dark ground. The olive primary button measured
-  2.1-2.6:1 against the teal bands and the hero gradient, under the 3:1 WCAG
-  asks of a control's own edge - the button was a shape you could not make out.
-  On `.hero`, `.band-dark`, `.media-section`, `.page-head` and the unscrolled
-  header, `.btn-primary` takes a light `--on-dark` fill with `--teal-950` text
-  instead: 9.8:1 against the band, 14.1:1 for the label. It reverts to olive on
-  light grounds, including the header once it scrolls.
+- The primary button is olive everywhere, by the site owner's call. Olive on
+  the teal bands is only 2.12:1 fill-against-ground, under the 3:1 WCAG asks of
+  a control's edge, so on `.hero`, `.band-dark`, `.media-section`, `.page-head`
+  and the unscrolled header the button also takes a light hairline
+  (`rgba(237, 241, 232, 0.5)`, ~4.4:1 against the band). That edge is what makes
+  it read as a control. The label is pure white at 5.29:1, and the hover olive
+  is `#697a53` - lightened enough to register on a dark ground while keeping
+  the white label at 4.66:1. On light grounds the border drops to transparent.
 - Brand palette: olive `#61714a` (single accent), grey-green neutrals, dark
   teal (`#1a3130` / `#122423`) for the closing CTA band and footer.
 - The closing CTA (`.band-dark`) and the footer are both dark, and the band's
