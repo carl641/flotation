@@ -55,13 +55,14 @@ the eight pages listed below under **Template pages**.
 
 ### Footer
 
-Generated the same way as the nav, from `scratchpad/foot.py`. Five blocks: the
-brand, **Explore** (All Dock Styles, Sundeck, Gable, Hip, Marinas & Commercial,
+Generated the same way as the nav, from `scratchpad/foot.py`. Four link
+columns - **Explore** (All Dock Styles, Sundeck, Gable, Hip, Marinas & Commercial,
 Photo Galleries), **Customize & Technical** (Options & Accessories, Slip
 Configurations, Ramps & Bridges, Tech Specs), **Company & Dealers** (About Us,
 Warranty Information, Find A Dock Builder, Become A Dealer, Dealer Login) and
 **Contact** (both phone numbers as `tel:` links, email, address, business
-hours). A bottom bar carries the copyright with Privacy Policy, Site Use and
+hours) - then the company line stretched full width beneath them, above the
+bottom bar. A bottom bar carries the copyright with Privacy Policy, Site Use and
 Sitemap.
 
 Two of those links are guesses at live-site URLs and need confirming:
