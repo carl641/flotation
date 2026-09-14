@@ -503,3 +503,22 @@
     slides[current].classList.add("is-active");
   }, 5500);
 })();
+
+/* FAQ accordion — one answer open at a time. Browsers that support the
+   exclusive-accordion `name` attribute on <details> already do this natively,
+   so this only steps in for the ones that do not. */
+(function () {
+  if ("name" in document.createElement("details")) return;
+
+  var items = [].slice.call(document.querySelectorAll(".faq-item"));
+  if (items.length < 2) return;
+
+  items.forEach(function (item) {
+    item.addEventListener("toggle", function () {
+      if (!item.open) return;
+      items.forEach(function (other) {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
+})();

@@ -106,7 +106,13 @@ border warming toward olive on hover and while open. The toggle is a round
 olive-wash chip that fills solid olive when the answer is open, matching the
 circular controls on the galleries and in the footer. Closed by default so the
 section reads as a scannable list of questions, but every answer is in the DOM,
-so find-on-page and crawlers see it either way. Each page carrying an FAQ
+so find-on-page and crawlers see it either way.
+
+Only one answer is open at a time. Each page's questions share
+`name="faq"`, the native exclusive-accordion attribute on `<details>`, so
+modern browsers do this with no script at all. The small block at the end of
+`main.js` is a fallback that only engages where that attribute is
+unsupported - it feature-detects and returns immediately otherwise. Each page carrying an FAQ
 should also carry a `FAQPage` JSON-LD block matching its questions verbatim -
 that is what earns the expandable answers in Google results, and Google drops
 the block if the markup and the visible copy disagree. The blocks are generated
