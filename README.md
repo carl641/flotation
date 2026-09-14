@@ -59,8 +59,8 @@ Generated the same way as the nav, from `scratchpad/foot.py`. The brand block
 plus three link columns - **Explore** (All Dock Styles, Sundeck, Gable, Hip, Marinas & Commercial,
 Photo Galleries), **Customize & Technical** (Options & Accessories, Slip
 Configurations, Ramps & Bridges, Tech Specs), **Company & Dealers** (About Us,
-Warranty Information, Find A Dock Builder, Become A Dealer, Dealer Login) and
-then **Contact** stretched full width beneath them - both phone numbers as
+Warranty Information, Find A Dock Builder, Become A Dealer, Dealer Login) -
+then **Contact** stretched full width beneath them, with both phone numbers as
 `tel:` links, email, address and business hours in one row. A bottom bar
 carries the copyright with Privacy Policy, Site Use and
 Sitemap.
