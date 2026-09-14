@@ -1499,19 +1499,90 @@ h3 {
   color: var(--ink-mute);
 }
 
-/* Collection rows: two splits inside one section, alternating sides, with a
-   hairline between them so they read as one run rather than two sections. */
-.collection-row {
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+/* Signature collections: two looks that go on top of whatever dock style you
+   already picked, so they sit side by side and can be read against each other
+   rather than stacked as two splits a screen apart. Equal columns, landscape
+   photo over the copy, and the buttons pushed to a common baseline. */
+/* The section head over a two-column run: the title holds the left column and
+   the lede moves up beside it instead of leaving the right half of the page
+   empty and pushing the cards further down. */
+.head-split {
+  max-width: none;
 }
 
-.collection-row + .collection-row {
-  padding-top: clamp(2.5rem, 5vw, 3.5rem);
-  border-top: 1px solid var(--line);
+@media (min-width: 900px) {
+  .head-split {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: end;
+  }
+
+  .head-split .lede {
+    margin-top: 0;
+    padding-bottom: 0.4rem;
+  }
+}
+
+.collection-duo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+}
+
+.collection-media {
+  margin: 0;
+}
+
+.collection-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.collection-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(1.5rem, 2.6vw, 2.25rem);
+}
+
+.collection-body .lede {
+  margin-top: 0.6rem;
+}
+
+.collection-body .body {
+  margin-top: 0.9rem;
+  color: var(--ink-mute);
+}
+
+/* auto on the CTA, not the button, so the pair lines up however long the copy
+   above it runs. */
+.collection-cta {
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 
 .h-collection {
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-size: clamp(1.4rem, 2.3vw, 1.85rem);
+}
+
+@media (max-width: 860px) {
+  .collection-duo {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 /* Color swatch grids: a chip of the finish with its name under it. */
@@ -1550,16 +1621,6 @@ h3 {
   .swatch-grid {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 1rem;
-  }
-}
-
-.collection-row .split-media img {
-  aspect-ratio: 4 / 3;
-}
-
-@media (max-width: 900px) {
-  .collection-row .split-media img {
-    aspect-ratio: 16 / 10;
   }
 }
 

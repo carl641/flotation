@@ -382,6 +382,15 @@ like a typo there but the copy was carried over as-is.
   instead of a full section's padding on both sides of a seam. This is the
   right fix whenever a section has no heading of its own: merge it up rather
   than leaving a boundary the reader cannot account for.
+- The Signature collections section on Dock Styles is a side-by-side pair
+  (`.collection-duo` / `.collection-card`), not two stacked splits. The two
+  looks go on top of whatever dock style the reader already picked, so they
+  need to be comparable at a glance: equal columns, a landscape photo over the
+  copy, and `.collection-cta { margin-top: auto }` so both buttons land on one
+  baseline however long the copy above them runs. Stacks to one column below
+  860px. `.head-split` is the matching section-head variant - the title holds
+  the left column and the lede sits beside it rather than leaving the right
+  half of the page empty; it is reusable over any full-width run.
 - Callouts are one component, not a set of one-offs. Any panel whose job is to
   stand apart from the copy around it - the warranty promise on About, the
   contact details card, the embed placeholders, the Beaumont panel - shares a
