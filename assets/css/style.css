@@ -365,6 +365,10 @@ h3 {
   color: var(--ink);
 }
 
+.nav-sub-toggle {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -421,6 +425,12 @@ h3 {
     background: var(--paper);
     border-bottom: 1px solid var(--line);
     padding: 1rem var(--gutter) 1.5rem;
+    /* The menu is taller than a phone screen with every list open, and it
+       hangs off a fixed header, so the page cannot scroll it. Cap it and let
+       it scroll itself. */
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .site-header.menu-open {
@@ -442,6 +452,59 @@ h3 {
     padding: 0.55rem 0;
     font-size: 1.05rem;
     color: var(--ink);
+  }
+
+  /* A flyout parent collapses here: the link still goes to its own page, the
+     chevron beside it opens the list underneath. */
+  .nav-links > li {
+    width: 100%;
+  }
+
+  .nav-links > li.has-sub {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .nav-links > li.has-sub > a,
+  .nav-links > li.has-sub > .nav-parent {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nav-sub-toggle {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    margin-right: -0.6rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink-mute);
+    cursor: pointer;
+  }
+
+  .nav-sub-toggle svg {
+    transition: transform 0.25s var(--ease);
+  }
+
+  .has-sub.is-open > .nav-sub-toggle {
+    color: var(--olive);
+  }
+
+  .has-sub.is-open > .nav-sub-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .nav-links > li.has-sub > .nav-sub {
+    flex-basis: 100%;
+    display: none;
+  }
+
+  .nav-links > li.has-sub.is-open > .nav-sub {
+    display: block;
   }
 
   .nav-links .nav-cta-item {

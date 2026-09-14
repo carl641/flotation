@@ -197,6 +197,18 @@ phone number - it lives in the footer contact block.
 The nav is generated from a single model rather than hand-edited per page - when
 it changes, regenerate it on all pages so the 31 copies stay identical.
 
+Below 900px every flyout parent collapses. With all five lists expanded the
+menu is 1250px tall on a 780px phone screen, and because it hangs off a
+`position: fixed` header the page cannot scroll it - the Get a Quote item was
+simply unreachable. Each parent now gets a chevron (injected by `main.js`, so
+no markup change across 35 pages) that opens its list; the parent link itself
+is untouched and still goes to its own page. Collapsed, the menu is 341px.
+`.site-nav` also takes `max-height: calc(100dvh - 72px)` and `overflow-y: auto`
+as a backstop, so even with every list open it scrolls rather than running off
+the screen. Closing the menu collapses everything and resets the scroll.
+Desktop is unaffected: the chevrons are `display: none` above 900px and the
+hover flyouts behave as before.
+
 ### Options & Accessories
 
 `options-accessories/` carries the copy from the live site's two separate
@@ -463,6 +475,13 @@ The five reviews on the page are real, quoted verbatim from Google including
 their typos ("Flotatation", "costumer", "my doc"). Do not tidy them - they are
 published under the reviewers' names. To add or remove one, add or remove a
 `.review-card`; the "1 of N" counter reads the number of cards.
+
+The cards must NOT carry `.reveal`. The reveal observer watches the viewport,
+and a card scrolled out of the rail is clipped by `overflow-x: auto`, so it
+never intersects, never gets `.in`, and stays at `opacity: 0` for good - on a
+phone, where one card shows at a time, that leaves every card after the first
+blank. `.reveal` goes on `.review-rail`, which is in normal flow, and the rail
+fades in as one unit.
 
 Reviews vary from one line to two hundred words, so `.review-quote` is clamped
 to nine lines and a "Read more" is added by script only to the cards that
