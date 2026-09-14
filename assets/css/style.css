@@ -1705,7 +1705,7 @@ h3 {
 
 .footer-contact-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.25rem 2.5rem;
   font-size: 0.95rem;
   line-height: 1.7;
@@ -1725,6 +1725,10 @@ h3 {
 .footer-contact-row a:hover {
   color: #fff;
   border-color: currentColor;
+}
+
+.footer-hours {
+  color: var(--on-dark-mute);
 }
 
 /* Sitemap page columns. */
