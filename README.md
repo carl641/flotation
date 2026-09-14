@@ -80,9 +80,7 @@ dealer section of Get a Quote.
 #### Social links
 
 The brand block carries Facebook, Instagram, YouTube and Pinterest icons.
-Facebook, Instagram and YouTube are confirmed; **the Pinterest URL is still a
-guess** - the live site could not be reached from the build machine to read
-its real ones - so check it before launch. They are in `SOCIAL` in
+All four URLs are confirmed by the site owner. They live in `SOCIAL` in
 `scratchpad/foot.py`.
 
 ### Navigation
