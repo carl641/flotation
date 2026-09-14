@@ -102,7 +102,9 @@ Use" is decoration on a document nobody reads for pleasure, and it buries the
 text under a screenful of photo. They open on `.page-head` instead: breadcrumb,
 title and lede on paper, with `body.page-plain` holding the header in its
 light state from the top, since the scroll observer that normally does that
-watches `.hero`.
+watches `.hero`. On a plain page the header also takes a solid `--surface`
+bar rather than the translucent blur it wears over a photo - with nothing
+behind it to read against, the translucent version leaves the menu floating.
 The old site called the second one "Site Use"; it is "Terms of Use" here.
 Sitemap is a local page (`sitemap/`) listing all 34 pages.
 "Become a Dealer" routes to `become-a-dealer/` and "Find a Dock Builder" to

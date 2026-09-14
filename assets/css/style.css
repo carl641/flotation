@@ -1510,10 +1510,11 @@ h3 {
    rather than waiting for the scroll observer that watches .hero.
    -------------------------------------------------------------------------- */
 
+/* On a plain page there is no photo for the header to sit over, so the
+   translucent treatment leaves it floating. Give it a solid bar of its own
+   against the paper page, so the menu reads as a menu from the first pixel. */
 .page-plain .site-header {
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  background: var(--surface);
   box-shadow: 0 1px 0 var(--line);
 }
 
@@ -1528,8 +1529,8 @@ h3 {
 }
 
 .page-head {
-  padding-top: 8.5rem;
-  padding-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+  padding-top: clamp(10rem, 13vh, 12rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
   border-bottom: 1px solid var(--line);
 }
 
