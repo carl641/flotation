@@ -2020,9 +2020,22 @@ h3 {
   min-height: 0;
 }
 
+/* Every inner page gets the same hero frame, so moving between them does not
+   make the header jump. The copy is bottom-aligned inside it, which keeps the
+   headline on the same line whatever the page. */
 .hero-page .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 665px;
   padding-top: 7.5rem;
   padding-bottom: clamp(2.5rem, 5.5vh, 3.75rem);
+}
+
+@media (max-width: 700px) {
+  .hero-page .container {
+    min-height: 726px;
+  }
 }
 
 /* In the hero the placeholder is the whole backdrop, so it stays a faint hatch
@@ -2837,21 +2850,16 @@ h3 {
   transition: opacity 1.4s ease-in-out;
 }
 
+/* The first frame holds until the script marks the stage ready, so a hero
+   still shows a photo with JS off or under reduced motion - both cases where
+   .is-active is never set. */
 .hero-media-slideshow img:first-child,
 .hero-media-slideshow img.is-active {
   opacity: 1;
 }
 
-.hero-media-slideshow img:first-child:not(.is-active) {
+.hero-media-slideshow.is-ready img:first-child:not(.is-active) {
   opacity: 0;
-}
-
-.hero-media-slideshow.is-ready img:first-child {
-  opacity: 0;
-}
-
-.hero-media-slideshow.is-ready img.is-active {
-  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
