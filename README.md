@@ -43,6 +43,7 @@ link resolves unchanged.
 | Get a Quote | `/get-boat-dock-quote/` |
 | Privacy Policy | `/privacy-policy/` |
 | Terms of Use | `/terms-of-use/` |
+| Become a Dealer | `/become-a-dealer/` |
 | Sitemap | `/sitemap/` |
 
 The nine galleries are listed under **Galleries** below. The ADA style page and
@@ -82,6 +83,16 @@ supplied a Microsoft `login.microsoftonline.com/.../oauth2/authorize` URL for
 this, but that is a single-use sign-in URL - it carries a `nonce`, `state`,
 `ear_jwe_crypto` and `client-request-id` bound to one browser session and
 expires in minutes - so the SharePoint root it redirects to is linked instead.)
+`become-a-dealer/` carries the live Become a Dealer copy: the pitch, the
+ten-item benefits list as an `.option-list`, and a `.placeholder-box` for the
+application form embed. A `.callout` sits directly under the hero for the
+people who are not its audience - "Already a dealer? Sign in to the dealer
+resource site" with a button to the SharePoint login, opening in a new tab
+like every other link to it. The visible `<h1>` is "Become a Flotation Systems
+Dealer" rather than the live page's "...Boat Dock Dealer", which wrapped to two
+lines and broke the shared hero height; the full phrasing is kept in the
+`<title>` and `og:title`.
+
 Privacy Policy and Terms of Use are local pages (`privacy-policy/`,
 `terms-of-use/`) carrying the live site's copy, not links off to the old site
 and not PDFs: they are legally operative documents, so they need to be
@@ -94,8 +105,8 @@ light state from the top, since the scroll observer that normally does that
 watches `.hero`.
 The old site called the second one "Site Use"; it is "Terms of Use" here.
 Sitemap is a local page (`sitemap/`) listing all 34 pages.
-"Become a Dealer" routes to the contact page and "Find a Dock Builder" to the
-dealer section of Get a Quote.
+"Become a Dealer" routes to `become-a-dealer/` and "Find a Dock Builder" to
+the dealer section of Get a Quote.
 
 #### Social links
 

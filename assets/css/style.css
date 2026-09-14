@@ -1478,6 +1478,29 @@ h3 {
   margin-left: auto;
 }
 
+/* The dealer-login callout: a line for people who are not the audience of the
+   page they landed on, so it sits at the top and gets out of the way. */
+.dealer-login {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+}
+
+.dealer-login .h-card {
+  margin-top: 0.3rem;
+}
+
+.dealer-login p:last-of-type {
+  margin-top: 0.5rem;
+  color: var(--ink-mute);
+}
+
+.dealer-login .btn {
+  flex: none;
+}
+
 /* --------------------------------------------------------------------------
    Plain page head
    Legal and policy pages carry no photo. A stock waterfront behind "Terms of
