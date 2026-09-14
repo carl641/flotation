@@ -127,7 +127,7 @@ laid out like Contact Us:
 - **How to order** - the LockDry decking Sketch / Detail / Send steps, each
   with its `order-step` photo.
 - **After you send it** - quote turnaround, payment methods and lead times.
-- **Find a dealer** - the live intro copy and the "taking on dealers
+- **Find a dock builder** - the live intro copy and the "taking on dealers
   nationwide" line.
 - **Dealer spotlight** - Randy Travis, with `spotlight1` and `spotlight2` -
   followed by
