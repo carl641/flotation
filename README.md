@@ -358,6 +358,26 @@ like a typo there but the copy was carried over as-is.
 
 ## Design notes
 
+- Every page except the homepage uses the same hero frame: `.hero-page
+  .container` is a bottom-aligned flex column with `min-height: 665px`
+  (726px below 700px wide), so the headline lands on the same line on every
+  page and only the amount of photo above it changes. Measured identical on
+  all 31 inner pages at 360, 390, 480, 600, 699, 700, 768, 900, 1024, 1280 and
+  1600px. Two headlines were shortened to fit it - the marina gallery and
+  LockDry - and the galleries' hero paragraphs lost the repeated "make note of
+  the number" boilerplate, which the section heads below already cover.
+- Hero rotations are drawn from the galleries and no photo appears in more than
+  one page's hero: 149 distinct photos across 31 pages, zero overlap. Style
+  pages take the `-22` run of their own gallery, the galleries take the `-24`
+  run of the same series, the two hubs take one of every style (a different one
+  each), and the subject pages show their own subject - `opt*` shots on Options
+  & Accessories, `materialconstruction*` on Tech Specs, `lockdry*` on LockDry.
+  About (the plant), WavePro (the mockup) and Ramps & Bridges keep the single
+  or set chosen earlier.
+- The slideshow's first frame holds until the script marks the stage
+  `.is-ready`, so a hero still shows a photo with JavaScript off or under
+  `prefers-reduced-motion` - both cases where `.is-active` is never set.
+
 - Vertical rhythm is set by four values, so page density can be tuned from one
   place: `--section` (the padding above and below every section),
   `.section-head` bottom margin, `.split` gap, and `.hero-page .container`
