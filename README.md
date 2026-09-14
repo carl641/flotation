@@ -370,10 +370,12 @@ like a typo there but the copy was carried over as-is.
   one page's hero: 149 distinct photos across 31 pages, zero overlap. Style
   pages take the `-22` run of their own gallery, the galleries take the `-24`
   run of the same series, the two hubs take one of every style (a different one
-  each), and the subject pages show their own subject - `opt*` shots on Options
-  & Accessories, `materialconstruction*` on Tech Specs, `lockdry*` on LockDry.
-  About (the plant), WavePro (the mockup) and Ramps & Bridges keep the single
-  or set chosen earlier.
+  each), and Options & Accessories shows its own subject (`opt*` shots). Tech
+  Specs, WavePro and LockDry take finished docks too: their subject matter is
+  shop shots, plank profile drawings and a cutaway mockup, which read as
+  diagrams rather than photography at hero scale, so those files stay in the
+  page body where they explain something and the hero shows the dock the page
+  is about. About (the plant) and Ramps & Bridges keep the set chosen earlier.
 - The slideshow's first frame holds until the script marks the stage
   `.is-ready`, so a hero still shows a photo with JavaScript off or under
   `prefers-reduced-motion` - both cases where `.is-active` is never set.
