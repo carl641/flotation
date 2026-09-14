@@ -60,9 +60,10 @@ plus three link columns - **Explore** (All Dock Styles, Sundeck, Gable, Hip, Mar
 Photo Galleries), **Customize & Technical** (Options & Accessories, Slip
 Configurations, Ramps & Bridges, Tech Specs), **Company & Dealers** (About Us,
 Warranty Information, Find A Dock Builder, Become A Dealer, Dealer Login) -
-then **Contact** stretched full width beneath them in three even cells: both
-phone numbers as `tel:` links, the email, and the address with business hours
-under it. A bottom bar
+then **Contact** stretched full width beneath them on the same grid tracks as
+the columns: a Google Maps pin on the shop under the heading, then both phone
+numbers as `tel:` links, the email, and the address with business hours under
+it. The map is the same keyless embed the contact page uses. A bottom bar
 carries the copyright with Privacy Policy, Site Use and
 Sitemap.
 
