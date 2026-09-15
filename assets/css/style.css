@@ -1873,10 +1873,10 @@ h3 {
   }
 }
 
-/* Callouts that put a line of copy beside a single button: the dealer-login
-   line at the top of Become a Dealer, and the brochure callouts. */
-.dealer-login,
-.brochure {
+/* The dealer-login callout: a line of copy beside a single button, for people
+   who are not the audience of the page they landed on, so it sits at the top
+   and gets out of the way. */
+.dealer-login {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1884,63 +1884,17 @@ h3 {
   gap: 1.25rem 2rem;
 }
 
-.dealer-login .h-card,
-.brochure .h-card {
+.dealer-login .h-card {
   margin-top: 0.3rem;
 }
 
-.dealer-login p:last-of-type,
-.brochure p:last-of-type {
+.dealer-login p:last-of-type {
   margin-top: 0.5rem;
   color: var(--ink-mute);
 }
 
-.dealer-login .btn,
-.brochure .btn {
+.dealer-login .btn {
   flex: none;
-}
-
-/* A brochure usually sits inside the section it belongs to, in a container of
-   its own, so it is always its parent's first child - it needs real space on
-   both sides or it butts straight up against the content above it. */
-.brochure {
-  margin-block: clamp(2.75rem, 5.5vw, 4rem);
-}
-
-/* Where the brochure is the whole section, the section's own padding already
-   does the separating - the margin on top of it just doubles the gap. */
-.section > .container:only-child > .brochure:only-child {
-  margin-block: 0;
-}
-
-/* Louder than the other callouts: it is an offer, not an aside. A heavier rail,
-   more room inside, a deeper lift, and a title a step up from .h-card. */
-.brochure {
-  padding: clamp(1.75rem, 3.4vw, 2.5rem);
-  border-left-width: 6px;
-  box-shadow: 0 22px 48px -24px rgba(26, 49, 48, 0.45);
-}
-
-.brochure .eyebrow {
-  margin-bottom: 0.5rem;
-  color: var(--olive);
-}
-
-.brochure .h-card {
-  margin-top: 0;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-}
-
-.brochure p:last-of-type {
-  margin-top: 0.55rem;
-  font-size: 1rem;
-  color: var(--ink-soft);
-}
-
-@media (prefers-color-scheme: dark) {
-  .brochure .eyebrow {
-    color: #a9bb8b;
-  }
 }
 
 /* --------------------------------------------------------------------------
