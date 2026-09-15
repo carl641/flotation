@@ -512,6 +512,14 @@ as one kind of thing. Each carries a button that opens the PDF in a new tab
 (`target="_blank" rel="noopener"`, with the new tab named in the `aria-label`),
 matching how Dealer Login and the social links behave.
 
+The brochure callout is deliberately louder than the other callouts - it is an
+offer, not an aside: a 6px olive rail, more padding, a deeper lift, an olive
+eyebrow and a title a step above `.h-card`. It carries `margin-block` on both
+sides, because it is always the only child of its own container and would
+otherwise butt straight against the content above it. Where the brochure *is*
+the whole section, `.section > .container:only-child > .brochure:only-child`
+drops that margin, since the section's own padding already separates it.
+
 The nine full callouts sit high on their page, each right after the section
 that sets up what the brochure covers.
 

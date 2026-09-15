@@ -1900,15 +1900,47 @@ h3 {
   flex: none;
 }
 
-/* A brochure sits inside the section it belongs to rather than in one of its
-   own, so it needs its own top margin where it follows a run of content. */
+/* A brochure usually sits inside the section it belongs to, in a container of
+   its own, so it is always its parent's first child - it needs real space on
+   both sides or it butts straight up against the content above it. */
 .brochure {
-  margin-top: clamp(2rem, 4vw, 3rem);
+  margin-block: clamp(2.75rem, 5.5vw, 4rem);
 }
 
-.container > .brochure:first-child,
-.brochure:first-child {
+/* Where the brochure is the whole section, the section's own padding already
+   does the separating - the margin on top of it just doubles the gap. */
+.section > .container:only-child > .brochure:only-child {
+  margin-block: 0;
+}
+
+/* Louder than the other callouts: it is an offer, not an aside. A heavier rail,
+   more room inside, a deeper lift, and a title a step up from .h-card. */
+.brochure {
+  padding: clamp(1.75rem, 3.4vw, 2.5rem);
+  border-left-width: 6px;
+  box-shadow: 0 22px 48px -24px rgba(26, 49, 48, 0.45);
+}
+
+.brochure .eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--olive);
+}
+
+.brochure .h-card {
   margin-top: 0;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.brochure p:last-of-type {
+  margin-top: 0.55rem;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+  .brochure .eyebrow {
+    color: #a9bb8b;
+  }
 }
 
 /* --------------------------------------------------------------------------
