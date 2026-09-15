@@ -523,13 +523,13 @@ an interruption wherever it was placed.
 | Accessories 2023 | Options & Accessories | the Hardware section head |
 | Marine Concepts 2023 | Options & Accessories | "Boat protection, reinvented" |
 
-Fifteen more pages carry a brochure **button** in the closing CTA band - a
-third `.btn-ghost` beside Get a Quote and Find a Dock Builder. The style pages,
-the galleries hub, Slip Configurations, About, Contact and Get a Quote point at
-the Corporate brochure; WavePro, Ramps & Bridges and Warranty point at
-Advantages.
+Sixteen more pages carry a brochure **button** in the closing CTA band - a
+third `.btn-ghost` beside Get a Quote and Find a Dock Builder. The homepage,
+the style pages, the galleries hub, Slip Configurations, About, Contact and Get
+a Quote point at the Corporate brochure; WavePro, Ramps & Bridges and Warranty
+point at Advantages.
 
-Twenty-four brochure links in total, every one opening in a new tab with
+Twenty-five brochure links in total, every one opening in a new tab with
 `target="_blank" rel="noopener"` and the new tab named in the `aria-label`.
 
 Specialty Styles previously linked the Beaumont brochure at
