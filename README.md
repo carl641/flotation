@@ -506,41 +506,31 @@ Two things to settle before launch:
 
 ## Brochures
 
-Nine PDFs on Uploadcare, surfaced as `.callout.brochure` blocks - the same
-callout component as the warranty panel and the dealer-login line, so they read
-as one kind of thing. Each carries a button that opens the PDF in a new tab
-(`target="_blank" rel="noopener"`, with the new tab named in the `aria-label`),
-matching how Dealer Login and the social links behave.
+Nine PDFs on Uploadcare. There is no brochure component: each one is a line of
+copy and a button inside the section it belongs to, sitting with that section's
+own content rather than in a panel of its own. A boxed callout kept reading as
+an interruption wherever it was placed.
 
-The brochure callout is deliberately louder than the other callouts - it is an
-offer, not an aside: a 6px olive rail, more padding, a deeper lift, an olive
-eyebrow and a title a step above `.h-card`. It carries `margin-block` on both
-sides, because it is always the only child of its own container and would
-otherwise butt straight against the content above it. Where the brochure *is*
-the whole section, `.section > .container:only-child > .brochure:only-child`
-drops that margin, since the section's own padding already separates it.
-
-The nine full callouts sit high on their page, each right after the section
-that sets up what the brochure covers.
-
-Fifteen more pages carry a brochure **button** in the closing CTA band rather
-than a callout of their own - a third `.btn-ghost` beside Get a Quote and Find
-a Dock Builder. The style pages, the galleries hub, Slip Configurations, About,
-Contact and Get a Quote point at the Corporate brochure; WavePro, Ramps &
-Bridges and Warranty point at Advantages. Twenty-four brochure links in total,
-every one opening in a new tab.
-
-| Brochure | Page | Placement |
+| Brochure | Page | Sits in |
 | --- | --- | --- |
-| Corporate Brochure 2023 | Dock Styles hub | section 2, after the intro |
-| Advantages 2023 | Tech Specs | section 3, after the opening pitch |
-| Beaumont Series 2023 | Specialty Styles | inside `#beaumont` |
-| Designer Color Series 2023 | Colors | section 3, before the colour grids |
-| Fixed or Floating Docks | Anchoring | section 2, after "two ways to anchor" |
-| LockDry Marine Decking | LockDry | section 2, after "what is LockDry" |
-| LockDry Refurbish | LockDry | inside the Refurbishing section |
-| Accessories 2023 | Options & Accessories | closes the Hardware section |
-| Marine Concepts 2023 | Options & Accessories | inside `#accessories` |
+| Corporate Brochure 2023 | Dock Styles hub | the opening "Designed to perfection" copy |
+| Advantages 2023 | Tech Specs | "The best aluminum piers and docks on the market" |
+| Beaumont Series 2023 | Specialty Styles | the Beaumont copy |
+| Designer Color Series 2023 | Colors | "Eighteen roofs, seven railings, four decks" |
+| Fixed or Floating Docks | Anchoring | "Two ways to anchor the same dock" |
+| LockDry Marine Decking | LockDry | "What is LockDry aluminum marine decking?" |
+| LockDry Refurbish | LockDry | "Refurbish your existing dock" |
+| Accessories 2023 | Options & Accessories | the Hardware section head |
+| Marine Concepts 2023 | Options & Accessories | "Boat protection, reinvented" |
+
+Fifteen more pages carry a brochure **button** in the closing CTA band - a
+third `.btn-ghost` beside Get a Quote and Find a Dock Builder. The style pages,
+the galleries hub, Slip Configurations, About, Contact and Get a Quote point at
+the Corporate brochure; WavePro, Ramps & Bridges and Warranty point at
+Advantages.
+
+Twenty-four brochure links in total, every one opening in a new tab with
+`target="_blank" rel="noopener"` and the new tab named in the `aria-label`.
 
 Specialty Styles previously linked the Beaumont brochure at
 `aluminumboatdocks.com/boat-dock-brochure-downloads/FSI-BeaumontSeries-2023.pdf`
