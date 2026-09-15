@@ -512,14 +512,23 @@ as one kind of thing. Each carries a button that opens the PDF in a new tab
 (`target="_blank" rel="noopener"`, with the new tab named in the `aria-label`),
 matching how Dealer Login and the social links behave.
 
+Each one shows a **cover mock**: a portrait card in the brand gradient with the
+wordmark, a rule and the brochure's title, tilted two degrees with a spine down
+the binding edge and a shadow under it, so it reads as a printed booklet rather
+than a link. It is built entirely in CSS - there is no cover artwork to host,
+and nothing to re-export when a brochure is revised, only the title string in
+the markup. It lifts on hover, and holds still under `prefers-reduced-motion`.
+Below 620px the cover moves above the copy, because side by side there is not
+enough room left for the button, which does not wrap.
+
 | Brochure | Page | Placement |
 | --- | --- | --- |
-| Corporate Brochure 2023 | Dock Styles hub | own section before the CTA |
-| Advantages 2023 | Tech Specs | own section before the CTA |
+| Corporate Brochure 2023 | Dock Styles hub | section 2, after the intro |
+| Advantages 2023 | Tech Specs | section 3, after the opening pitch |
 | Beaumont Series 2023 | Specialty Styles | inside `#beaumont` |
-| Designer Color Series 2023 | Colors | own section before the CTA |
-| Fixed or Floating Docks | Anchoring | own section before the CTA |
-| LockDry Marine Decking | LockDry | own section before the CTA |
+| Designer Color Series 2023 | Colors | section 3, before the colour grids |
+| Fixed or Floating Docks | Anchoring | section 2, after "two ways to anchor" |
+| LockDry Marine Decking | LockDry | section 2, after "what is LockDry" |
 | LockDry Refurbish | LockDry | inside the Refurbishing section |
 | Accessories 2023 | Options & Accessories | own section before the FAQ |
 | Marine Concepts 2023 | Options & Accessories | inside `#accessories` |
@@ -592,13 +601,14 @@ off-site brochure links remain.
   so a reader learns the shape once. New highlight blocks should use
   `.callout` rather than inventing another treatment.
 
-- Never put a dark fill on a dark ground. The olive primary button measured
-  2.1-2.6:1 against the teal bands and the hero gradient, under the 3:1 WCAG
-  asks of a control's own edge - the button was a shape you could not make out.
-  On `.hero`, `.band-dark`, `.media-section`, `.page-head` and the unscrolled
-  header, `.btn-primary` takes a light `--on-dark` fill with `--teal-950` text
-  instead: 9.8:1 against the band, 14.1:1 for the label. It reverts to olive on
-  light grounds, including the header once it scrolls.
+- The primary button is olive everywhere, by the site owner's call. Olive on
+  the teal bands is only 2.12:1 fill-against-ground, under the 3:1 WCAG asks of
+  a control's edge, so on `.hero`, `.band-dark`, `.media-section`, `.page-head`
+  and the unscrolled header the button also takes a light hairline
+  (`rgba(237, 241, 232, 0.5)`, ~4.4:1 against the band). That edge is what makes
+  it read as a control. The label is pure white at 5.29:1, and the hover olive
+  is `#697a53` - lightened enough to register on a dark ground while keeping
+  the white label at 4.66:1. On light grounds the border drops to transparent.
 - Brand palette: olive `#61714a` (single accent), grey-green neutrals, dark
   teal (`#1a3130` / `#122423`) for the closing CTA band and footer.
 - The closing CTA (`.band-dark`) and the footer are both dark, and the band's
