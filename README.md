@@ -512,14 +512,15 @@ as one kind of thing. Each carries a button that opens the PDF in a new tab
 (`target="_blank" rel="noopener"`, with the new tab named in the `aria-label`),
 matching how Dealer Login and the social links behave.
 
-Each one shows a **cover mock**: a portrait card in the brand gradient with the
-wordmark, a rule and the brochure's title, tilted two degrees with a spine down
-the binding edge and a shadow under it, so it reads as a printed booklet rather
-than a link. It is built entirely in CSS - there is no cover artwork to host,
-and nothing to re-export when a brochure is revised, only the title string in
-the markup. It lifts on hover, and holds still under `prefers-reduced-motion`.
-Below 620px the cover moves above the copy, because side by side there is not
-enough room left for the button, which does not wrap.
+The nine full callouts sit high on their page, each right after the section
+that sets up what the brochure covers.
+
+Fifteen more pages carry a brochure **button** in the closing CTA band rather
+than a callout of their own - a third `.btn-ghost` beside Get a Quote and Find
+a Dock Builder. The style pages, the galleries hub, Slip Configurations, About,
+Contact and Get a Quote point at the Corporate brochure; WavePro, Ramps &
+Bridges and Warranty point at Advantages. Twenty-four brochure links in total,
+every one opening in a new tab.
 
 | Brochure | Page | Placement |
 | --- | --- | --- |
