@@ -531,7 +531,7 @@ every one opening in a new tab.
 | Fixed or Floating Docks | Anchoring | section 2, after "two ways to anchor" |
 | LockDry Marine Decking | LockDry | section 2, after "what is LockDry" |
 | LockDry Refurbish | LockDry | inside the Refurbishing section |
-| Accessories 2023 | Options & Accessories | own section before the FAQ |
+| Accessories 2023 | Options & Accessories | closes the Hardware section |
 | Marine Concepts 2023 | Options & Accessories | inside `#accessories` |
 
 Specialty Styles previously linked the Beaumont brochure at
