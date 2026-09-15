@@ -512,14 +512,23 @@ as one kind of thing. Each carries a button that opens the PDF in a new tab
 (`target="_blank" rel="noopener"`, with the new tab named in the `aria-label`),
 matching how Dealer Login and the social links behave.
 
+Each one shows a **cover mock**: a portrait card in the brand gradient with the
+wordmark, a rule and the brochure's title, tilted two degrees with a spine down
+the binding edge and a shadow under it, so it reads as a printed booklet rather
+than a link. It is built entirely in CSS - there is no cover artwork to host,
+and nothing to re-export when a brochure is revised, only the title string in
+the markup. It lifts on hover, and holds still under `prefers-reduced-motion`.
+Below 620px the cover moves above the copy, because side by side there is not
+enough room left for the button, which does not wrap.
+
 | Brochure | Page | Placement |
 | --- | --- | --- |
-| Corporate Brochure 2023 | Dock Styles hub | own section before the CTA |
-| Advantages 2023 | Tech Specs | own section before the CTA |
+| Corporate Brochure 2023 | Dock Styles hub | section 2, after the intro |
+| Advantages 2023 | Tech Specs | section 3, after the opening pitch |
 | Beaumont Series 2023 | Specialty Styles | inside `#beaumont` |
-| Designer Color Series 2023 | Colors | own section before the CTA |
-| Fixed or Floating Docks | Anchoring | own section before the CTA |
-| LockDry Marine Decking | LockDry | own section before the CTA |
+| Designer Color Series 2023 | Colors | section 3, before the colour grids |
+| Fixed or Floating Docks | Anchoring | section 2, after "two ways to anchor" |
+| LockDry Marine Decking | LockDry | section 2, after "what is LockDry" |
 | LockDry Refurbish | LockDry | inside the Refurbishing section |
 | Accessories 2023 | Options & Accessories | own section before the FAQ |
 | Marine Concepts 2023 | Options & Accessories | inside `#accessories` |

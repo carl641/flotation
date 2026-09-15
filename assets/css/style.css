@@ -1895,9 +1895,12 @@ h3 {
   color: var(--ink-mute);
 }
 
-.dealer-login .btn,
-.brochure .btn {
+.dealer-login .btn {
   flex: none;
+}
+
+.brochure .btn {
+  margin-top: 1.1rem;
 }
 
 /* A brochure sits inside the section it belongs to rather than in one of its
@@ -1909,6 +1912,95 @@ h3 {
 .container > .brochure:first-child,
 .brochure:first-child {
   margin-top: 0;
+}
+
+/* The cover mock: a stand-in for the printed brochure, built in CSS so it
+   needs no artwork. Portrait, brand gradient, wordmark over the title, with a
+   spine down the binding edge and a lift off the page. */
+.brochure {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.brochure-cover {
+  position: relative;
+  flex: none;
+  width: clamp(112px, 12vw, 146px);
+  aspect-ratio: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.85rem 0.8rem 0.9rem 1.05rem;
+  border-radius: 3px 8px 8px 3px;
+  background: linear-gradient(155deg, #35422f 0%, var(--teal-800) 55%, var(--teal-950) 100%);
+  box-shadow: 0 14px 30px -12px rgba(10, 22, 21, 0.55);
+  transform: rotate(-2deg);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+/* The binding edge. */
+.brochure-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 7px;
+  border-radius: 3px 0 0 3px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.08));
+}
+
+.brochure:hover .brochure-cover {
+  transform: rotate(-2deg) translateY(-3px);
+  box-shadow: 0 20px 38px -12px rgba(10, 22, 21, 0.6);
+}
+
+.brochure-cover-mark {
+  position: relative;
+  font-size: 0.46rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: #b9cb99;
+}
+
+.brochure-cover-title {
+  position: relative;
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.25;
+  color: #f4f7ef;
+}
+
+.brochure-cover-title::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-bottom: 0.45rem;
+  background: var(--olive);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brochure-cover,
+  .brochure:hover .brochure-cover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Narrow: the cover moves above the copy. Side by side there is not enough
+   room left for the button, which does not wrap. */
+@media (max-width: 620px) {
+  .brochure {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+  }
+
+  .brochure-cover {
+    width: 104px;
+  }
 }
 
 /* --------------------------------------------------------------------------
