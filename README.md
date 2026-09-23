@@ -375,6 +375,35 @@ point them back at local slugs as those pages get built out. Every "Get a Quote"
 link now points at the local `contact-flotation-systems/` page, and every
 "About Us" link at the local about page, instead of the live URLs.
 
+## Blog
+
+`blog/` is the blog index and `blog/floating-dock-design/` the first post,
+"Floating Dock Design: Essential Considerations for Durability &
+Functionality". Both open on the plain `.page-head` (no hero photo) and close
+on the `.band-dark` CTA. **Blog** is in the footer's Explore column on every
+page and in the sitemap; it is not in the header nav.
+
+A post is one prose column (`.post-body`, 70ch) with a contents rail
+(`.post-toc`) built from the article's own `<h2 id>`s. At 1000px and up the
+rail sits to the left and stays pinned while you scroll; below that it sits
+above the article in two columns. Sub-heads, dot lists, figures
+(`.post-figure`, 16/10 cover) and the key-highlights box (`.callout` plus a
+`.check-list`) are styled under "Blog" in `style.css`. The post's FAQ reuses
+`.faq-list`, and the post carries `BlogPosting`, `BreadcrumbList` and
+`FAQPage` JSON-LD, with the FAQ text generated from the same strings as the
+visible answers. On the index, each post is a `.config-card` whose title link
+stretches over the whole card.
+
+Before launch:
+
+- **Slug.** `/blog/floating-dock-design/` is new; the live WordPress site
+  has no blog to match. Confirm it or pick another before launch.
+- **"Free site evaluation".** The closing CTA offers one, as the post copy
+  does. Nothing else on the site mentions it, so confirm FSI offers it. The
+  button goes to Get a Quote.
+- **Date.** The post is dated September 23, 2026 (the page and JSON-LD).
+  Change both if it publishes on another day.
+
 ## Dock Styles photography
 
 Photos are hosted on Uploadcare and referenced by full CDN URL; no image files
