@@ -41,6 +41,7 @@ link resolves unchanged.
 | Contact Us | `/contact-flotation-systems/` |
 | Warranty Information | `/warranty-information/` |
 | Get a Quote | `/get-boat-dock-quote/` |
+| Find a Dock Builder | `/find-a-dock-builder/` |
 | Privacy Policy | `/privacy-policy/` |
 | Terms of Use | `/terms-of-use/` |
 | Become a Dealer | `/become-a-dealer/` |
@@ -165,9 +166,10 @@ when you scroll past its head. On a plain page the header also takes a solid `--
 bar rather than the translucent blur it wears over a photo - with nothing
 behind it to read against, the translucent version leaves the menu floating.
 The old site called the second one "Site Use"; it is "Terms of Use" here.
-Sitemap is a local page (`sitemap/`) listing all 34 pages.
+Sitemap is a local page (`sitemap/`) listing all 35 pages.
 "Become a Dealer" routes to `become-a-dealer/` and "Find a Dock Builder" to
-the dealer section of Get a Quote.
+`find-a-dock-builder/`, the full dealer list with its state filter. Get a
+Quote keeps one row of three dealers and a button through to that page.
 
 #### Social links
 
