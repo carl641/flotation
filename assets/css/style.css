@@ -3484,8 +3484,9 @@ h3 {
   }
 }
 
-/* Get a Quote: the "every dealer" button sits in the section's upper right,
-   level with the heading; on narrow screens it drops under the copy. */
+/* Get a Quote: the "every dealer" button sits in the section's upper right at
+   every width - level with the heading on wide screens, and above it, still
+   right-aligned, on phones where the two cannot share a row. */
 .dealer-list-top {
   display: flex;
   align-items: flex-start;
@@ -3504,7 +3505,11 @@ h3 {
 
 @media (max-width: 760px) {
   .dealer-list-top {
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .dealer-list-top .btn {
+    align-self: flex-end;
   }
 }
 
