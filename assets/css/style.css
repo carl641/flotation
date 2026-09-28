@@ -3623,6 +3623,166 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
 }
 
+/* Get a Quote: one dealer section. The spotlight dealer gets a wide feature
+   card - both project photos beside the story and contact details - and the
+   row of three dealer cards follows under its own small heading. */
+.dealer-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+}
+
+.dealer-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  height: 3px;
+  background: var(--olive);
+}
+
+/* The photos are pinned inside the media column so they fill whatever height
+   the copy sets, instead of their own tall proportions setting the card's. */
+.dealer-feature-media {
+  position: relative;
+  min-height: 460px;
+  background: var(--surface);
+}
+
+.dealer-feature-media img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+.dealer-feature-media img:first-child {
+  top: 0;
+  height: calc(60% - 2px);
+}
+
+.dealer-feature-media img:last-child {
+  bottom: 0;
+  height: calc(40% - 2px);
+}
+
+.dealer-feature-copy {
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  color: var(--ink-soft);
+}
+
+.dealer-feature .eyebrow {
+  margin-bottom: 0;
+  color: var(--olive);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dealer-feature .eyebrow {
+    color: #a9bb8b;
+  }
+}
+
+.dealer-feature-title {
+  margin-top: 0.4rem;
+  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.dealer-feature-lede {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--ink-mute);
+}
+
+.dealer-feature-copy > p + p {
+  margin-top: 0.8rem;
+}
+
+.dealer-feature-copy > p:not(.eyebrow):not(.dealer-feature-lede) {
+  max-width: 60ch;
+}
+
+.dealer-feature-lede + p {
+  margin-top: 1rem;
+}
+
+.dealer-feature-details {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.dealer-feature-details .dealer-contact {
+  padding: 0;
+}
+
+.dealer-feature-details .dealer-areas {
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  border-top: 0;
+  border-left: 1px solid var(--line);
+}
+
+.dealer-subhead {
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+.dealer-subhead p {
+  margin-top: 0.4rem;
+  color: var(--ink-mute);
+}
+
+.dealer-list-top + .dealer-feature {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .dealer-feature {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dealer-feature-media {
+    min-height: 0;
+    height: clamp(200px, 45vw, 340px);
+  }
+
+  .dealer-feature-media img:first-child,
+  .dealer-feature-media img:last-child {
+    top: 0;
+    bottom: auto;
+    width: calc(50% - 2px);
+    height: 100%;
+  }
+
+  .dealer-feature-media img:last-child {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .dealer-feature-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dealer-feature-details .dealer-areas {
+    padding: 1rem 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
 /* Get a Quote shows a single row of three; the full list has its own page. */
 .dealer-cards.dealer-cards-row {
   grid-template-columns: repeat(3, minmax(0, 1fr));
