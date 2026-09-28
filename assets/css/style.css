@@ -3456,7 +3456,7 @@ h3 {
 
 @media (max-width: 1000px) {
   .dealer-cards.dealer-cards-row {
-    grid-template-columns: minmax(0, 520px);
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -3485,7 +3485,8 @@ h3 {
 }
 
 /* Get a Quote: the "every dealer" button sits in the section's upper right,
-   level with the heading; on narrow screens it drops under the copy. */
+   level with the heading; on phones it drops under the copy. Heading, button
+   and cards all share the container's left and right edges. */
 .dealer-list-top {
   display: flex;
   align-items: flex-start;
@@ -3517,14 +3518,13 @@ h3 {
   color: var(--olive-deep);
 }
 
-/* State filter above the dealer cards; shown only once the script runs. */
+/* State filter above the dealer cards; shown only once the script runs.
+   Starts on the same left edge as the heading and cards. */
 .dealer-filter {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem;
-  max-width: 900px;
-  margin: 0 auto clamp(1.75rem, 3.5vw, 2.5rem);
+  margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 .dealer-filter[hidden] {
@@ -3560,7 +3560,6 @@ h3 {
 .dealer-count {
   flex-basis: 100%;
   margin-top: 0.35rem;
-  text-align: center;
   font-size: 0.85rem;
   color: var(--ink-mute);
 }
