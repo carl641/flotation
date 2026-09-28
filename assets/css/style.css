@@ -3700,29 +3700,14 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
 }
 
 /* The spotlight leads with Randy's story: it sits straight under his name in
-   larger, darker type behind an olive rule, and the contact lines drop to the
-   off-white footer where the other cards keep their bios. */
+   larger, darker type, on the same inner margin as the head and contact lines
+   on both sides, and the contact lines drop to the off-white footer where the
+   other cards keep their bios. */
 .dealer-story {
-  --pad: clamp(1.25rem, 2.5vw, 1.6rem);
-  position: relative;
-  padding: var(--pad) var(--pad) clamp(1.4rem, 3vw, 1.9rem);
-}
-
-/* The olive rule hangs in the card's gutter, so the story text keeps the same
-   inner margin as the business name and the contact lines. */
-.dealer-story::before {
-  content: "";
-  position: absolute;
-  top: var(--pad);
-  bottom: clamp(1.4rem, 3vw, 1.9rem);
-  left: calc(var(--pad) - 0.85rem);
-  width: 3px;
-  border-radius: 2px;
-  background: var(--olive);
+  padding: clamp(1.25rem, 2.5vw, 1.6rem) clamp(1.25rem, 2.5vw, 1.6rem) clamp(1.4rem, 3vw, 1.9rem);
 }
 
 .dealer-story p {
-  max-width: 62ch;
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--ink);
@@ -3748,12 +3733,6 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
 
 .dealer-feature-card .dealer-areas {
   border-color: var(--line);
-}
-
-@media (prefers-color-scheme: dark) {
-  .dealer-story::before {
-    background: #a9bb8b;
-  }
 }
 
 .dealer-subhead {
