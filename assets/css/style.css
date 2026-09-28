@@ -3378,11 +3378,22 @@ h3 {
   border-radius: var(--r-card);
   box-shadow: var(--shadow-card);
   font-size: 0.94rem;
+  position: relative;
 }
 
+.dealer-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--olive);
+}
+
+/* The cards sit on the light green tint, so every part of them is white or
+   near-white; a thin olive rule along the top edge marks each one. */
 .dealer-head {
   padding: 1.25rem clamp(1.25rem, 2.5vw, 1.6rem);
-  background: var(--olive-wash);
+  background: var(--surface);
   border-bottom: 1px solid var(--line);
 }
 
@@ -3539,7 +3550,7 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   margin-top: auto;
   padding: 1rem clamp(1.25rem, 2.5vw, 1.6rem) 1.35rem;
   border-top: 1px solid var(--line);
-  background: var(--surface-tint);
+  background: var(--paper);
   font-size: 0.9rem;
   color: var(--ink-soft);
 }
