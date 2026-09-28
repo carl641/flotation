@@ -3808,56 +3808,34 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   }
 }
 
-/* Get a Quote: the eyebrow and heading sit on the left with the "every dock
-   builder" button level with them on the right; the intro copy runs the full
-   width of the section underneath. On phones the button follows the copy.
-   Heading, copy, button and cards all share the container's edges. */
+/* Get a Quote: the "every dealer" button sits in the section's upper right,
+   level with the heading; on phones it drops under the copy. Heading, button
+   and cards all share the container's left and right edges. */
 .dealer-list-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas:
-    "head btn"
-    "copy copy";
-  align-items: start;
-  gap: 0 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
   margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
 }
 
 .dealer-list-top .section-head {
-  grid-area: head;
-  max-width: none;
   margin-bottom: 0;
 }
 
-.dealer-list-top .btn {
-  grid-area: btn;
-}
-
-.dealer-intro {
-  grid-area: copy;
-  margin-top: 1rem;
-}
-
-.dealer-intro .lede {
-  max-width: none;
-}
-
-.dealer-intro .lede + .lede {
+/* The intro is two short paragraphs at one size; they share the room beside
+   the button and wrap to the lede's comfortable measure. */
+.dealer-list-top .section-head .lede + .lede {
   margin-top: 0.75rem;
+}
+
+.dealer-list-top .btn {
+  flex: none;
 }
 
 @media (max-width: 760px) {
   .dealer-list-top {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "head"
-      "copy"
-      "btn";
-  }
-
-  .dealer-list-top .btn {
-    justify-self: start;
-    margin-top: 1.25rem;
+    flex-direction: column;
   }
 }
 
