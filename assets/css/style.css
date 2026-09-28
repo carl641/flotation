@@ -3823,6 +3823,12 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   margin-bottom: 0;
 }
 
+/* The intro is two short paragraphs at one size; they share the room beside
+   the button and wrap to the lede's comfortable measure. */
+.dealer-list-top .section-head .lede + .lede {
+  margin-top: 0.75rem;
+}
+
 .dealer-list-top .btn {
   flex: none;
 }
