@@ -12,6 +12,17 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
+## Cache busting
+
+Every page links `assets/css/style.css` and `assets/js/main.js` with a
+`?v=<hash>` taken from the file's contents, so browsers and the host fetch the
+new copy as soon as either changes instead of serving a cached one. After
+editing either file, run:
+
+```bash
+python3 tools/stamp-assets.py
+```
+
 ## Pages
 
 Each page lives at the live site's existing WordPress slug, as `<slug>/index.html`,
