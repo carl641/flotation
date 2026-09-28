@@ -170,6 +170,11 @@ Sitemap is a local page (`sitemap/`) listing all 35 pages.
 "Become a Dealer" routes to `become-a-dealer/` and "Find a Dock Builder" to
 `find-a-dock-builder/`, the full dealer list with its state filter. Get a
 Quote keeps one row of three dealers and a button through to that page.
+The dealer page groups its cards: Dealer spotlight (dealers with a
+description), Dealer directory (contact details only), then More dealers in
+our network (name and states only, details to come). On every card the contact
+details are single icon-marked lines, and territories sit in their own small
+block, clamped to two lines with a "Show all" toggle where a list runs long.
 
 #### Social links
 
