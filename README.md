@@ -12,6 +12,14 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
+## Logos
+
+The header pill shows the 2025 horizontal logo
+(`Logo-FSI-Vector-HorizGradGreen-2025.png`) and the footer's left column shows
+the stacked 2025 logo (`Logo-FloSysLogo-2025-Stacked.png`) on a white badge
+above the company name, linking home. Both are served from the site's image
+CDN; a smaller export or an SVG of each would load faster.
+
 ## Cache busting
 
 Every page links `assets/css/style.css` and `assets/js/main.js` with a

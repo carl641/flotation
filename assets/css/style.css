@@ -2415,6 +2415,28 @@ h3 {
   padding-block: 4rem 3rem;
 }
 
+/* The stacked 2025 logo on a white badge - the same treatment as the header's
+   pill - above the company name in the footer's left corner. */
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  padding: 0.9rem 1.1rem;
+  background: #fff;
+  border-radius: var(--r-card);
+  box-shadow: 0 12px 26px -14px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s var(--ease);
+}
+
+.footer-logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer-logo img {
+  display: block;
+  width: auto;
+  height: 96px;
+}
+
 .footer-brand strong {
   display: block;
   color: #fff;
