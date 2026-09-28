@@ -284,70 +284,482 @@
           <h2 class="h-section">Our dealers cover the US</h2>
           <p class="lede">From Fort Worth to Illinois to Virginia &mdash; find the one on your water.</p>
         </div>
+        <div class="dealer-filter reveal" role="group" aria-label="Filter dealers by state" hidden>
+            <button type="button" class="dealer-chip" data-state="all" aria-pressed="true">All states</button>
+            <button type="button" class="dealer-chip" data-state="al" aria-pressed="false">Alabama</button>
+            <button type="button" class="dealer-chip" data-state="ar" aria-pressed="false">Arkansas</button>
+            <button type="button" class="dealer-chip" data-state="ca" aria-pressed="false">California</button>
+            <button type="button" class="dealer-chip" data-state="fl" aria-pressed="false">Florida</button>
+            <button type="button" class="dealer-chip" data-state="ga" aria-pressed="false">Georgia</button>
+            <button type="button" class="dealer-chip" data-state="il" aria-pressed="false">Illinois</button>
+            <button type="button" class="dealer-chip" data-state="ks" aria-pressed="false">Kansas</button>
+            <button type="button" class="dealer-chip" data-state="ky" aria-pressed="false">Kentucky</button>
+            <button type="button" class="dealer-chip" data-state="la" aria-pressed="false">Louisiana</button>
+            <button type="button" class="dealer-chip" data-state="ms" aria-pressed="false">Mississippi</button>
+            <button type="button" class="dealer-chip" data-state="mo" aria-pressed="false">Missouri</button>
+            <button type="button" class="dealer-chip" data-state="nc" aria-pressed="false">North Carolina</button>
+            <button type="button" class="dealer-chip" data-state="sc" aria-pressed="false">South Carolina</button>
+            <button type="button" class="dealer-chip" data-state="tn" aria-pressed="false">Tennessee</button>
+            <button type="button" class="dealer-chip" data-state="tx" aria-pressed="false">Texas</button>
+            <button type="button" class="dealer-chip" data-state="va" aria-pressed="false">Virginia</button>
+          <p class="dealer-count" aria-live="polite"></p>
+        </div>
         <div class="dealer-cards">
-          <article class="dealer-card reveal">
+          <article class="dealer-card reveal" data-states="nc">
+            <header class="dealer-head">
+              <h3 class="h-card">760 Docks, LLC</h3>
+              <p>Tim &amp; Brittney Gauvin</p>
+              <p class="dealer-states">North Carolina</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="ky">
+            <header class="dealer-head">
+              <h3 class="h-card">Bar H Solutions, LLC</h3>
+              <p>Jake Bartlett, Tristan Hagan</p>
+              <p class="dealer-states">Kentucky</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="al ga">
             <header class="dealer-head">
               <h3 class="h-card">Big Water Docks, LLC</h3>
               <p>Shawn Jackson</p>
+              <p class="dealer-states">Alabama &middot; Georgia</p>
             </header>
             <dl class="dealer-meta">
               <div><dt>Email</dt><dd><a href="mailto:shawn@bigwaterdocks.com">shawn@bigwaterdocks.com</a></dd></div>
               <div><dt>Website</dt><dd><a href="https://www.bigwaterdocks.com" target="_blank" rel="noopener">www.bigwaterdocks.com</a></dd></div>
               <div><dt>Address</dt><dd>1106 Otho Road<br>Abbeville, AL 36316</dd></div>
-              <div><dt>Phone</dt><dd><span class="nowrap">(334) 441-5069</span></dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+13344415069">(334) 441-5069</a></dd></div>
               <div><dt>Territories</dt><dd>Lake Eufaula / Walter F. George Lake</dd></div>
             </dl>
           </article>
-          <article class="dealer-card reveal">
+          <article class="dealer-card reveal" data-states="la tx">
             <header class="dealer-head">
               <h3 class="h-card">Boathouse Equipment Co., LLC</h3>
               <p>Richard Faries</p>
+              <p class="dealer-states">Louisiana &middot; Texas</p>
             </header>
             <dl class="dealer-meta">
               <div><dt>Email</dt><dd><a href="mailto:fariesrc@aol.com">fariesrc@aol.com</a></dd></div>
               <div><dt>Website</dt><dd><a href="https://www.boathouseequipment.com" target="_blank" rel="noopener">www.boathouseequipment.com</a></dd></div>
               <div><dt>Address</dt><dd>610 Sophia Lane<br>Shreveport, LA 71115</dd></div>
-              <div><dt>Phone</dt><dd><span class="nowrap">(318) 393-2285</span>, <span class="nowrap">(318) 797-0523</span> (cell)</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+13183932285">(318) 393-2285</a>, <a href="tel:+13187970523">(318) 797-0523</a> (cell)</dd></div>
               <div><dt>Territories</dt><dd>North &amp; Central Louisiana; Caddo Lake in Texas</dd></div>
             </dl>
           </article>
-          <article class="dealer-card reveal">
+          <article class="dealer-card reveal" data-states="ca">
+            <header class="dealer-head">
+              <h3 class="h-card">Bobsin Construction, Inc.</h3>
+              <p>Brandon Bobsin</p>
+              <p class="dealer-states">California</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="nc sc va">
             <header class="dealer-head">
               <h3 class="h-card">Buggs Island Dock Service</h3>
               <p>Mike &amp; Terry Denton</p>
+              <p class="dealer-states">North Carolina &middot; South Carolina &middot; Virginia</p>
             </header>
             <dl class="dealer-meta">
               <div><dt>Email</dt><dd><a href="mailto:kerrlakedocks@gmail.com">kerrlakedocks@gmail.com</a></dd></div>
               <div><dt>Website</dt><dd><a href="https://www.kerrlakedocks.com" target="_blank" rel="noopener">www.kerrlakedocks.com</a></dd></div>
               <div><dt>Address</dt><dd>11632 Highway 15<br>Clarksville, VA 23927</dd></div>
-              <div><dt>Phone</dt><dd><span class="nowrap">(434) 374-8028</span></dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+14343748028">(434) 374-8028</a></dd></div>
               <div><dt>Territories</dt><dd>Kerr Lake, Lake Gaston, Lake Chesdin, Leesville Lake, Smith Mountain Lake</dd></div>
             </dl>
             <p class="dealer-bio">Mike and Terry have been with Flotation Systems since 2006, bringing Mike&rsquo;s 40 years of construction, carpentry and fabrication experience and Terry&rsquo;s artist&rsquo;s eye to every dock they build. Kerr Lake residents with years of experience building in the area.</p>
           </article>
-          <article class="dealer-card reveal">
+          <article class="dealer-card reveal" data-states="tn">
             <header class="dealer-head">
               <h3 class="h-card">C.B.S Dock Service</h3>
               <p>Sim Stewart</p>
+              <p class="dealer-states">Tennessee</p>
             </header>
             <dl class="dealer-meta">
               <div><dt>Email</dt><dd><a href="mailto:cbsdocks@hotmail.com">cbsdocks@hotmail.com</a></dd></div>
               <div><dt>Address</dt><dd>2118 Cherokee Drive<br>Beanstation, TN 37708</dd></div>
-              <div><dt>Phone</dt><dd><span class="nowrap">(865) 767-6772</span>, <span class="nowrap">(865) 310-1360</span> (cell)</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18657676772">(865) 767-6772</a>, <a href="tel:+18653101360">(865) 310-1360</a> (cell)</dd></div>
               <div><dt>Territories</dt><dd>Cherokee Lake, Douglas Lake</dd></div>
             </dl>
             <p class="dealer-bio">For over a decade Sim has represented Flotation Systems in Tennessee. He got started after finding nothing but old wood docks on Douglas and Cherokee lakes and being certain there was a better alternative. He prides himself on the honesty and integrity he brings to every sale.</p>
           </article>
-          <article class="dealer-card reveal">
+          <article class="dealer-card reveal" data-states="nc sc">
             <header class="dealer-head">
               <h3 class="h-card">Construction Specialties &amp; Design Builders</h3>
               <p>Terry Baker</p>
+              <p class="dealer-states">North Carolina &middot; South Carolina</p>
             </header>
             <dl class="dealer-meta">
               <div><dt>Email</dt><dd><a href="mailto:tbaker@als88.com">tbaker@als88.com</a></dd></div>
               <div><dt>Address</dt><dd>6475 Brevard Road<br>Etowah, NC 28729</dd></div>
-              <div><dt>Phone</dt><dd><span class="nowrap">(828) 890-3507</span>, <span class="nowrap">(828) 691-3422</span> (cell)</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18288903507">(828) 890-3507</a>, <a href="tel:+18286913422">(828) 691-3422</a> (cell)</dd></div>
               <div><dt>Territories</dt><dd>North Carolina: Lake Lure, Adger Lake, Toxaway Lake, Lake Glenville, Lake Moss, Summit Lake; South Carolina: Lake Greenwood, Lake Bowen</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Dave &amp; Drew&rsquo;s Docks</h3>
+              <p>David Carroll</p>
+              <p class="dealer-states">Tennessee</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:jeanniecarroll42@gmail.com">jeanniecarroll42@gmail.com</a></dd></div>
+              <div><dt>Address</dt><dd>3626 Demory Road<br>LaFollette, TN 37766</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+14234941215">(423) 494-1215</a></dd></div>
+              <div><dt>Territories</dt><dd>Norris Lake</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Deck &amp; Dock Builders</h3>
+              <p>Greg Cotten</p>
+              <p class="dealer-states">Tennessee</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:gcotton@blomand.net">gcotton@blomand.net</a></dd></div>
+              <div><dt>Address</dt><dd>1967 Rock Island Road<br>Rock Island, TN 38581</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+19316862373">(931) 686-2373</a>, <a href="tel:+19312125398">(931) 212-5398</a> (cell)</dd></div>
+              <div><dt>Territories</dt><dd>Collins River, Rocky River, Caney Fork River, Center Hill Lake, Tims Ford Lake</dd></div>
+            </dl>
+            <p class="dealer-bio">Greg has been building and installing docks for 25 years. He is happiest on the water, whether constructing a dock, running his marina, or escaping to do some saltwater fishing in Florida. NASCAR, the Vols, and his wife and four children keep him busy when he is not installing his next dock.</p>
+          </article>
+          <article class="dealer-card reveal" data-states="tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Dock Doc 24/7</h3>
+              <p>Judd Rice</p>
+              <p class="dealer-states">Tennessee</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:dockdoc247@yahoo.com">dockdoc247@yahoo.com</a></dd></div>
+              <div><dt>Address</dt><dd>1715 Mount Holston Road<br>Bluff City, TN 37618</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18284428695">(828) 442-8695</a></dd></div>
+              <div><dt>Territories</dt><dd>Boone Lake, Watauga Lake, South Holston Lake</dd></div>
+            </dl>
+            <p class="dealer-bio">Judd is an experienced Flotation Systems aluminum boat dock dealer. He proudly represents us on Tennessee&rsquo;s Boone Lake, Watauga Lake, and South Holston Lake. Please call or email him with any questions about the complete line of Flotation Systems docks, additions, and accessories.</p>
+          </article>
+          <article class="dealer-card reveal" data-states="ky">
+            <header class="dealer-head">
+              <h3 class="h-card">Dock Solutions of Kentucky</h3>
+              <p>Chad Helm</p>
+              <p class="dealer-states">Kentucky</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="ca">
+            <header class="dealer-head">
+              <h3 class="h-card">DockPro USA</h3>
+              <p>Daniel Allen</p>
+              <p class="dealer-states">California</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Docks &amp; Decks</h3>
+              <p>Aaron Feeney</p>
+              <p class="dealer-states">Tennessee</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="la">
+            <header class="dealer-head">
+              <h3 class="h-card">Dockworx Marine Construction, LLC</h3>
+              <p>Billy Palmer</p>
+              <p class="dealer-states">Louisiana</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:info@dock-worx.com">info@dock-worx.com</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.dock-worx.com" target="_blank" rel="noopener">www.dock-worx.com</a></dd></div>
+              <div><dt>Address</dt><dd>9060 Natchitoches Highway<br>Robeline, LA 71469</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+13183329431">(318) 332-9431</a></dd></div>
+              <div><dt>Territories</dt><dd>Toledo Bend</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="al il">
+            <header class="dealer-head">
+              <h3 class="h-card">Flotation Systems, Inc.</h3>
+              <p>Melanie Powe</p>
+              <p class="dealer-states">Alabama &middot; Illinois</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:melanie@aluminumboatdocks.com">melanie@aluminumboatdocks.com</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.aluminumboatdocks.com" target="_blank" rel="noopener">www.aluminumboatdocks.com</a></dd></div>
+              <div><dt>Address</dt><dd>2700 Alabama Highway 69 South<br>Cullman, AL 35057</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18007111785">(800) 711-1785</a></dd></div>
+              <div><dt>Territories</dt><dd>Alabama: Smith Lake, Tallapoosa River; Georgia: Lake Allatoona, Lake Sidney Lanier, Lake Hartwell, Savannah River, Lake Oconee, Lake Sinclair; South Carolina: Clarks Hill / Thurmond Lake, Lake Murray; Tennessee: Lake Normandy; Massachusetts, Rhode Island, Connecticut, and nationwide</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="tx">
+            <header class="dealer-head">
+              <h3 class="h-card">FS Texas, LLC</h3>
+              <p>Caleb &amp; Anna Burk</p>
+              <p class="dealer-states">Texas</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:caleb_burk@yahoo.com">caleb_burk@yahoo.com</a></dd></div>
+              <div><dt>Address</dt><dd>308 Cove Road<br>Gordon, TX 76453</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18176588641">(817) 658-8641</a></dd></div>
+              <div><dt>Territories</dt><dd>Lake Palo Pinto, Possum Kingdom, Hubbard Creek</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="nc">
+            <header class="dealer-head">
+              <h3 class="h-card">Jarman Piers &amp; Construction</h3>
+              <p>Jason Jarman</p>
+              <p class="dealer-states">North Carolina</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:jarmanjason@yahoo.com">jarmanjason@yahoo.com</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.jarmanpiers.com" target="_blank" rel="noopener">www.jarmanpiers.com</a></dd></div>
+              <div><dt>Address</dt><dd>1179 Riverwood Road<br>Lexington, NC 27292</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+13362508185">(336) 250-8185</a> (cell), <a href="tel:+13367986089">(336) 798-6089</a> (home)</dd></div>
+              <div><dt>Territories</dt><dd>High Rock Lake, Badin Lake, Lake Tillery, and more including the James River</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Kirby Construction</h3>
+              <p>Daniel Kirby</p>
+              <p class="dealer-states">Tennessee</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="tx">
+            <header class="dealer-head">
+              <h3 class="h-card">Kukaro Docks</h3>
+              <p>Tim Cannon</p>
+              <p class="dealer-states">Texas</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:tim@kukarodock.com">tim@kukarodock.com</a></dd></div>
+              <div><dt>Address</dt><dd>9120 FM 1201<br>Gainesville, TX 76240</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+19403724444">(940) 372-4444</a></dd></div>
+              <div><dt>Territories</dt><dd>Hubert H. Moss Lake</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="ar">
+            <header class="dealer-head">
+              <h3 class="h-card">Lake Greeson Docks</h3>
+              <p>Hunter Fant</p>
+              <p class="dealer-states">Arkansas</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:lakegreesondocks@gmail.com">lakegreesondocks@gmail.com</a></dd></div>
+              <div><dt>Address</dt><dd>PO Box 535<br>Murfreesboro, AR 71958</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18702851148">(870) 285-1148</a></dd></div>
+              <div><dt>Territories</dt><dd>Lake Greeson</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="nc">
+            <header class="dealer-head">
+              <h3 class="h-card">Lake James Outdoors</h3>
+              <p>Jason Allison</p>
+              <p class="dealer-states">North Carolina</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:info@lakejamesoutdoors.com">info@lakejamesoutdoors.com</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.lakejamesoutdoors.com" target="_blank" rel="noopener">www.lakejamesoutdoors.com</a></dd></div>
+              <div><dt>Address</dt><dd>1464 Stacy Hill Road<br>Marion, NC 28752</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18284428695">(828) 442-8695</a>, <a href="tel:+13362508185">(336) 250-8185</a> (cell)</dd></div>
+              <div><dt>Territories</dt><dd>Lake James, Lake Rhodhiss, Lookout Shoals, Lake Hickory</dd></div>
+            </dl>
+            <p class="dealer-bio">Jason brings over ten years of experience in the dock industry to his partnership with Flotation Systems. An avid outdoorsman and family man, he loves being out on the water. When it comes to his docks, the standard of his business is that they &ldquo;always stand behind our work.&rdquo;</p>
+          </article>
+          <article class="dealer-card reveal" data-states="al ms tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Lake Life Solutions, LLC</h3>
+              <p>Sonya Lee, Kevin Stevens</p>
+              <p class="dealer-states">Alabama &middot; Mississippi &middot; Tennessee</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="ks">
+            <header class="dealer-head">
+              <h3 class="h-card">Lakeside Solutions</h3>
+              <p>George Papacek</p>
+              <p class="dealer-states">Kansas</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="ga sc">
+            <header class="dealer-head">
+              <h3 class="h-card">Legacy Dock Repair, LLC</h3>
+              <p>Colin Burris, Brenden Milstead</p>
+              <p class="dealer-states">Georgia &middot; South Carolina</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="nc">
+            <header class="dealer-head">
+              <h3 class="h-card">Legacy Docks &amp; Shoreline</h3>
+              <p>Todd Bennick, Stefan Wilson</p>
+              <p class="dealer-states">North Carolina</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="tn">
+            <header class="dealer-head">
+              <h3 class="h-card">LMH Waterfront Construction, LLC</h3>
+              <p>Matt Fugate</p>
+              <p class="dealer-states">Tennessee</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="il">
+            <header class="dealer-head">
+              <h3 class="h-card">McCoy Marine</h3>
+              <p>George McCoy</p>
+              <p class="dealer-states">Illinois</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:george@mccoymarine.com">george@mccoymarine.com</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.mccoymarine.com" target="_blank" rel="noopener">www.mccoymarine.com</a></dd></div>
+              <div><dt>Address</dt><dd>805 E Division<br>Coal City, IL 60416</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18156344248">(815) 634-4248</a>, <a href="tel:+18154058979">(815) 405-8979</a> (cell)</dd></div>
+              <div><dt>Territories</dt><dd>State of Illinois (with the exception of Lake of Egypt &amp; Mill Creek)</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="ms">
+            <header class="dealer-head">
+              <h3 class="h-card">Pickwick Flotations</h3>
+              <p>Tony Rooney</p>
+              <p class="dealer-states">Mississippi</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:tnyrooney@yahoo.com">tnyrooney@yahoo.com</a></dd></div>
+              <div><dt>Address</dt><dd>8 County Road 430<br>Iuka, MS 38852</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+16624232459">(662) 423-2459</a>, <a href="tel:+16624238359">(662) 423-8359</a> (cell)</dd></div>
+              <div><dt>Territories</dt><dd>Pickwick Lake, Bear Creek, Lake Wheeler, Wilson Lake</dd></div>
+            </dl>
+            <p class="dealer-bio">Tony is a dock-building veteran with over 7 years of quality construction on his resume. His first tour of Flotation Systems headquarters convinced him that the quality of our docks was up to the high standards of his work, and we have been partners ever since. Away from the docks, Tony races motorcycles, watches Alabama football and NHRA drag racing, and spends time with his family.</p>
+          </article>
+          <article class="dealer-card reveal" data-states="ga nc tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Precision Docks</h3>
+              <p>Jeff Stamey</p>
+              <p class="dealer-states">Georgia &middot; North Carolina &middot; Tennessee</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:precisionfab@hotmail.com">precisionfab@hotmail.com</a></dd></div>
+              <div><dt>Address</dt><dd>132 Ruel Hall Road<br>Hayesville, NC 28904</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18283891212">(828) 389-1212</a>, <a href="tel:+17068972787">(706) 897-2787</a> (cell)</dd></div>
+              <div><dt>Territories</dt><dd>North Carolina: Lake Hiwassee, Lake Santeetlah, Lake Nantahala, Lake Chatuge, Lake Appalachia, Fontana Lake; Georgia: Lake Allatoona, Lake Burton, Lake Rabun, Lake Nottely, Lake Blue Ridge; Tennessee: Watts Bar Lake</dd></div>
+            </dl>
+            <p class="dealer-bio">Jeff brings years of waterfront development experience and top-notch customer service to the Flotation Systems dealer team. A Navy veteran with extensive construction industry expertise, Jeff prides himself on building both exceptional docks and lasting relationships with every client. In his time away from the water, he enjoys farming, golf, coaching school sports, and spending time with his wife and daughter.</p>
+          </article>
+          <article class="dealer-card reveal" data-states="il">
+            <header class="dealer-head">
+              <h3 class="h-card">Rock-N-Shoreline Inc.</h3>
+              <p>Caelin Dhom</p>
+              <p class="dealer-states">Illinois</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="fl">
+            <header class="dealer-head">
+              <h3 class="h-card">Saltwater Builders, LLC</h3>
+              <p>Forrest Cothron</p>
+              <p class="dealer-states">Florida</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:forrest@saltwaterbuilders.com">forrest@saltwaterbuilders.com</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.saltwaterbuilders.com" target="_blank" rel="noopener">www.saltwaterbuilders.com</a></dd></div>
+              <div><dt>Address</dt><dd>5750 Northwest 57th Court<br>Bell, FL 32619</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18553625748">(855) DOCKS4U</a></dd></div>
+              <div><dt>Territories</dt><dd>Suwannee River, Central &amp; Northeast Florida</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="tx">
+            <header class="dealer-head">
+              <h3 class="h-card">Shepco Development, Inc.</h3>
+              <p>Matt Hageman</p>
+              <p class="dealer-states">Texas</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="tn va">
+            <header class="dealer-head">
+              <h3 class="h-card">Siegel Services</h3>
+              <p>Mark Siegel</p>
+              <p class="dealer-states">Tennessee &middot; Virginia</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Tennessee Dock Masters, LLC</h3>
+              <p>Daniel Chambers</p>
+              <p class="dealer-states">Tennessee</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:daniel@tndockmasters.com">daniel@tndockmasters.com</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.tndockmasters.com" target="_blank" rel="noopener">www.tndockmasters.com</a></dd></div>
+              <div><dt>Address</dt><dd>3548 Camp Road<br>Ooltewah, TN 37363</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+14233543000">(423) 354-3000</a></dd></div>
+              <div><dt>Territories</dt><dd>Southeast Tennessee</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="ky">
+            <header class="dealer-head">
+              <h3 class="h-card">Travis Boat Docks &amp; Lifts</h3>
+              <p>Randy Travis</p>
+              <p class="dealer-states">Kentucky</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:rtravis@apex.net">rtravis@apex.net</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.travisboatdocks.com" target="_blank" rel="noopener">www.travisboatdocks.com</a></dd></div>
+              <div><dt>Address</dt><dd>350 US Hwy 68 East<br>Benton, KY 42025</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+12705590687">(270) 559-0687</a></dd></div>
+              <div><dt>Territories</dt><dd>Kentucky Lake</dd></div>
+            </dl>
+            <p class="dealer-bio">Randy brings the skills and experience of more than 36 years in manufacturing to every dock. He started with Flotation Systems because, in his own words, he wanted to find an honest dock builder. Now that builder is him, and he most enjoys the satisfaction of his customers with a job well done. When not building quality docks, Randy spends time with his family.</p>
+          </article>
+          <article class="dealer-card reveal" data-states="al">
+            <header class="dealer-head">
+              <h3 class="h-card">Waterfront Solutions, LLC</h3>
+              <p>Shannon Burnett</p>
+              <p class="dealer-states">Alabama</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:burnettshannon99@gmail.com">burnettshannon99@gmail.com</a></dd></div>
+              <div><dt>Address</dt><dd>20781 Max Vintson Rd<br>Northport, AL 35475</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+12052928681">(205) 292-8681</a></dd></div>
+              <div><dt>Territories</dt><dd>Tuscaloosa, Hale County</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="ga">
+            <header class="dealer-head">
+              <h3 class="h-card">West Georgia Docks, LLC</h3>
+              <p>Thad Hackley</p>
+              <p class="dealer-states">Georgia</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:twhd75@yahoo.com">twhd75@yahoo.com</a></dd></div>
+              <div><dt>Address</dt><dd>113 Franklin Way<br>LaGrange, GA 30240</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+17065236965">(706) 523-6965</a></dd></div>
+              <div><dt>Territories</dt><dd>West Point Lake</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="mo">
+            <header class="dealer-head">
+              <h3 class="h-card">Williams Lakefront Construction</h3>
+              <p>Brad Williams</p>
+              <p class="dealer-states">Missouri</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:brad@williamslakefront.com">brad@williamslakefront.com</a></dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.williamslakefront.com" target="_blank" rel="noopener">www.williamslakefront.com</a></dd></div>
+              <div><dt>Address</dt><dd>2301 US Highway 40<br>Blue Springs, MO 64015</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+18168094577">(816) 809-4577</a></dd></div>
+              <div><dt>Territories</dt><dd>Lake Lotawana, Lake Winnebago, Lake Tapawingo, Blue Springs Lake, Longview Lake, Smithville Lake, Lake Dabinawa, Prairie Lee Lake, Raintree Lake, Council Grove Lake, Clinton Lake, Gardner Lake, Lock Lloyd Lake, Linn Valley Lakes, Lake Quivira, Sugar Valley Lake, Tanglewood Lake, Lake Waukomis, Weatherby Lake</dd></div>
+            </dl>
+          </article>
+          <article class="dealer-card reveal" data-states="tx">
+            <header class="dealer-head">
+              <h3 class="h-card">Willis Construction</h3>
+              <p>Chris Willis</p>
+              <p class="dealer-states">Texas</p>
+            </header>
+          </article>
+          <article class="dealer-card reveal" data-states="tn">
+            <header class="dealer-head">
+              <h3 class="h-card">Winchester Boat Dock Co.</h3>
+              <p>Michael Thomason</p>
+              <p class="dealer-states">Tennessee</p>
+            </header>
+            <dl class="dealer-meta">
+              <div><dt>Email</dt><dd><a href="mailto:winchester.docks@outlook.com">winchester.docks@outlook.com</a></dd></div>
+              <div><dt>Address</dt><dd>114 5th Ave. NE<br>Winchester, TN 37398</dd></div>
+              <div><dt>Phone</dt><dd><a href="tel:+19315818731">(931) 581-8731</a></dd></div>
+              <div><dt>Territories</dt><dd>Tims Ford Lake, Woods Reservoir, Normandy Lake</dd></div>
             </dl>
           </article>
         </div>

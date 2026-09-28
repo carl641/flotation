@@ -682,3 +682,37 @@
     quote.insertAdjacentElement("afterend", btn);
   });
 })();
+
+// Dealer list: filter the cards by state. Without the script every card shows.
+(function () {
+  var filter = document.querySelector(".dealer-filter");
+  if (!filter) return;
+  var chips = [].slice.call(filter.querySelectorAll(".dealer-chip"));
+  var cards = [].slice.call(document.querySelectorAll(".dealer-card[data-states]"));
+  var count = filter.querySelector(".dealer-count");
+
+  function show(state) {
+    var shown = 0;
+    cards.forEach(function (card) {
+      var match = state === "all" || card.getAttribute("data-states").split(" ").indexOf(state) > -1;
+      card.hidden = !match;
+      if (match) {
+        card.classList.add("in");
+        shown++;
+      }
+    });
+    chips.forEach(function (chip) {
+      chip.setAttribute("aria-pressed", chip.getAttribute("data-state") === state ? "true" : "false");
+    });
+    count.textContent = shown + (shown === 1 ? " dealer" : " dealers") +
+      (state === "all" ? "" : " in " + filter.querySelector('[data-state="' + state + '"]').textContent);
+  }
+
+  filter.addEventListener("click", function (event) {
+    var chip = event.target.closest(".dealer-chip");
+    if (chip) show(chip.getAttribute("data-state"));
+  });
+
+  filter.hidden = false;
+  show("all");
+})();
