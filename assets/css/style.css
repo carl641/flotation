@@ -3829,13 +3829,20 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   margin-top: 0.75rem;
 }
 
+/* Centred on the intro block rather than pinned to its top corner, so the
+   heading and copy on the left and the button on the right balance. */
 .dealer-list-top .btn {
   flex: none;
+  align-self: center;
 }
 
 @media (max-width: 760px) {
   .dealer-list-top {
     flex-direction: column;
+  }
+
+  .dealer-list-top .btn {
+    align-self: flex-start;
   }
 }
 
