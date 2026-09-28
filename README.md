@@ -251,16 +251,13 @@ laid out like Contact Us:
 - **How to order** - the LockDry decking Sketch / Detail / Send steps, each
   with its `order-step` photo.
 - **After you send it** - quote turnaround, payment methods and lead times.
-- **Find a dock builder** - the live intro copy and the "taking on dealers
-  nationwide" line.
-- **Dealer spotlight** - Randy Travis, with `spotlight1` and `spotlight2` -
-  followed by
-  the first five dealers as cards - a tinted header with the company and
-  contact name, then labelled rows for email, website, address, phone and
-  territories, with the bio in a tinted footer where the live site has a real
-  one. The other
-  twenty are in `scratchpad/dealers.py` if the list should grow or move to a
-  dealer page of its own.
+- **Find a dock builder** - one tinted section holding everything about
+  dealers: the live intro copy and the "taking on dealers nationwide" line,
+  with a "See every dealer by state" button top right; the Randy Travis
+  spotlight as a wide feature card (`spotlight1` and `spotlight2` beside his
+  story, contact details and territory); then "Our dealers cover the US" with
+  a row of three dealers who have real bios. The full list lives on
+  `find-a-dock-builder/`.
 
 The header's "Get a Quote" button now points here rather than at Contact Us.
 
