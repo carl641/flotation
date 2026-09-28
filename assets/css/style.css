@@ -2534,7 +2534,7 @@ h3 {
 .footer-contact {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: minmax(0, 4fr) repeat(3, minmax(0, 3fr));
+  grid-template-columns: minmax(min-content, 4fr) repeat(3, minmax(0, 3fr));
   gap: clamp(1.5rem, 3.5vw, 3rem);
   margin-top: clamp(0.5rem, 2vw, 1.25rem);
   padding-top: clamp(1.5rem, 3vw, 2rem);
@@ -3973,4 +3973,14 @@ h3 {
 
 body.lightbox-open {
   overflow: hidden;
+}
+
+/* Phone numbers and email addresses always stay on one line. Last in the file
+   so it wins over the overflow-wrap rules on footer, dealer and info lists. */
+a[href^="tel:"],
+a[href^="mailto:"],
+.nowrap {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
 }
