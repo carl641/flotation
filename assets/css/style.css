@@ -3825,7 +3825,7 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem 2rem;
-  margin-top: 1rem;
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .dealer-intro-row .lede {
