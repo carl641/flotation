@@ -3393,50 +3393,146 @@ h3 {
   color: var(--ink-mute);
 }
 
-.dealer-meta {
-  padding: 0.35rem clamp(1.25rem, 2.5vw, 1.6rem) 0.85rem;
-}
-
-.dealer-meta > div {
+/* Contact details: one line each, marked by a small icon instead of a label
+   and divider, so a full set of details stays compact without looking busy. */
+.dealer-contact {
   display: grid;
-  gap: 0.1rem;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.dealer-meta > div:last-child {
-  border-bottom: 0;
-}
-
-.dealer-meta dt {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-}
-
-.dealer-meta dd {
-  margin: 0;
-  line-height: 1.55;
+  gap: 0.5rem;
+  padding: 1.1rem clamp(1.25rem, 2.5vw, 1.6rem) 1.05rem;
+  list-style: none;
+  font-size: 0.9rem;
+  line-height: 1.45;
   color: var(--ink-soft);
-  overflow-wrap: anywhere;
 }
 
-.dealer-meta a {
-  color: var(--olive);
+.dealer-contact li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.dealer-contact li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+  width: 1rem;
+  height: 1rem;
+  background: var(--olive);
+  opacity: 0.8;
+  -webkit-mask: no-repeat center / contain;
+  mask: no-repeat center / contain;
+}
+
+.dealer-contact .dc-phone::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+}
+
+.dealer-contact .dc-email::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E");
+}
+
+.dealer-contact .dc-web::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='2' y1='12' x2='22' y2='12'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='2' y1='12' x2='22' y2='12'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E");
+}
+
+.dealer-contact .dc-addr::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+
+.dealer-contact a {
+  color: var(--olive-deep);
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
 
-.dealer-meta a:hover {
+.dealer-contact a:hover {
   border-color: currentColor;
 }
 
+.dealer-contact .dc-note {
+  color: var(--ink-mute);
+}
+
 @media (prefers-color-scheme: dark) {
-  .dealer-meta a {
+  .dealer-contact a {
     color: #a9bb8b;
   }
+
+  .dealer-contact li::before {
+    background: #a9bb8b;
+  }
+}
+
+/* Territories sit apart from the contact lines in a smaller, quieter block.
+   Long lists are held to two lines with a "Show all" toggle, so a dealer
+   covering nineteen lakes lines up with one covering a single lake. */
+.dealer-areas {
+  margin: 0 clamp(1.25rem, 2.5vw, 1.6rem) 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--ink-mute);
+}
+
+.dealer-areas-label {
+  margin-bottom: 0.15rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.dealer-areas-more {
+  margin-top: 0.3rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 650;
+  color: var(--olive);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.dealer-areas-more:hover {
+  color: var(--olive-deep);
+}
+
+.no-js .dealer-areas-more,
+.dealer-areas-more[hidden] {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dealer-areas-more {
+    color: #a9bb8b;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .dealer-bio {
@@ -3446,6 +3542,47 @@ h3 {
   background: var(--surface-tint);
   font-size: 0.9rem;
   color: var(--ink-soft);
+}
+
+/* Find a Dock Builder: spotlight, directory, then the rest, each under its
+   own small heading on the section's left edge. */
+.dealer-group + .dealer-group {
+  margin-top: clamp(2.75rem, 5vw, 3.75rem);
+}
+
+.dealer-group[hidden] {
+  display: none;
+}
+
+.dealer-group-head {
+  max-width: 720px;
+  margin-bottom: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+.dealer-group-title {
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.dealer-group-head p {
+  margin-top: 0.4rem;
+  color: var(--ink-mute);
+}
+
+.dealer-group-head .tel {
+  color: var(--olive-deep);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.dealer-groups .dealer-cards {
+  margin-bottom: 0;
+}
+
+.dealer-groups + .reveal.mute {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 /* Get a Quote shows a single row of three; the full list has its own page. */

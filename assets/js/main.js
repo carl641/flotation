@@ -690,6 +690,7 @@
   var chips = [].slice.call(filter.querySelectorAll(".dealer-chip"));
   var cards = [].slice.call(document.querySelectorAll(".dealer-card[data-states]"));
   var count = filter.querySelector(".dealer-count");
+  var groups = [].slice.call(document.querySelectorAll(".dealer-group"));
 
   function show(state) {
     var shown = 0;
@@ -701,11 +702,23 @@
         shown++;
       }
     });
+    // A group with no dealer in the chosen state drops out, heading and all.
+    groups.forEach(function (group) {
+      group.hidden = !group.querySelector(".dealer-card:not([hidden])");
+      if (!group.hidden) {
+        [].forEach.call(group.querySelectorAll(".reveal"), function (el) { el.classList.add("in"); });
+      }
+    });
+    fitAreas();
     chips.forEach(function (chip) {
       chip.setAttribute("aria-pressed", chip.getAttribute("data-state") === state ? "true" : "false");
     });
     count.textContent = shown + (shown === 1 ? " dealer" : " dealers") +
       (state === "all" ? "" : " in " + filter.querySelector('[data-state="' + state + '"]').textContent);
+  }
+
+  function fitAreas() {
+    if (window.fitDealerAreas) window.fitDealerAreas();
   }
 
   filter.addEventListener("click", function (event) {
@@ -715,4 +728,38 @@
 
   filter.hidden = false;
   show("all");
+})();
+
+// Dealer territories: long lists are clamped to two lines by CSS. The "Show
+// all" toggle only appears where the clamp actually hides something at the
+// current width, and is re-checked when the width changes.
+(function () {
+  var areas = [].slice.call(document.querySelectorAll(".dealer-areas.is-long"));
+  if (!areas.length) return;
+
+  function fit() {
+    areas.forEach(function (area) {
+      if (area.classList.contains("is-open")) return;
+      var list = area.querySelector(".dealer-areas-list");
+      var btn = area.querySelector(".dealer-areas-more");
+      if (!list.getClientRects().length) return;
+      btn.hidden = list.scrollHeight <= list.clientHeight + 2;
+    });
+  }
+
+  document.addEventListener("click", function (event) {
+    var btn = event.target.closest(".dealer-areas-more");
+    if (!btn) return;
+    var open = btn.parentNode.classList.toggle("is-open");
+    btn.textContent = open ? "Show less" : "Show all";
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  var timer;
+  window.addEventListener("resize", function () {
+    clearTimeout(timer);
+    timer = setTimeout(fit, 150);
+  });
+  window.fitDealerAreas = fit;
+  fit();
 })();
