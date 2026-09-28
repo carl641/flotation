@@ -3460,6 +3460,30 @@ h3 {
   }
 }
 
+/* A dealer with no details yet: the tinted head fills the card rather than
+   leaving an empty white block beside its taller neighbours. */
+.dealer-head:last-child {
+  flex: 1;
+  border-bottom: 0;
+}
+
+/* The full dealer page: rows of three on desktop, two on tablets, one on phones. */
+.dealer-cards.dealer-cards-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1000px) {
+  .dealer-cards.dealer-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .dealer-cards.dealer-cards-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .dealer-list-cta {
   display: flex;
   justify-content: center;
