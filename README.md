@@ -255,8 +255,9 @@ laid out like Contact Us:
   dealers: the live intro copy and the "taking on dealers nationwide" line,
   with a "See every dealer by state" button top right; the Travis Boat Docks & Lifts
   spotlight as a wide feature card: `spotlight1` and `spotlight2` beside a
-  regular dealer card (head, contact lines and territory, the story in the
-  bio footer) with a "Dealer spotlight" tag; then "Our dealers cover the US" with
+  dealer-card head with a "Dealer spotlight" tag; his story follows
+  straight under his name in larger type behind an olive rule, and the contact
+  lines and territory sit in the off-white footer; then "Our dealers cover the US" with
   a row of three dealers who have real bios. The full list lives on
   `find-a-dock-builder/`.
 
