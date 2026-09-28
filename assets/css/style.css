@@ -3671,91 +3671,41 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   height: calc(40% - 2px);
 }
 
-.dealer-feature-copy {
-  padding: clamp(1.5rem, 3.5vw, 2.5rem);
-  color: var(--ink-soft);
+/* Travis's details use the same card parts as the dealer cards beside it -
+   head, icon lines with territories, then the story in the bio footer - set
+   inside the feature frame, so the card itself drops its own frame. */
+.dealer-feature-card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.dealer-feature .eyebrow {
-  margin-bottom: 0;
+.dealer-feature-card::before {
+  content: none;
+}
+
+.dealer-head .dealer-flag {
+  margin: 0 0 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--olive);
 }
 
 @media (prefers-color-scheme: dark) {
-  .dealer-feature .eyebrow {
+  .dealer-head .dealer-flag {
     color: #a9bb8b;
   }
 }
 
-.dealer-feature-title {
-  margin-top: 0.4rem;
-  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.15;
-  color: var(--ink);
+.dealer-bio p + p {
+  margin-top: 0.7rem;
 }
 
-/* Same order as the dealer cards: business name, then the person, then the
-   states - scaled up for the feature. */
-.dealer-feature-person {
-  margin-top: 0.3rem;
-  font-size: 1.05rem;
+.dealer-bio .dealer-bio-lead {
   font-weight: 650;
   color: var(--ink-mute);
-}
-
-.dealer-feature .dealer-states {
-  margin-top: 0.45rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--olive-deep);
-}
-
-@media (prefers-color-scheme: dark) {
-  .dealer-feature .dealer-states {
-    color: #a9bb8b;
-  }
-}
-
-.dealer-feature-lede {
-  margin-top: 1.1rem;
-  font-weight: 600;
-  color: var(--ink-mute);
-}
-
-.dealer-feature-copy > p + p {
-  margin-top: 0.8rem;
-}
-
-.dealer-feature-copy > p:not(.eyebrow):not(.dealer-feature-lede) {
-  max-width: 60ch;
-}
-
-.dealer-feature-lede + p {
-  margin-top: 1rem;
-}
-
-.dealer-feature-details {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
-}
-
-.dealer-feature-details .dealer-contact {
-  padding: 0;
-}
-
-.dealer-feature-details .dealer-areas {
-  margin: 0;
-  padding: 0 0 0 1.25rem;
-  border-top: 0;
-  border-left: 1px solid var(--line);
 }
 
 .dealer-subhead {
@@ -3792,18 +3742,6 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   .dealer-feature-media img:last-child {
     left: auto;
     right: 0;
-  }
-}
-
-@media (max-width: 560px) {
-  .dealer-feature-details {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .dealer-feature-details .dealer-areas {
-    padding: 1rem 0 0;
-    border-left: 0;
-    border-top: 1px solid var(--line);
   }
 }
 

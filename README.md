@@ -254,9 +254,9 @@ laid out like Contact Us:
 - **Find a dock builder** - one tinted section holding everything about
   dealers: the live intro copy and the "taking on dealers nationwide" line,
   with a "See every dealer by state" button top right; the Travis Boat Docks & Lifts
-  spotlight as a wide feature card (business name first, then Randy
-  Travis and Kentucky, like the dealer cards) (`spotlight1` and `spotlight2` beside his
-  story, contact details and territory); then "Our dealers cover the US" with
+  spotlight as a wide feature card: `spotlight1` and `spotlight2` beside a
+  regular dealer card (head, contact lines and territory, the story in the
+  bio footer) with a "Dealer spotlight" tag; then "Our dealers cover the US" with
   a row of three dealers who have real bios. The full list lives on
   `find-a-dock-builder/`.
 
