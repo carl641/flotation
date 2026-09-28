@@ -3766,6 +3766,27 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   color: var(--ink-mute);
 }
 
+/* Between the spotlight and the row of cards: the heading on the left and a
+   second "See every dock builder by state" button on the right, centred on
+   it like the one in the intro; on phones the button drops underneath. */
+.dealer-subhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+}
+
+.dealer-subhead .btn {
+  flex: none;
+}
+
+@media (max-width: 760px) {
+  .dealer-subhead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .dealer-list-top + .dealer-feature {
   margin-top: 0;
 }
