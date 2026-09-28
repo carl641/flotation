@@ -3544,6 +3544,33 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   color: var(--ink-soft);
 }
 
+/* A card only gets wide when the grid stacks (Get a Quote below 1000px, the
+   dealer page on tablets). Then the contact lines take the left half and the
+   territories the right, so the details do not bunch up on one side of an
+   otherwise empty card; the description still runs full width underneath. */
+.dealer-card {
+  container-type: inline-size;
+}
+
+@container (min-width: 560px) {
+  .dealer-body {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: start;
+  }
+
+  .dealer-body .dealer-contact {
+    padding-bottom: 1.3rem;
+  }
+
+  .dealer-body .dealer-areas {
+    margin: 1.1rem clamp(1.25rem, 2.5vw, 1.6rem) 1.3rem 0;
+    padding: 0 0 0 clamp(1.25rem, 2.5vw, 1.6rem);
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+}
+
 /* Find a Dock Builder: spotlight, directory, then the rest, each under its
    own small heading on the section's left edge. */
 .dealer-group + .dealer-group {
