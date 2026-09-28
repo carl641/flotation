@@ -3484,10 +3484,28 @@ h3 {
   }
 }
 
-.dealer-list-cta {
+/* Get a Quote: the "every dealer" button sits in the section's upper right,
+   level with the heading; on narrow screens it drops under the copy. */
+.dealer-list-top {
   display: flex;
-  justify-content: center;
-  margin-top: clamp(2rem, 4vw, 2.75rem);
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.dealer-list-top .section-head {
+  margin-bottom: 0;
+}
+
+.dealer-list-top .btn {
+  flex: none;
+}
+
+@media (max-width: 760px) {
+  .dealer-list-top {
+    flex-direction: column;
+  }
 }
 
 .dealer-head .dealer-states {
