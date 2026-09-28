@@ -3448,6 +3448,24 @@ h3 {
   color: var(--ink-soft);
 }
 
+/* Get a Quote shows a single row of three; the full list has its own page. */
+.dealer-cards.dealer-cards-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+  .dealer-cards.dealer-cards-row {
+    grid-template-columns: minmax(0, 520px);
+  }
+}
+
+.dealer-list-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
 .dealer-head .dealer-states {
   margin-top: 0.45rem;
   font-size: 0.72rem;
