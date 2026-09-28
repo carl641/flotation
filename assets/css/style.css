@@ -3808,41 +3808,38 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   }
 }
 
-/* Get a Quote: the "every dealer" button sits in the section's upper right,
-   level with the heading; on phones it drops under the copy. Heading, button
-   and cards all share the container's left and right edges. */
+/* Get a Quote: the "every dock builder" button shares a row with the body
+   copy under the heading, centred on that paragraph and ending on the right
+   margin; on phones it drops under the copy. */
 .dealer-list-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.25rem 2rem;
   margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
 }
 
 .dealer-list-top .section-head {
+  max-width: none;
   margin-bottom: 0;
 }
 
-/* The intro is two short paragraphs at one size; they share the room beside
-   the button and wrap to the lede's comfortable measure. */
-.dealer-list-top .section-head .lede + .lede {
-  margin-top: 0.75rem;
+.dealer-intro-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  margin-top: 1rem;
 }
 
-/* Centred on the intro block rather than pinned to its top corner, so the
-   heading and copy on the left and the button on the right balance. */
-.dealer-list-top .btn {
+.dealer-intro-row .lede {
+  margin-top: 0;
+}
+
+.dealer-intro-row .btn {
   flex: none;
-  align-self: center;
 }
 
 @media (max-width: 760px) {
-  .dealer-list-top {
+  .dealer-intro-row {
     flex-direction: column;
-  }
-
-  .dealer-list-top .btn {
-    align-self: flex-start;
+    align-items: flex-start;
   }
 }
 
