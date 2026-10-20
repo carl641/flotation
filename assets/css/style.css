@@ -3451,6 +3451,7 @@ h3 {
 .dealer-contact li {
   position: relative;
   padding-left: 1.6rem;
+  overflow-wrap: anywhere;
 }
 
 .dealer-contact li::before {
@@ -3614,8 +3615,7 @@ html:not(.no-js) .dealer-areas.is-long:not(.is-open) .dealer-areas-list {
   }
 }
 
-/* Find a Dock Builder: spotlight, directory, then the rest, each under its
-   own small heading on the section's left edge. */
+/* Find a Dock Builder: one group of identical dealer cards. */
 .dealer-group + .dealer-group {
   margin-top: clamp(2.75rem, 5vw, 3.75rem);
 }
