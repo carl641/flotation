@@ -3501,6 +3501,28 @@ h3 {
   color: var(--ink-mute);
 }
 
+/* A dealer with several numbers gets one per line. */
+.dealer-contact .dc-line {
+  display: block;
+}
+
+/* An email stays on one line; main.js shrinks one that is too long for its
+   card. */
+.dealer-contact .dc-email {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* On the narrowest phones, a little less side padding gives a long email
+   the room to fit. */
+@container (max-width: 300px) {
+  .dealer-contact {
+    padding-right: 0.9rem;
+    padding-left: 0.9rem;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .dealer-contact a {
     color: #a9bb8b;

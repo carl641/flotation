@@ -719,6 +719,7 @@
 
   function fitAreas() {
     if (window.fitDealerAreas) window.fitDealerAreas();
+    if (window.fitDealerEmails) window.fitDealerEmails();
   }
 
   filter.addEventListener("click", function (event) {
@@ -761,5 +762,37 @@
     timer = setTimeout(fit, 150);
   });
   window.fitDealerAreas = fit;
+  fit();
+})();
+
+// Dealer emails: each stays on one line. One too long for its card at the
+// current width is set smaller, step by step, until it fits.
+(function () {
+  var emails = [].slice.call(document.querySelectorAll(".dealer-contact .dc-email"));
+  if (!emails.length) return;
+
+  function fit() {
+    emails.forEach(function (li) {
+      if (!li.getClientRects().length) return;
+      var link = li.querySelector("a");
+      if (!link) return;
+      li.style.fontSize = "";
+      var style = getComputedStyle(li);
+      var room = li.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      var size = parseFloat(style.fontSize);
+      while (link.getBoundingClientRect().width > room && size > 10) {
+        size -= 0.5;
+        li.style.fontSize = size + "px";
+      }
+    });
+  }
+
+  var timer;
+  window.addEventListener("resize", function () {
+    clearTimeout(timer);
+    timer = setTimeout(fit, 150);
+  });
+  if (document.fonts) document.fonts.ready.then(fit);
+  window.fitDealerEmails = fit;
   fit();
 })();
